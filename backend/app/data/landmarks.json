@@ -1,0 +1,865 @@
+{
+    "Hà Nội": {
+        "foods": [
+            "Phở",
+            "Bún chả",
+            "Bánh cuốn"
+        ],
+        "related_places": [
+            "Ninh Bình",
+            "Hạ Long",
+            "Sa Pa"
+        ],
+        "keywords": [
+            "Hà Nội",
+            "thủ đô Việt Nam",
+            "Hồ Hoàn Kiếm",
+            "lăng Bác"
+        ],
+        "description": [
+            "Hà Nội, thủ đô của Việt Nam, nổi tiếng với lịch sử lâu đời và văn hóa phong phú. Thành phố này có nhiều di tích lịch sử như Văn Miếu - Quốc Tử Giám, Hoàng thành Thăng Long và chùa Một Cột. Hà Nội cũng là trung tâm ẩm thực với các món ăn đặc trưng như phở, bún chả và bánh cuốn. Du khách đến Hà Nội có thể tận hưởng không khí nhộn nhịp của phố cổ, tham quan các bảo tàng và thưởng thức cà phê vỉa hè đặc trưng của thành phố."
+        ]
+    },
+    "Hạ Long": {
+        "foods": [
+            "Sá sùng",
+            "Chả mực",
+            "Ngán nướng"
+        ],
+        "related_places": [
+            "Quảng Ninh",
+            "Cát Bà",
+            "Hà Nội"
+        ],
+        "keywords": [
+            "Hạ Long",
+            "vịnh Hạ Long",
+            "du lịch Quảng Ninh"
+        ],
+        "description": [
+            "Hạ Long, nổi tiếng với vịnh Hạ Long - một trong bảy kỳ quan thiên nhiên thế giới, là điểm đến hấp dẫn của du khách trong và ngoài nước. Vịnh Hạ Long có hàng nghìn hòn đảo đá vôi lớn nhỏ với hình dáng độc đáo, tạo nên cảnh quan tuyệt đẹp. Du khách có thể tham gia các hoạt động như du thuyền, khám phá hang động, chèo thuyền kayak và thưởng thức hải sản tươi ngon tại các nhà hàng ven biển. Hạ Long không chỉ là điểm đến thiên nhiên mà còn mang đậm nét văn hóa địa phương với các làng chài truyền thống."
+        ]
+    },
+    "Sa Pa": {
+        "foods": [
+            "Thắng cố",
+            "Cá hồi",
+            "Xôi ngũ sắc"
+        ],
+        "related_places": [
+            "Hà Giang",
+            "Hà Nội",
+            "Bắc Hà"
+        ],
+        "keywords": [
+            "Sa Pa",
+            "Lào Cai",
+            "Fansipan",
+            "ruộng bậc thang"
+        ],
+        "description": [
+            "Sa Pa, nằm ở tỉnh Lào Cai, là một điểm đến nổi tiếng với cảnh quan núi non hùng vĩ và văn hóa đa dạng của các dân tộc thiểu số. Nơi đây nổi bật với đỉnh Fansipan - nóc nhà Đông Dương, cùng những thung lũng xanh mướt và ruộng bậc thang tuyệt đẹp. Sa Pa cũng là nơi sinh sống của nhiều dân tộc như H'Mông, Dao, Tày, mỗi dân tộc mang đến những nét văn hóa đặc sắc riêng biệt. Du khách đến Sa Pa có thể tham gia các hoạt động như trekking, thăm bản làng truyền thống và thưởng thức ẩm thực độc đáo của vùng núi cao."
+        ]
+    },
+    "Ninh Bình": {
+        "foods": [
+            "Cơm cháy",
+            "Dê núi Ninh Bình",
+            "Chả mực Ninh Bình"
+        ],
+        "related_places": [
+            "Tam Cốc",
+            "Bái Đính",
+            "Hà Nội"
+        ],
+        "keywords": [
+            "Ninh Bình",
+            "Tràng An",
+            "Tam Cốc",
+            "Bái Đính"
+        ],
+        "description": [
+            "Ninh Bình, được mệnh danh là 'Hạ Long trên cạn', nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp và các di tích lịch sử văn hóa. Khu du lịch Tràng An với hệ thống hang động và sông nước uốn lượn qua những dãy núi đá vôi tạo nên khung cảnh hùng vĩ. Ninh Bình còn có chùa Bái Đính - ngôi chùa lớn nhất Đông Nam Á, thu hút nhiều du khách đến tham quan và chiêm bái. Ẩm thực Ninh Bình cũng rất đặc sắc với các món như cơm cháy, dê núi và chả mực."
+        ]
+    },
+    "Đà Nẵng": {
+        "foods": [
+            "Mì Quảng",
+            "Bánh tráng cuốn thịt heo",
+            "Hải sản"
+        ],
+        "related_places": [
+            "Hội An",
+            "Huế",
+            "Ngũ Hành Sơn"
+        ],
+        "keywords": [
+            "Đà Nẵng",
+            "cầu Rồng",
+            "bãi biển Mỹ Khê"
+        ],
+        "description": [
+            "Đà Nẵng, thành phố biển năng động của Việt Nam, nổi tiếng với những bãi biển tuyệt đẹp như Mỹ Khê và Non Nước. Thành phố này còn có nhiều điểm tham quan hấp dẫn như cầu Rồng, bán đảo Sơn Trà và Ngũ Hành Sơn với các hang động và chùa chiền cổ kính. Đà Nẵng cũng là cửa ngõ để khám phá các di sản văn hóa thế giới như phố cổ Hội An và cố đô Huế. Ẩm thực Đà Nẵng đa dạng với các món đặc sản như mì Quảng, bánh tráng cuốn thịt heo và hải sản tươi ngon."
+        ]
+    },
+    "Hội An": {
+        "foods": [
+            "Cao lầu",
+            "Bánh bao bánh vạc",
+            "Mì Quảng Hội An"
+        ],
+        "related_places": [
+            "Đà Nẵng",
+            "Huế",
+            "Cù Lao Chàm"
+        ],
+        "keywords": [
+            "Hội An",
+            "phố cổ Hội An",
+            "du lịch Hội An"
+        ],
+        "description": [
+            "Hội An, một di sản văn hóa thế giới được UNESCO công nhận, nổi tiếng với phố cổ rực rỡ ánh đèn lồng và kiến trúc độc đáo pha trộn giữa các nền văn hóa Á, Âu. Thành phố này có nhiều ngôi nhà cổ, chùa chiền và cầu Nhật Bản mang đậm dấu ấn lịch sử. Hội An cũng là điểm đến lý tưởng để thưởng thức ẩm thực đặc sắc với các món như cao lầu, bánh bao bánh vạc và mì Quảng. Du khách đến Hội An có thể tận hưởng không khí yên bình, tham gia các lễ hội truyền thống và khám phá các làng nghề thủ công truyền thống."
+        ]
+    },
+    "Huế": {
+        "foods": [
+            "Bún bò Huế",
+            "Bánh khoái",
+            "Nem lụi"
+        ],
+        "related_places": [
+            "Đà Nẵng",
+            "Hội An",
+            "Lăng Tự Đức"
+        ],
+        "keywords": [
+            "Huế",
+            "Cố đô Huế",
+            "sông Hương"
+        ],
+        "description": [
+            "Huế, cố đô của Việt Nam, nổi tiếng với hệ thống di tích lịch sử và văn hóa phong phú. Thành phố này từng là trung tâm của triều đại nhà Nguyễn, với nhiều lăng tẩm, đền đài và cung điện như Đại Nội, lăng Tự Đức và chùa Thiên Mụ. Huế cũng nổi bật với ẩm thực đặc sắc, trong đó bún bò Huế là món ăn nổi tiếng nhất. Du khách đến Huế có thể khám phá vẻ đẹp cổ kính của thành phố, tham quan các di tích lịch sử và thưởng thức những món ăn truyền thống độc đáo."
+        ]
+    },
+    "Nha Trang": {
+        "foods": [
+            "Bún chả cá",
+            "Nem nướng Ninh Hòa",
+            "Hải sản"
+        ],
+        "related_places": [
+            "Phan Thiết",
+            "Đà Lạt",
+            "Cam Ranh"
+        ],
+        "keywords": [
+            "Nha Trang",
+            "biển Nha Trang",
+            "Vinpearl Nha Trang"
+        ],
+        "description": [
+            "Nha Trang, thành phố biển nổi tiếng của Việt Nam, thu hút du khách với những bãi biển trắng mịn và làn nước trong xanh. Nơi đây có nhiều điểm tham quan hấp dẫn như đảo Hòn Tre, Vinpearl Land và tháp Bà Ponagar. Nha Trang cũng là thiên đường ẩm thực với các món hải sản tươi ngon và đặc sản như bún chả cá và nem nướng Ninh Hòa. Du khách đến Nha Trang có thể tận hưởng không khí biển trong lành, tham gia các hoạt động thể thao dưới nước và khám phá văn hóa địa phương."
+        ]
+    },
+    "Phan Thiết": {
+        "foods": [
+            "Bánh căn",
+            "Bánh xèo mực",
+            "Hải sản Phan Thiết"
+        ],
+        "related_places": [
+            "Mũi Né",
+            "Nha Trang",
+            "Đà Lạt"
+        ],
+        "keywords": [
+            "Phan Thiết",
+            "Mũi Né",
+            "đồi cát Phan Thiết"
+        ],
+        "description": [
+            "Phan Thiết, thành phố ven biển nổi tiếng với bãi biển Mũi Né và những đồi cát trải dài, là điểm đến hấp dẫn cho du khách yêu thích thiên nhiên và thể thao biển. Nơi đây có nhiều hoạt động thú vị như lướt ván diều, leo đồi cát và tham quan làng chài truyền thống. Phan Thiết cũng nổi bật với ẩm thực đặc sắc, trong đó bánh căn và hải sản tươi ngon là những món ăn không thể bỏ qua. Du khách đến Phan Thiết có thể tận hưởng không khí biển trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản."
+        ]
+    },
+    "Đà Lạt": {
+        "foods": [
+            "Bánh tráng nướng",
+            "Nem nướng",
+            "Lẩu gà lá é"
+        ],
+        "related_places": [
+            "Buôn Ma Thuột",
+            "Nha Trang",
+            "Đà Nẵng"
+        ],
+        "keywords": [
+            "Đà Lạt",
+            "thung lũng Tình Yêu",
+            "Hồ Xuân Hương"
+        ],
+        "description": [
+            "Đà Lạt, thành phố ngàn hoa nằm trên cao nguyên Lâm Viên, nổi tiếng với khí hậu mát mẻ quanh năm và cảnh quan thiên nhiên tuyệt đẹp. Nơi đây có nhiều điểm tham quan hấp dẫn như thung lũng Tình Yêu, hồ Xuân Hương và đồi chè Cầu Đất. Đà Lạt cũng là thiên đường ẩm thực với các món đặc sản như bánh tráng nướng, nem nướng và lẩu gà lá é. Du khách đến Đà Lạt có thể tận hưởng không khí trong lành, khám phá các vườn hoa rực rỡ và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Buôn Ma Thuột": {
+        "foods": [
+            "Cà phê Buôn Ma Thuột",
+            "Thịt nai nướng",
+            "Bánh khọt Tây Nguyên"
+        ],
+        "related_places": [
+            "Đà Lạt",
+            "Gia Lai",
+            "Kon Tum"
+        ],
+        "keywords": [
+            "Buôn Ma Thuột",
+            "tây nguyên",
+            "thác Dray Nur"
+        ],
+        "description": [
+            "Buôn Ma Thuột, thủ phủ của tỉnh Đắk Lắk, nổi tiếng với nền văn hóa đa dạng của các dân tộc thiểu số và cảnh quan thiên nhiên hùng vĩ. Thành phố này là trung tâm cà phê lớn nhất Việt Nam, với nhiều đồn điền cà phê trải dài trên các ngọn đồi xanh mướt. Buôn Ma Thuột cũng có nhiều điểm tham quan hấp dẫn như thác Dray Nur, hồ Lắk và các buôn làng truyền thống. Ẩm thực nơi đây đặc sắc với các món ăn như thịt nai nướng và bánh khọt Tây Nguyên."
+        ]
+    },
+    "Gia Lai": {
+        "foods": [
+            "Gà nướng Gia Lai",
+            "Cơm lam",
+            "Cá suối"
+        ],
+        "related_places": [
+            "Buôn Ma Thuột",
+            "Kon Tum",
+            "Đà Lạt"
+        ],
+        "keywords": [
+            "Gia Lai",
+            "Pleiku",
+            "núi lửa Chư Đăng Ya"
+        ],
+        "description": [
+            "Gia Lai, nằm ở trung tâm Tây Nguyên, nổi tiếng với cảnh quan núi rừng hùng vĩ và văn hóa đa dạng của các dân tộc thiểu số. Thành phố Pleiku, thủ phủ của tỉnh, là điểm đến hấp dẫn với nhiều di tích lịch sử và văn hóa. Gia Lai còn có nhiều điểm tham quan thiên nhiên như núi lửa Chư Đăng Ya, hồ T'Nưng và thác Phú Cường. Ẩm thực Gia Lai đặc sắc với các món ăn như gà nướng, cơm lam và cá suối, mang đậm hương vị núi rừng Tây Nguyên."
+        ]
+    },
+    "Kon Tum": {
+        "foods": [
+            "Thịt trâu gác bếp",
+            "Cơm lam",
+            "Gà nướng Kon Tum"
+        ],
+        "related_places": [
+            "Gia Lai",
+            "Buôn Ma Thuột",
+            "Đà Lạt"
+        ],
+        "keywords": [
+            "Kon Tum",
+            "nhà thờ gỗ Kon Tum",
+            "tây nguyên"
+        ],
+        "description": [
+            "Kon Tum, tỉnh nằm ở phía bắc Tây Nguyên, nổi tiếng với cảnh quan núi rừng hoang sơ và văn hóa đặc sắc của các dân tộc thiểu số. Thành phố Kon Tum có nhiều di tích lịch sử và kiến trúc độc đáo như nhà thờ gỗ Kon Tum, được xây dựng hoàn toàn bằng gỗ mà không sử dụng đinh. Kon Tum cũng có nhiều điểm tham quan thiên nhiên như thác Pa Sỹ, hồ Đăk Tô và vườn quốc gia Chư Mom Ray. Ẩm thực Kon Tum đặc sắc với các món ăn như thịt trâu gác bếp, cơm lam và gà nướng, mang đậm hương vị núi rừng Tây Nguyên."
+        ]
+    },
+    "TP.HCM": {
+        "foods": [
+            "Bánh mì Sài Gòn",
+            "Hủ tiếu",
+            "Bánh xèo miền Nam"
+        ],
+        "related_places": [
+            "Cần Thơ",
+            "Vũng Tàu",
+            "Mỹ Tho"
+        ],
+        "keywords": [
+            "TP.HCM",
+            "Sài Gòn",
+            "Chợ Bến Thành"
+        ],
+        "description": [
+            "TP.HCM, hay còn gọi là Sài Gòn, là trung tâm kinh tế và văn hóa lớn nhất của Việt Nam. Thành phố này nổi bật với sự pha trộn giữa kiến trúc hiện đại và di tích lịch sử, như Dinh Độc Lập, Nhà thờ Đức Bà và chợ Bến Thành. TP.HCM cũng là thiên đường ẩm thực với các món ăn đặc trưng như bánh mì Sài Gòn, hủ tiếu và bánh xèo miền Nam. Du khách đến TP.HCM có thể trải nghiệm cuộc sống sôi động của thành phố, khám phá các khu chợ truyền thống và thưởng thức ẩm thực đa dạng."
+        ]
+    },
+    "Cần Thơ": {
+        "foods": [
+            "Bún mắm",
+            "Cá lóc nướng trui",
+            "Lẩu mắm"
+        ],
+        "related_places": [
+            "Mỹ Tho",
+            "Vĩnh Long",
+            "Bến Tre"
+        ],
+        "keywords": [
+            "Cần Thơ",
+            "chợ nổi Cái Răng",
+            "Mekong"
+        ],
+        "description": [
+            "Cần Thơ, trung tâm của vùng đồng bằng sông Cửu Long, nổi tiếng với chợ nổi Cái Răng và cảnh quan sông nước đặc trưng. Thành phố này có nhiều điểm tham quan hấp dẫn như bến Ninh Kiều, vườn cò Bằng Lăng và các làng nghề truyền thống. Cần Thơ cũng là thiên đường ẩm thực với các món đặc sản như bún mắm, cá lóc nướng trui và lẩu mắm. Du khách đến Cần Thơ có thể trải nghiệm cuộc sống sông nước, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Vũng Tàu": {
+        "foods": [
+            "Bánh khọt Vũng Tàu",
+            "Hải sản",
+            "Gỏi cá mai"
+        ],
+        "related_places": [
+            "TP.HCM",
+            "Mũi Né",
+            "Phan Thiết"
+        ],
+        "keywords": [
+            "Vũng Tàu",
+            "bãi Trước",
+            "núi Lớn"
+        ],
+        "description": [
+            "Vũng Tàu, thành phố biển nổi tiếng với những bãi biển tuyệt đẹp và không khí trong lành, là điểm đến lý tưởng cho du khách yêu thích thiên nhiên và ẩm thực hải sản. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi Trước, bãi Sau và núi Lớn với tượng Chúa Kitô Vua nổi tiếng. Vũng Tàu cũng là thiên đường ẩm thực với các món đặc sản như bánh khọt, gỏi cá mai và hải sản tươi ngon. Du khách đến Vũng Tàu có thể tận hưởng không khí biển mát mẻ, tham gia các hoạt động thể thao dưới nước và thưởng thức những món ăn đặc sản."
+        ]
+    },
+    "Phú Quốc": {
+        "foods": [
+            "Ghẹ Hàm Ninh",
+            "Nước mắm Phú Quốc",
+            "Bún quậy"
+        ],
+        "related_places": [
+            "Kiên Giang",
+            "Hà Tiên",
+            "Đảo Thổ Châu"
+        ],
+        "keywords": [
+            "Phú Quốc",
+            "hòn đảo ngọc",
+            "bãi sao"
+        ],
+        "description": [
+            "Phú Quốc, hòn đảo lớn nhất Việt Nam, nổi tiếng với những bãi biển hoang sơ, nước biển trong xanh và hệ sinh thái đa dạng. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi Sao, suối Tranh và vườn quốc gia Phú Quốc. Phú Quốc cũng là thiên đường ẩm thực với các món đặc sản như ghẹ Hàm Ninh, nước mắm Phú Quốc và bún quậy. Du khách đến Phú Quốc có thể tận hưởng không khí biển trong lành, khám phá thiên nhiên hoang dã và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Mỹ Tho": {
+        "foods": [
+            "Bánh xèo miền Nam",
+            "Hủ tiếu Mỹ Tho",
+            "Bánh tráng cuốn"
+        ],
+        "related_places": [
+            "Cần Thơ",
+            "Bến Tre",
+            "Vĩnh Long"
+        ],
+        "keywords": [
+            "Mỹ Tho",
+            "đồng bằng sông Cửu Long",
+            "chùa Vĩnh Tràng"
+        ],
+        "description": [
+            "Mỹ Tho, thành phố nằm ở trung tâm đồng bằng sông Cửu Long, nổi tiếng với hệ thống kênh rạch chằng chịt và các vườn trái cây trù phú. Thành phố này có nhiều điểm tham quan hấp dẫn như chùa Vĩnh Tràng, cù lao Thới Sơn và các làng nghề truyền thống. Mỹ Tho cũng là thiên đường ẩm thực với các món đặc sản như bánh xèo miền Nam, hủ tiếu Mỹ Tho và bánh tráng cuốn. Du khách đến Mỹ Tho có thể trải nghiệm cuộc sống sông nước, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Bến Tre": {
+        "foods": [
+            "Kẹo dừa",
+            "Bánh xèo Bến Tre",
+            "Hủ tiếu"
+        ],
+        "related_places": [
+            "Mỹ Tho",
+            "Cần Thơ",
+            "Vĩnh Long"
+        ],
+        "keywords": [
+            "Bến Tre",
+            "đồng bằng sông Cửu Long",
+            "dừa Bến Tre"
+        ],
+        "description": [
+            "Bến Tre, tỉnh nằm ở đồng bằng sông Cửu Long, nổi tiếng với những vườn dừa xanh mướt và các sản phẩm từ dừa đặc sắc. Thành phố này có nhiều điểm tham quan hấp dẫn như cù lao Thới Sơn, chùa Vĩnh Tràng và các làng nghề truyền thống. Bến Tre cũng là thiên đường ẩm thực với các món đặc sản như kẹo dừa, bánh xèo Bến Tre và hủ tiếu. Du khách đến Bến Tre có thể trải nghiệm cuộc sống sông nước, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Vinh": {
+        "foods": [
+            "Cháo lươn Nghệ An",
+            "Gỏi cá trích",
+            "Bánh cuốn Vinh"
+        ],
+        "related_places": [
+            "Hà Tĩnh",
+            "Cửa Lò",
+            "Nghệ An"
+        ],
+        "keywords": [
+            "Vinh",
+            "Nghệ An",
+            "cửa lò"
+        ],
+        "description": [
+            "Vinh, thành phố lớn nhất tỉnh Nghệ An, nổi tiếng với lịch sử văn hóa phong phú và các di tích lịch sử quan trọng. Thành phố này là nơi sinh sống của nhiều nhân vật lịch sử nổi tiếng như Chủ tịch Hồ Chí Minh. Vinh cũng có nhiều điểm tham quan hấp dẫn như bãi biển Cửa Lò, đền thờ vua Quang Trung và các làng nghề truyền thống. Ẩm thực Vinh đặc sắc với các món ăn như cháo lươn Nghệ An, gỏi cá trích và bánh cuốn Vinh."
+        ]
+    },
+    "Hà Tĩnh": {
+        "foods": [
+            "Bánh đa cua",
+            "Cháo lươn",
+            "Nem chua Hà Tĩnh"
+        ],
+        "related_places": [
+            "Vinh",
+            "Huế",
+            "Đồng Hới"
+        ],
+        "keywords": [
+            "Hà Tĩnh",
+            "biển Thiên Cầm",
+            "Núi Hồng Lĩnh"
+        ],
+        "description": [
+            "Hà Tĩnh, tỉnh nằm ở miền Trung Việt Nam, nổi tiếng với cảnh quan thiên nhiên đa dạng và các di tích lịch sử văn hóa. Thành phố này có nhiều điểm tham quan hấp dẫn như biển Thiên Cầm, núi Hồng Lĩnh và các làng nghề truyền thống. Hà Tĩnh cũng là thiên đường ẩm thực với các món đặc sản như bánh đa cua, cháo lươn và nem chua Hà Tĩnh. Du khách đến Hà Tĩnh có thể tận hưởng không khí trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Đồng Hới": {
+        "foods": [
+            "Bánh bèo Đồng Hới",
+            "Bánh lọc",
+            "Gà nướng Quảng Bình"
+        ],
+        "related_places": [
+            "Phong Nha",
+            "Huế",
+            "Hà Tĩnh"
+        ],
+        "keywords": [
+            "Đồng Hới",
+            "Quảng Bình",
+            "động Phong Nha"
+        ],
+        "description": [
+            "Đồng Hới, thành phố ven biển của tỉnh Quảng Bình, nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp và các di tích lịch sử văn hóa. Thành phố này có nhiều điểm tham quan hấp dẫn như bãi biển Nhật Lệ, động Phong Nha và các làng nghề truyền thống. Đồng Hới cũng là thiên đường ẩm thực với các món đặc sản như bánh bèo Đồng Hới, bánh lọc và gà nướng Quảng Bình. Du khách đến Đồng Hới có thể tận hưởng không khí biển trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Phong Nha": {
+        "foods": [
+            "Gà nướng Phong Nha",
+            "Bánh khoái",
+            "Hải sản Quảng Bình"
+        ],
+        "related_places": [
+            "Đồng Hới",
+            "Huế",
+            "Vinh"
+        ],
+        "keywords": [
+            "Phong Nha",
+            "động Phong Nha",
+            "Quảng Bình"
+        ],
+        "description": [
+            "Phong Nha, nổi tiếng với hệ thống hang động kỳ vĩ và cảnh quan thiên nhiên hoang sơ, là điểm đến hấp dẫn cho du khách yêu thích khám phá thiên nhiên. Khu vực này bao gồm nhiều hang động nổi tiếng như động Phong Nha, động Tiên Sơn và hang Sơn Đoòng - hang động lớn nhất thế giới. Phong Nha cũng có nhiều hoạt động thú vị như leo núi, chèo thuyền kayak và tham quan các làng nghề truyền thống. Ẩm thực Phong Nha đặc sắc với các món ăn như gà nướng Phong Nha, bánh khoái và hải sản tươi ngon."
+        ]
+    },
+    "Tam Đảo": {
+        "foods": [
+            "Thịt trâu xào lăn",
+            "Gà đồi Tam Đảo",
+            "Rau su su xào"
+        ],
+        "related_places": [
+            "Hà Nội",
+            "Vĩnh Phúc",
+            "Mộc Châu"
+        ],
+        "keywords": [
+            "Tam Đảo",
+            "Vĩnh Phúc",
+            "núi Tam Đảo"
+        ],
+        "description": [
+            "Tam Đảo, khu du lịch sinh thái nổi tiếng nằm trên dãy núi Tam Đảo, thu hút du khách với khí hậu mát mẻ quanh năm và cảnh quan thiên nhiên tuyệt đẹp. Nơi đây có nhiều điểm tham quan hấp dẫn như thác Bạc, đền Bà Chúa Thượng Ngàn và các con đường mòn leo núi. Tam Đảo cũng là nơi lý tưởng để thưởng thức ẩm thực đặc sắc với các món như thịt trâu xào lăn, gà đồi Tam Đảo và rau su su xào. Du khách đến Tam Đảo có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương."
+        ]
+    },
+    "Mộc Châu": {
+        "foods": [
+            "Bê chao",
+            "Sữa Mộc Châu",
+            "Cá suối"
+        ],
+        "related_places": [
+            "Tam Đảo",
+            "Sapa",
+            "Hà Nội"
+        ],
+        "keywords": [
+            "Mộc Châu",
+            "cao nguyên Mộc Châu",
+            "thác Dải Yếm"
+        ],
+        "description": [
+            "Mộc Châu, cao nguyên nổi tiếng với cảnh quan thiên nhiên hùng vĩ và khí hậu mát mẻ, là điểm đến hấp dẫn cho du khách yêu thích khám phá thiên nhiên và văn hóa dân tộc. Nơi đây có nhiều điểm tham quan hấp dẫn như thác Dải Yếm, đồi chè Mộc Châu và các bản làng truyền thống của người dân tộc thiểu số. Mộc Châu cũng là thiên đường ẩm thực với các món đặc sản như bê chao, sữa Mộc Châu và cá suối. Du khách đến Mộc Châu có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Cát Bà": {
+        "foods": [
+            "Hải sản Cát Bà",
+            "Sò huyết",
+            "Tôm nướng"
+        ],
+        "related_places": [
+            "Hạ Long",
+            "Tuần Châu",
+            "Hà Nội"
+        ],
+        "keywords": [
+            "Cát Bà",
+            "vịnh Cát Bà",
+            "đảo Cát Bà"
+        ],
+        "description": [
+            "Cát Bà, hòn đảo lớn nhất trong quần đảo Cát Bà, nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp và hệ sinh thái đa dạng. Nơi đây có nhiều điểm tham quan hấp dẫn như vịnh Lan Hạ, rừng quốc gia Cát Bà và các bãi biển hoang sơ. Cát Bà cũng là thiên đường ẩm thực với các món hải sản tươi ngon như sò huyết, tôm nướng và cá biển. Du khách đến Cát Bà có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Tuần Châu": {
+        "foods": [
+            "Hải sản Tuần Châu",
+            "Sò huyết",
+            "Tôm hấp"
+        ],
+        "related_places": [
+            "Hạ Long",
+            "Cát Bà",
+            "Hà Nội"
+        ],
+        "keywords": [
+            "Tuần Châu",
+            "quần đảo Tuần Châu",
+            "du lịch Quảng Ninh"
+        ],
+        "description": [
+            "Tuần Châu, hòn đảo nổi tiếng nằm trong vịnh Hạ Long, thu hút du khách với cảnh quan thiên nhiên tuyệt đẹp và các hoạt động giải trí đa dạng. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi biển Tuần Châu, công viên nước và các chương trình biểu diễn nghệ thuật đặc sắc. Tuần Châu cũng là thiên đường ẩm thực với các món hải sản tươi ngon như sò huyết, tôm hấp và cá biển. Du khách đến Tuần Châu có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Côn Đảo": {
+        "foods": [
+            "Hải sản Côn Đảo",
+            "Gỏi cá sống",
+            "Cua ghẹ"
+        ],
+        "related_places": [
+            "Vũng Tàu",
+            "Phú Quốc",
+            "TP.HCM"
+        ],
+        "keywords": [
+            "Côn Đảo",
+            "hòn đảo Côn Đảo",
+            "biển Côn Đảo"
+        ],
+        "description": [
+            "Côn Đảo, quần đảo nằm ngoài khơi bờ biển miền Nam Việt Nam, nổi tiếng với cảnh quan thiên nhiên hoang sơ và hệ sinh thái đa dạng. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi biển Đầm Trầu, nghĩa trang Hàng Dương và các di tích lịch sử văn hóa. Côn Đảo cũng là thiên đường ẩm thực với các món hải sản tươi ngon như gỏi cá sống, cua ghẹ và cá biển. Du khách đến Côn Đảo có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Hàm Ninh": {
+        "foods": [
+            "Ghẹ Hàm Ninh",
+            "Bún quậy",
+            "Hải sản Phú Quốc"
+        ],
+        "related_places": [
+            "Phú Quốc",
+            "Kiên Giang",
+            "Đảo Thổ Châu"
+        ],
+        "keywords": [
+            "Hàm Ninh",
+            "Phú Quốc",
+            "làng chài Hàm Ninh"
+        ],
+        "description": [
+            "Hàm Ninh, làng chài truyền thống nằm trên đảo Phú Quốc, nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp và ẩm thực hải sản tươi ngon. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi biển Hàm Ninh, chợ hải sản và các hoạt động câu cá truyền thống. Hàm Ninh cũng là thiên đường ẩm thực với các món đặc sản như ghẹ Hàm Ninh, bún quậy và hải sản tươi ngon. Du khách đến Hàm Ninh có thể tận hưởng không khí trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Mỹ Sơn": {
+        "foods": [
+            "Bánh xèo miền Trung",
+            "Mì Quảng Mỹ Sơn",
+            "Bánh ít lá gai"
+        ],
+        "related_places": [
+            "Hội An",
+            "Đà Nẵng",
+            "Huế"
+        ],
+        "keywords": [
+            "Mỹ Sơn",
+            "thánh địa Mỹ Sơn",
+            "di tích Chăm"
+        ],
+        "description": [
+            "Mỹ Sơn, thánh địa Chăm Pa cổ kính nằm ở tỉnh Quảng Nam, nổi tiếng với hệ thống đền tháp Hindu giáo độc đáo và cảnh quan thiên nhiên tuyệt đẹp. Khu di tích này bao gồm nhiều đền tháp được xây dựng từ thế kỷ 4 đến thế kỷ 14, thể hiện sự phát triển văn hóa và tôn giáo của người Chăm. Mỹ Sơn cũng là điểm đến hấp dẫn cho du khách yêu thích lịch sử và kiến trúc cổ đại. Ẩm thực địa phương tại Mỹ Sơn đặc sắc với các món như bánh xèo miền Trung, mì Quảng Mỹ Sơn và bánh ít lá gai."
+        ]
+    },
+    "Quy Nhơn": {
+        "foods": [
+            "Bánh hỏi lòng heo",
+            "Chả cá Quy Nhơn",
+            "Hải sản"
+        ],
+        "related_places": [
+            "Nha Trang",
+            "Phú Yên",
+            "Đà Nẵng"
+        ],
+        "keywords": [
+            "Quy Nhơn",
+            "biển Quy Nhơn",
+            "Eo Gió"
+        ],
+        "description": [
+            "Quy Nhơn, thành phố biển nổi tiếng của tỉnh Bình Định, thu hút du khách với những bãi biển tuyệt đẹp và di tích lịch sử văn hóa phong phú. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi biển Quy Nhơn, Eo Gió và tháp Đôi. Quy Nhơn cũng là thiên đường ẩm thực với các món đặc sản như bánh hỏi lòng heo, chả cá Quy Nhơn và hải sản tươi ngon. Du khách đến Quy Nhơn có thể tận hưởng không khí biển trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Phú Yên": {
+        "foods": [
+            "Bánh xèo Phú Yên",
+            "Bánh hỏi Phú Yên",
+            "Hải sản"
+        ],
+        "related_places": [
+            "Quy Nhơn",
+            "Nha Trang",
+            "Đà Lạt"
+        ],
+        "keywords": [
+            "Phú Yên",
+            "Gành Đá Đĩa",
+            "Vịnh Vũng Rô"
+        ],
+        "description": [
+            "Phú Yên, tỉnh ven biển nổi tiếng với cảnh quan thiên nhiên hoang sơ và những bãi biển tuyệt đẹp, là điểm đến hấp dẫn cho du khách yêu thích khám phá thiên nhiên và văn hóa địa phương. Nơi đây có nhiều điểm tham quan hấp dẫn như Gành Đá Đĩa, vịnh Vũng Rô và các làng chài truyền thống. Phú Yên cũng là thiên đường ẩm thực với các món đặc sản như bánh xèo Phú Yên, bánh hỏi Phú Yên và hải sản tươi ngon. Du khách đến Phú Yên có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Bà Rịa": {
+        "foods": [
+            "Hải sản Bà Rịa",
+            "Bánh khọt",
+            "Lẩu cá đuối"
+        ],
+        "related_places": [
+            "Vũng Tàu",
+            "TP.HCM",
+            "Mỹ Tho"
+        ],
+        "keywords": [
+            "Bà Rịa",
+            "Vũng Tàu",
+            "biển Long Hải"
+        ],
+        "description": [
+            "Bà Rịa, thành phố ven biển nổi tiếng với những bãi biển tuyệt đẹp và không khí trong lành, là điểm đến lý tưởng cho du khách yêu thích thiên nhiên và ẩm thực hải sản. Nơi đây có nhiều điểm tham quan hấp dẫn như bãi biển Long Hải, núi Dinh và các làng chài truyền thống. Bà Rịa cũng là thiên đường ẩm thực với các món đặc sản như bánh khọt, lẩu cá đuối và hải sản tươi ngon. Du khách đến Bà Rịa có thể tận hưởng không khí biển mát mẻ, tham gia các hoạt động thể thao dưới nước và thưởng thức những món ăn đặc sản."
+        ]
+    },
+    "Ninh Thuận": {
+        "foods": [
+            "Bánh căn Ninh Thuận",
+            "Tôm hùm Ninh Thuận",
+            "Bò nướng lá lốt"
+        ],
+        "related_places": [
+            "Phan Rang",
+            "Nha Trang",
+            "Đà Lạt"
+        ],
+        "keywords": [
+            "Ninh Thuận",
+            "tháp Chàm Po Nagar",
+            "vườn nho Ninh Thuận"
+        ],
+        "description": [
+            "Ninh Thuận, tỉnh ven biển nổi tiếng với cảnh quan thiên nhiên đa dạng và những bãi biển tuyệt đẹp, là điểm đến hấp dẫn cho du khách yêu thích khám phá thiên nhiên và văn hóa địa phương. Nơi đây có nhiều điểm tham quan hấp dẫn như tháp Chàm Po Nagar, vườn nho Ninh Thuận và các làng chài truyền thống. Ninh Thuận cũng là thiên đường ẩm thực với các món đặc sản như bánh căn Ninh Thuận, tôm hùm Ninh Thuận và bò nướng lá lốt. Du khách đến Ninh Thuận có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Khánh Hòa": {
+        "foods": [
+            "Bún chả cá Nha Trang",
+            "Nem Ninh Hòa",
+            "Hải sản"
+        ],
+        "related_places": [
+            "Nha Trang",
+            "Cam Ranh",
+            "Đà Lạt"
+        ],
+        "keywords": [
+            "Khánh Hòa",
+            "Nha Trang",
+            "Vinpearl Land"
+        ],
+        "description": [
+            "Khánh Hòa, tỉnh ven biển nổi tiếng với thành phố Nha Trang và những bãi biển tuyệt đẹp, là điểm đến hấp dẫn cho du khách yêu thích thiên nhiên và ẩm thực hải sản. Nơi đây có nhiều điểm tham quan hấp dẫn như đảo Hòn Tre, Vinpearl Land và tháp Bà Ponagar. Khánh Hòa cũng là thiên đường ẩm thực với các món đặc sản như bún chả cá Nha Trang, nem Ninh Hòa và hải sản tươi ngon. Du khách đến Khánh Hòa có thể tận hưởng không khí biển trong lành, tham gia các hoạt động thể thao dưới nước và khám phá văn hóa địa phương."
+        ]
+    },
+    "Lạng Sơn": {
+        "foods": [
+            "Bánh cuốn trứng Lạng Sơn",
+            "Thịt trâu gác bếp",
+            "Phở chua"
+        ],
+        "related_places": [
+            "Cao Bằng",
+            "Hà Nội",
+            "Mẫu Sơn"
+        ],
+        "keywords": [
+            "Lạng Sơn",
+            "Mẫu Sơn",
+            "Động Tam Thanh"
+        ],
+        "description": [
+            "Lạng Sơn, tỉnh nằm ở phía bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên hùng vĩ và văn hóa đa dạng của các dân tộc thiểu số. Thành phố Lạng Sơn có nhiều điểm tham quan hấp dẫn như đỉnh Mẫu Sơn, động Tam Thanh và chợ Đông Kinh. Lạng Sơn cũng là thiên đường ẩm thực với các món đặc sản như bánh cuốn trứng Lạng Sơn, thịt trâu gác bếp và phở chua. Du khách đến Lạng Sơn có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Cao Bằng": {
+        "foods": [
+            "Bánh khảo",
+            "Cá suối",
+            "Thịt trâu gác bếp"
+        ],
+        "related_places": [
+            "Lạng Sơn",
+            "Hà Giang",
+            "Thác Bản Giốc"
+        ],
+        "keywords": [
+            "Cao Bằng",
+            "thác Bản Giốc",
+            "địa điểm Cao Bằng"
+        ],
+        "description": [
+            "Cao Bằng, tỉnh nằm ở phía bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên hùng vĩ và văn hóa đa dạng của các dân tộc thiểu số. Thành phố Cao Bằng có nhiều điểm tham quan hấp dẫn như thác Bản Giốc, động Ngườm Ngao và hồ Thang Hen. Cao Bằng cũng là thiên đường ẩm thực với các món đặc sản như bánh khảo, cá suối và thịt trâu gác bếp. Du khách đến Cao Bằng có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Hà Giang": {
+        "foods": [
+            "Thắng cố",
+            "Cá suối",
+            "Bánh cuốn trứng"
+        ],
+        "related_places": [
+            "Sa Pa",
+            "Cao Bằng",
+            "Mèo Vạc"
+        ],
+        "keywords": [
+            "Hà Giang",
+            "cao nguyên đá",
+            "Đồng Văn"
+        ],
+        "description": [
+            "Hà Giang, tỉnh nằm ở phía bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên hùng vĩ và văn hóa đa dạng của các dân tộc thiểu số. Thành phố Hà Giang có nhiều điểm tham quan hấp dẫn như cao nguyên đá Đồng Văn, đèo Mã Pí Lèng và các bản làng truyền thống. Hà Giang cũng là thiên đường ẩm thực với các món đặc sản như thắng cố, cá suối và bánh cuốn trứng. Du khách đến Hà Giang có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Quảng Bình": {
+        "foods": [
+            "Bánh bèo",
+            "Bánh lọc",
+            "Gà nướng Phong Nha"
+        ],
+        "related_places": [
+            "Đồng Hới",
+            "Phong Nha",
+            "Huế"
+        ],
+        "keywords": [
+            "Quảng Bình",
+            "động Phong Nha",
+            "biển Nhật Lệ"
+        ],
+        "description": [
+            "Quảng Bình, tỉnh nằm ở miền Trung Việt Nam, nổi tiếng với cảnh quan thiên nhiên đa dạng và các di tích lịch sử văn hóa. Thành phố Đồng Hới có nhiều điểm tham quan hấp dẫn như động Phong Nha, biển Nhật Lệ và các làng nghề truyền thống. Quảng Bình cũng là thiên đường ẩm thực với các món đặc sản như bánh bèo, bánh lọc và gà nướng Phong Nha. Du khách đến Quảng Bình có thể tận hưởng không khí trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Quảng Trị": {
+        "foods": [
+            "Bánh khoái Quảng Trị",
+            "Cháo lòng",
+            "Hải sản"
+        ],
+        "related_places": [
+            "Huế",
+            "Đồng Hới",
+            "Đà Nẵng"
+        ],
+        "keywords": [
+            "Quảng Trị",
+            "cầu Hiền Lương",
+            "địa điểm Quảng Trị"
+        ],
+        "description": [
+            "Quảng Trị, tỉnh nằm ở miền Trung Việt Nam, nổi tiếng với cảnh quan thiên nhiên đa dạng và các di tích lịch sử văn hóa. Thành phố Quảng Trị có nhiều điểm tham quan hấp dẫn như cầu Hiền Lương, địa đạo Vịnh Mốc và các làng nghề truyền thống. Quảng Trị cũng là thiên đường ẩm thực với các món đặc sản như bánh khoái Quảng Trị, cháo lòng và hải sản tươi ngon. Du khách đến Quảng Trị có thể tận hưởng không khí trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    },
+    "Bắc Kạn": {
+        "foods": [
+            "Gà nướng Bắc Kạn",
+            "Cá suối",
+            "Chè khoai sọ"
+        ],
+        "related_places": [
+            "Cao Bằng",
+            "Thái Nguyên",
+            "Bắc Giang"
+        ],
+        "keywords": [
+            "Bắc Kạn",
+            "hồ Ba Bể",
+            "vườn quốc gia Ba Bể"
+        ],
+        "description": [
+            "Bắc Kạn, tỉnh nằm ở phía bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên hùng vĩ và văn hóa đa dạng của các dân tộc thiểu số. Thành phố Bắc Kạn có nhiều điểm tham quan hấp dẫn như hồ Ba Bể, vườn quốc gia Ba Bể và các bản làng truyền thống. Bắc Kạn cũng là thiên đường ẩm thực với các món đặc sản như gà nướng Bắc Kạn, cá suối và chè khoai sọ. Du khách đến Bắc Kạn có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Bắc Giang": {
+        "foods": [
+            "Vải thiều Bắc Giang",
+            "Gà đồi Bắc Giang",
+            "Bánh đa Kế"
+        ],
+        "related_places": [
+            "Bắc Kạn",
+            "Hà Nội",
+            "Lạng Sơn"
+        ],
+        "keywords": [
+            "Bắc Giang",
+            "vải thiều",
+            "du lịch Bắc Giang"
+        ],
+        "description": [
+            "Bắc Giang, tỉnh nằm ở phía bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên đa dạng và văn hóa đặc sắc của các dân tộc thiểu số. Thành phố Bắc Giang có nhiều điểm tham quan hấp dẫn như chùa Vĩnh Nghiêm, suối Mỡ và các làng nghề truyền thống. Bắc Giang cũng là thiên đường ẩm thực với các món đặc sản như vải thiều Bắc Giang, gà đồi Bắc Giang và bánh đa Kế. Du khách đến Bắc Giang có thể tận hưởng không khí trong lành, khám phá thiên nhiên và trải nghiệm văn hóa địa phương độc đáo."
+        ]
+    },
+    "Bắc Ninh": {
+        "foods": [
+            "Bánh phu thê",
+            "Chè Lam",
+            "Bún Thang"
+        ],
+        "related_places": [
+            "Hà Nội",
+            "Hưng Yên",
+            "Bắc Giang"
+        ],
+        "keywords": [
+            "Bắc Ninh",
+            "chùa Dâu",
+            "đình làng Quan họ"
+        ],
+        "description": [
+            "Bắc Ninh, tỉnh nằm ở phía bắc Việt Nam, nổi tiếng với văn hóa Quan họ đặc sắc và các di tích lịch sử văn hóa quan trọng. Thành phố Bắc Ninh có nhiều điểm tham quan hấp dẫn như chùa Dâu, đình làng Quan họ và các làng nghề truyền thống. Bắc Ninh cũng là thiên đường ẩm thực với các món đặc sản như bánh phu thê, chè Lam và bún Thang. Du khách đến Bắc Ninh có thể tận hưởng không khí trong lành, khám phá văn hóa địa phương và thưởng thức những món ăn đặc sản độc đáo."
+        ]
+    }
+}
