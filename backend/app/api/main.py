@@ -1,48 +1,35 @@
-from fastapi import FastAPI, HTTPException, status, Depends
-from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 from loguru import logger
-from .utils import chatbot_reply  # Import từ utils.py trong cùng thư mục
+from .utils import chatbot_reply
 
-app = FastAPI(title="Smart Tourism Chatbot API")
-security = HTTPBasic()
+app = FastAPI(title="Smart Tourism Chatbot API", version="1.0")
+
+# Request body schema
+class ChatRequest(BaseModel):
+    question: str
 
 @app.get("/")
-def root():
-    return {"message": "Welcome to Smart Tourism Chatbot API!"}
+def home():
+    return {"message": "Smart Tourism Chatbot is running!"}
 
 @app.get("/metadata")
 def get_metadata():
-    return {"project": "Smart Tourism Chatbot", "version": "1.0", "author": "Nam Nguyen"}
+    return {"project": "Smart Tourism Chatbot", "version": "1.0", "author": "top7vibecoder"}
 
 @app.post("/chat")
-def chat(question: str):
+def chat(request: ChatRequest):
     """
-    Chat API chính: trả lời từ dữ liệu landmarks.json trước, nếu thiếu gọi GPT hỗ trợ.
+    Chat API: nhận question từ body JSON
+    Ví dụ: POST /chat
+    {
+        "question": "Hội An có gì đẹp?"
+    }
     """
-    logger.info(f"[USER] {question}")
     try:
-        answer = chatbot_reply(question)
-        logger.info(f"[BOT] {answer}")
-        return {"response": answer}
+        logger.info(f"User hỏi: {request.question}")
+        answer = chatbot_reply(request.question)
+        return {"answer": answer}
     except Exception as e:
         logger.error(e)
-        raise HTTPException(status_code=500, detail="Internal Server Error")
-
-@app.post("/chat-auth")
-def chat_auth(
-    question: str,
-    credentials: HTTPBasicCredentials = Depends(security)
-):
-    """
-    Chat có xác thực chỉ dành cho Admin (nếu cần test bảo mật)
-    """
-    if credentials.username != "admin" or credentials.password != "123456":
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect credentials",
-            headers={"WWW-Authenticate": "Basic"},
-        )
-
-    logger.info(f"[AUTH USER] {credentials.username} asked: {question}")
-    answer = chatbot_reply(question)
-    return {"response": answer}
+        raise HTTPException(status_code=500, detail="Lỗi server nội bộ")
