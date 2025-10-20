@@ -40,7 +40,7 @@ def build_answer_from_data(name, info):
     foods = ", ".join(info.get("foods", []))
     nearby = ", ".join(info.get("related_places", []))
     return (
-        f"**{name}** là một địa điểm du lịch nổi tiếng tại Việt Nam. "
+        f"{name} là một địa điểm du lịch nổi tiếng tại Việt Nam. "
         f"{description} "
         f"Những món ăn đặc sản bạn nên thử khi đến đây gồm: {foods}. "
         f"Các địa điểm lân cận có thể tham khảo: {nearby}."
