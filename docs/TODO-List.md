@@ -1,3 +1,4 @@
+```bash
 smart-tourism-system/
 ├── backend/                         # Python backend (FastAPI + AI agents)
 │   ├── .env                         # TODO: Thêm API_KEYS (Gemini)
@@ -60,3 +61,4 @@ smart-tourism-system/
 │       - Report (for school)
 │
 └── .gitignore                       # TODO: ignore .env, __pycache__, venv, logs
+```
