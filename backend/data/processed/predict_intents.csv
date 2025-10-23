@@ -1,0 +1,460 @@
+﻿text,true_label,pred_label
+Bạn có biết chỗ nghỉ nào view đẹp ở Chợ Bến Thành không?,info,info
+Nếu tôi đến Eo Gió thì nên đi đâu đầu tiên?,info,info
+"Tôi muốn đi phượt Đảo Bình Ba, có nguy hiểm không?",info,info
+Tôi có thể đổi tiền ở đâu khi đến Cần Thơ?,info,info
+Có chuyến bay nào thẳng đến Mộc Châu không?,info,info
+Tôi nên ở bao lâu khi đi Núi Sam?,info,info
+Ở Đại Nội Huế có lễ hội gì nổi tiếng không?,info,info
+Ninh Bình có gì thú vị thế?,info,info
+Tôi nên ở bao lâu khi đi Nam Định?,info,info
+"Bạn ơi, Đồng Nai có gì vui không?",info,info
+Bạn có thể kể lịch sử của Đại Nam không?,info,info
+Homestay ở Phan Rang có phục vụ ăn sáng không?,info,info
+Lễ hội ở Mũi Né thường diễn ra vào tháng mấy?,info,info
+Tôi muốn biết thêm thông tin về Điện Biên.,info,info
+Tôi có thể thuê xe máy ở Thanh Hóa được không?,info,info
+Tháng mấy là mùa đẹp nhất ở Bình Thuận?,info,info
+Từ Sài Gòn đi Đảo Hòn Sơn mất bao lâu?,info,info
+Có món ăn nào nhất định phải thử ở Phố cổ Hà Nội không?,info,info
+Mua iPhone ở đâu uy tín?,none,none
+Có thể mua đặc sản Mũi Né làm quà ở đâu?,info,info
+Mộc Châu có món nào hợp với người ăn chay không?,info,info
+Mùa xuân ở Thác Datanla có gì đặc biệt?,info,info
+Đi Cao Bằng vào cuối tuần có kẹt xe không?,info,info
+Đặc sản nổi tiếng ở Hoa Lư là gì vậy?,info,info
+Bạn có thể chia sẻ kinh nghiệm du lịch Hoa Lư không?,info,info
+Tôi có thể cắm trại ở Hà Giang được không?,info,info
+"Tôi muốn trải nghiệm văn hóa địa phương ở Cà Mau, nên đi đâu?",info,info
+Tôi nên đi tour hay tự túc khi du lịch Lạng Sơn?,info,info
+Tôi nên ở bao lâu khi đi Đà Lạt?,info,info
+Ở Đà Nẵng có khách sạn nào gần điểm du lịch chính không?,info,info
+Ở An Giang có khách sạn nào gần trung tâm không?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Núi Bà Đen?,info,info
+Đi Ghềnh Đá Đĩa có an toàn cho trẻ nhỏ không?,info,info
+"Tôi muốn trải nghiệm văn hóa địa phương ở Bạc Liêu, nên đi đâu?",info,info
+Món ăn truyền thống của Thanh Hóa là gì?,info,info
+Có tàu lửa đi Nhà thờ Đức Bà không bạn?,info,info
+Đi Chợ nổi Cái Răng vào cuối tuần có kẹt xe không?,info,info
+Lạng Sơn có món nào hợp với người ăn chay không?,info,info
+Đường đến Long An có dễ đi không?,info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Bình Thuận không?,info,info
+"Tôi cần đặt vé tàu đi Hồ Tây, bạn biết chỗ nào uy tín không?",info,info
+Du lịch Sầm Sơn cần lưu ý điều gì?,info,info
+Có chuyến bay nào thẳng đến Fansipan không?,info,info
+Lễ hội lớn nhất ở Tây Ninh là gì?,info,info
+Bạn có thể chia sẻ kinh nghiệm du lịch Đảo Nam Du không?,info,info
+Có chuyến bay nào thẳng đến Bắc Kạn không?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Yên Bái không?,info,info
+Ở Nha Trang có lạnh vào ban đêm không?,info,info
+Trời có thường mưa khi đi Phong Nha – Kẻ Bàng tháng 8 không?,info,info
+Lăng Tự Đức có đặc sản gì không nhỉ?,info,info
+Từ Hà Nội đến Phố cổ Hà Nội đi bằng gì tiện nhất?,info,info
+Ở Long Hải có di tích lịch sử nào nên tham quan?,info,info
+Giá đồ ăn ở Bến Tre có đắt không?,info,info
+Tôi nên ở bao lâu khi đi Điện Biên?,info,info
+Nếu đi Mộc Châu vào mùa mưa có sao không?,info,info
+Ở Đảo Thạnh An có khách sạn nào gần trung tâm không?,info,info
+Có khách sạn nào ở Thung lũng Tình yêu phù hợp cho gia đình không?,info,info
+Ở Thái Bình có địa điểm nào nên ghé thăm ạ?,info,info
+Nếu tôi đến Quảng Nam thì nên đi đâu đầu tiên?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Đảo Hòn Tre không?,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Đảo Hòn Tằm không?,info,info
+Trời có thường mưa khi đi Đảo Bình Ba tháng 8 không?,info,info
+Tôi nên mang gì khi đi Lũng Cú mùa này?,info,info
+Nhiệt độ trung bình ở Pleiku khoảng bao nhiêu?,info,info
+Giá đồ ăn ở Thung lũng Tình yêu có đắt không?,info,info
+Tôi có thể cắm trại ở Cần Thơ được không?,info,info
+Du khách thường làm gì khi đến Vinpearl Land?,info,info
+Đi Cầu Vàng Đà Nẵng vào cuối tuần có kẹt xe không?,info,info
+Ở Hội An có khách sạn nào gần trung tâm không?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Đại Nam không?,info,info
+Nếu tôi đến Quản Bạ thì nên đi đâu đầu tiên?,info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Sun World Hạ Long không?,info,info
+Món ăn truyền thống của Fansipan là gì?,info,info
+Nên đi Huế vào mùa nào là đẹp nhất?,info,info
+Nên đi Hồ Tây vào mùa nào là đẹp nhất?,info,info
+"Tôi muốn ăn hải sản ở Đảo Nam Du, bạn gợi ý giúp nhé?",info,info
+Tôi muốn biết thêm thông tin về Hồ Trị An.,info,info
+Bạn có thể giới thiệu vài quán ăn ngon ở Buôn Ma Thuột không?,info,info
+"Tôi muốn trải nghiệm văn hóa địa phương ở Đảo Thạnh An, nên đi đâu?",info,info
+Đi Mộc Châu có an toàn cho trẻ nhỏ không?,info,info
+Tôi nên ở bao lâu khi đi Fansipan?,info,info
+Đi Hồ Tây có an toàn cho trẻ nhỏ không?,info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Chợ Đà Lạt không?,info,info
+Ở Phong Nha – Kẻ Bàng có gì mới mở không?,info,info
+Review cho tôi về Bạc Liêu với.,info,info
+Ở Thiên Cầm có chợ đêm bán đồ ăn không?,info,info
+Ở Đảo Quan Lạn có di tích lịch sử nào nên tham quan?,info,info
+Giá phòng trung bình ở Côn Đảo là bao nhiêu?,info,info
+Bạn có thể giới thiệu vài quán ăn ngon ở Thái Bình không?,info,info
+"Tôi muốn trải nghiệm văn hóa địa phương ở Tây Ninh, nên đi đâu?",info,info
+Thời tiết ở Ninh Thuận tháng này thế nào?,info,info
+Lễ hội ở Thiên Cầm thường diễn ra vào tháng mấy?,info,info
+"Bạn ơi, Điện Biên có gì vui không?",info,info
+Có tàu lửa đi Hội An không bạn?,info,info
+Ở Mai Châu có cần đặt vé trước không?,info,info
+Tôi nên ở bao lâu khi đi Vịnh Hạ Long?,info,info
+Lễ hội lớn nhất ở Đảo Hòn Tre là gì?,info,info
+Buôn Ma Thuột có gì thú vị thế?,info,info
+Lễ hội lớn nhất ở Phố cổ Hà Nội là gì?,info,info
+Từ Sài Gòn đi Quảng Trị mất bao lâu?,info,info
+Review cho tôi về Kỳ Co với.,info,info
+"Bạn ơi, Quảng Ninh có gì vui không?",info,info
+Từ Hà Nội đến Ninh Thuận đi bằng gì tiện nhất?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Nam Định không?,info,info
+Có tàu lửa đi Vĩnh Long không bạn?,info,info
+Đất Mũi có hoạt động truyền thống nào thú vị không?,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Quảng Ninh không?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Phú Quốc?,info,info
+Món ăn truyền thống của Đảo Lý Sơn là gì?,info,info
+Bạn có thể chia sẻ kinh nghiệm du lịch Lăng Tự Đức không?,info,info
+Người dân Cần Thơ có phong tục đặc biệt gì?,info,info
+Ở Đảo Cù Lao Chàm có quán cà phê đẹp nào không?,info,info
+Có chuyến bay nào thẳng đến Mỹ Sơn không?,info,info
+"Bạn ơi, Đảo Phú Quý có gì vui không?",info,info
+Có chuyến bay nào thẳng đến Côn Đảo không?,info,info
+Vĩnh Long có gì thú vị thế?,info,info
+Ở Nhà thờ Đức Bà có lạnh vào ban đêm không?,info,info
+Trời có thường mưa khi đi Nam Định tháng 8 không?,info,info
+Ở Thiên Cầm có gì mới mở không?,info,info
+Ninh Bình có đặc sản gì không nhỉ?,info,info
+Đi Bình Định nên mang theo những gì?,info,info
+"Bạn ơi, Đất Mũi có gì vui không?",info,info
+Trời có thường mưa khi đi Bình Định tháng 8 không?,info,info
+Làng cổ Đường Lâm có món nào hợp với người ăn chay không?,info,info
+Nhiệt độ trung bình ở Cam Ranh khoảng bao nhiêu?,info,info
+Lễ hội ở Đảo Phú Quý thường diễn ra vào tháng mấy?,info,info
+Cách tạo playlist trên Spotify là sao?,none,none
+Ở Bái Đính có địa điểm nào nên ghé thăm ạ?,info,info
+Ở Quảng Bình có quán cà phê đẹp nào không?,info,info
+Tôi muốn biết thêm thông tin về Sầm Sơn.,info,info
+Có chuyến bay nào thẳng đến Cam Ranh không?,info,info
+Có khách sạn nào ở Mù Cang Chải phù hợp cho gia đình không?,info,info
+Du khách thường làm gì khi đến Bình Dương?,info,info
+Review cho tôi về Rạch Giá với.,info,info
+Giá phòng trung bình ở Núi Sam là bao nhiêu?,info,info
+Du khách thường làm gì khi đến Vườn quốc gia Cúc Phương?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Vịnh Vĩnh Hy không?,info,info
+Món ăn truyền thống của Đảo Thạnh An là gì?,info,info
+Ở Đảo Cô Tô có lạnh vào ban đêm không?,info,info
+Homestay ở Đất Mũi có phục vụ ăn sáng không?,info,info
+Ở Fansipan có di tích lịch sử nào nên tham quan?,info,info
+Cách tính điểm trong bóng rổ là sao?,none,none
+Có món ăn nào nhất định phải thử ở Vịnh Hạ Long không?,info,info
+Elon Musk là ai vậy?,none,none
+Tôi có thể cắm trại ở Tuyên Quang được không?,info,info
+Ở Lũng Cú có khách sạn nào gần điểm du lịch chính không?,info,info
+Homestay ở Phan Thiết có phục vụ ăn sáng không?,info,info
+Bạn có thể kể lịch sử của Núi Bà Đen không?,info,info
+Ở Chùa Hương có chợ đêm bán đồ ăn không?,info,info
+Món ăn truyền thống của Yên Bái là gì?,info,info
+Fansipan có đặc sản gì không nhỉ?,info,info
+Ở Tây Ninh có chợ đêm bán đồ ăn không?,info,info
+Đặc sản nổi tiếng ở Quản Bạ là gì vậy?,info,info
+Tôi nên ở bao lâu khi đi Hà Nội?,info,info
+Ở Kiên Giang có khách sạn nào gần trung tâm không?,info,info
+Tôi muốn biết thêm thông tin về Quảng Ngãi.,info,info
+Giá đồ ăn ở Đảo Hòn Tre có đắt không?,info,info
+Ở Huế có chợ đêm bán đồ ăn không?,info,info
+Bạn có thể kể lịch sử của Sơn La không?,info,info
+Đi Phú Yên có an toàn cho trẻ nhỏ không?,info,info
+"Bạn ơi, Thái Bình có gì vui không?",info,info
+"Tôi cần đặt vé tàu đi Thái Bình, bạn biết chỗ nào uy tín không?",info,info
+Thời tiết ở Lâm Đồng tháng này thế nào?,info,info
+Tôi có thể thuê xe máy ở Đảo Phú Quý được không?,info,info
+Từ Sài Gòn đi Sơn La mất bao lâu?,info,info
+Phú Quốc có bãi biển nào đẹp không?,info,info
+Thời tiết ở Rạch Giá tháng này thế nào?,info,info
+Đường đến Thác Pongour có dễ đi không?,info,info
+Ở Vườn quốc gia Bạch Mã có quán cà phê đẹp nào không?,info,info
+Tôi nên ở bao lâu khi đi Nha Trang?,info,info
+Vườn quốc gia Cát Tiên có đặc sản gì không nhỉ?,info,info
+Trời có thường mưa khi đi Chợ nổi Cái Răng tháng 8 không?,info,info
+Ở Sun World Hạ Long có quán cà phê đẹp nào không?,info,info
+Thanh Hóa có gần biển không?,info,info
+Tôi có thể cắm trại ở Bắc Kạn được không?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Cầu Vàng Đà Nẵng?,info,info
+Trời có thường mưa khi đi Ninh Thuận tháng 8 không?,info,info
+Du khách thường làm gì khi đến Khánh Hòa?,info,info
+Homestay ở Đảo Cát Bà có phục vụ ăn sáng không?,info,info
+Có tour nào đi Quảng Bình 3 ngày 2 đêm không?,info,info
+Có tàu lửa đi Vịnh Hạ Long không bạn?,info,info
+Tôi nên đi Eo Gió bao nhiêu ngày là hợp lý?,info,info
+"Tôi nghe nói Bái Đính có lễ hội rất đông, đúng không?",info,info
+"Tôi muốn ăn hải sản ở Đảo Lý Sơn, bạn gợi ý giúp nhé?",info,info
+Đồng Văn có gì nổi tiếng vậy?,info,info
+Giá đồ ăn ở Bạc Liêu có đắt không?,info,info
+Làng hoa Sa Đéc có bãi biển nào đẹp không?,info,info
+Từ Sài Gòn đi Trà Vinh mất bao lâu?,info,info
+Tôi nên mang gì khi đi Đảo Hòn Tre mùa này?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Thác Bản Giốc?,info,info
+Món ăn truyền thống của Thác Datanla là gì?,info,info
+Suối Tiên có gì nổi tiếng vậy?,info,info
+Có món ăn nào nhất định phải thử ở Mũi Né không?,info,info
+"Tôi cần đặt vé tàu đi Cầu Vàng Đà Nẵng, bạn biết chỗ nào uy tín không?",info,info
+Tôi nên đi tour hay tự túc khi du lịch Đảo Cù Lao Chàm?,info,info
+Đắk Lắk có món nào hợp với người ăn chay không?,info,info
+Hội An có bị ảnh hưởng bởi bão không?,info,info
+Review cho tôi về Vĩnh Long với.,info,info
+Thác Bản Giốc có gì nổi tiếng vậy?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Hà Nội không?,info,info
+Tôi nên ở bao lâu khi đi Mũi Né?,info,info
+Đặc sản nổi tiếng ở Hội An là gì vậy?,info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Đảo Bình Ba không?,info,info
+Tôi nên đi Bạc Liêu bao nhiêu ngày là hợp lý?,info,info
+Tháng mấy là mùa đẹp nhất ở Bắc Kạn?,info,info
+Giá đồ ăn ở Vinpearl Land có đắt không?,info,info
+Ở Đảo Quan Lạn có địa điểm nào nên ghé thăm ạ?,info,info
+Bạn có thể kể lịch sử của Ghềnh Đá Đĩa không?,info,info
+Đảo Bình Ba có đặc sản gì không nhỉ?,info,info
+Tôi có thể cắm trại ở Đắk Lắk được không?,info,info
+"Tôi muốn ăn hải sản ở Cầu Vàng Đà Nẵng, bạn gợi ý giúp nhé?",info,info
+Có thể xem múa rối nước ở Gia Lai không?,info,info
+"Tôi nghe nói Lăng Tự Đức có lễ hội rất đông, đúng không?",info,info
+Đi Bến Tre có an toàn cho trẻ nhỏ không?,info,info
+Có nên đi Mộc Châu vào mùa hè không?,info,info
+"Tôi muốn ăn hải sản ở Đảo Hòn Tằm, bạn gợi ý giúp nhé?",info,info
+Có thể thanh toán bằng thẻ ở Bái Đính không?,info,info
+Có thể mua đặc sản Thái Bình làm quà ở đâu?,info,info
+Đi Lũng Cú có an toàn cho trẻ nhỏ không?,info,info
+Lễ hội ở Mai Châu thường diễn ra vào tháng mấy?,info,info
+Tôi nên mang gì khi đi Cam Ranh mùa này?,info,info
+Tôi có thể thuê xe máy ở Ninh Thuận được không?,info,info
+Phim Titanic công chiếu năm nào?,none,none
+Hồ Gươm có gần biển không?,info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Quảng Ngãi không?,info,info
+Bạn có thể kể lịch sử của Đảo Bình Hưng không?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Đảo Hòn Tre?,info,info
+Lễ hội lớn nhất ở An Giang là gì?,info,info
+Bà Nà Hills có bị ảnh hưởng bởi bão không?,info,info
+Có chuyến bay nào thẳng đến Ninh Thuận không?,info,info
+Tôi có thể thuê xe máy ở Đảo Thạnh An được không?,info,info
+Lễ hội lớn nhất ở Bình Thuận là gì?,info,info
+Tôi nên mang gì khi đi Mai Châu mùa này?,info,info
+Ở Hồ Trị An có di tích lịch sử nào nên tham quan?,info,info
+Bạn có thể kể lịch sử của Ba Bể không?,info,info
+Làng cổ Đường Lâm có gần biển không?,info,info
+Món ăn truyền thống của Hà Tiên là gì?,info,info
+Giá phòng trung bình ở Đảo Cát Bà là bao nhiêu?,info,info
+"Tôi muốn đi phượt Chợ Bến Thành, có nguy hiểm không?",info,info
+Có thể xem múa rối nước ở Hồ Tây không?,info,info
+Giá đồ ăn ở Vườn quốc gia Cát Tiên có đắt không?,info,info
+Nam Định có bãi biển nào đẹp không?,info,info
+Bạn có thể chia sẻ kinh nghiệm du lịch Nhà thờ con gà Đà Lạt không?,info,info
+Du khách thường làm gì khi đến Đảo Hòn Tằm?,info,info
+"Tôi nghe nói Vinpearl Land có lễ hội rất đông, đúng không?",info,info
+Ở Mỹ Sơn có địa điểm nào nên ghé thăm ạ?,info,info
+Đường đến An Giang có dễ đi không?,info,info
+Nếu tôi đến Đà Lạt thì nên đi đâu đầu tiên?,info,info
+Ở Ngũ Hành Sơn có khách sạn nào gần trung tâm không?,info,info
+Đảo Thạnh An có món nào hợp với người ăn chay không?,info,info
+Giá phòng trung bình ở Asia Park là bao nhiêu?,info,info
+Thác Pongour có gần biển không?,info,info
+Tôi nên đặt phòng ở khu nào khi đến Đảo Hòn Tre?,info,info
+Có tour nào đi Điện Biên 3 ngày 2 đêm không?,info,info
+Có món ăn nào nhất định phải thử ở Mộc Châu không?,info,info
+Ở Hồ Trị An có phong cảnh đẹp không?,info,info
+Ở Hà Giang có khách sạn nào gần điểm du lịch chính không?,info,info
+Ở Đảo Phú Quý có di tích lịch sử nào nên tham quan?,info,info
+Ở Đảo Thạnh An có gì mới mở không?,info,info
+Lễ hội ở Cát Bà thường diễn ra vào tháng mấy?,info,info
+Bạn có thể giới thiệu về Đà Lạt không?,info,info
+Có thể xem múa rối nước ở Lào Cai không?,info,info
+Thời tiết ở Phong Nha – Kẻ Bàng tháng này thế nào?,info,info
+Lào Cai có gì nổi tiếng vậy?,info,info
+Ở Điện Biên có chợ đêm bán đồ ăn không?,info,info
+Sơn La có gì thú vị thế?,info,info
+Có thể mua đặc sản Ninh Bình làm quà ở đâu?,info,info
+Có thể thanh toán bằng thẻ ở Chợ Đà Lạt không?,info,info
+Mùa xuân ở Cần Thơ có gì đặc biệt?,info,info
+Tôi nên đi Sóc Trăng bao nhiêu ngày là hợp lý?,info,info
+Tôi nên đi Đảo Hòn Tằm bao nhiêu ngày là hợp lý?,info,info
+Tôi có thể đổi tiền ở đâu khi đến Mai Châu?,info,info
+Tôi nên đặt phòng ở khu nào khi đến Vườn quốc gia Bạch Mã?,info,info
+Homestay ở Ba Bể có phục vụ ăn sáng không?,info,info
+Ở Phố cổ Hà Nội có gì mới mở không?,info,info
+Nếu đi Hạ Long vào mùa mưa có sao không?,info,info
+Vườn quốc gia Cát Tiên có gì nổi tiếng vậy?,info,info
+Có thể thanh toán bằng thẻ ở Thác Bản Giốc không?,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Đảo Bình Hưng không?,info,info
+Lễ hội lớn nhất ở Hà Nội là gì?,info,info
+Có resort nào ven biển ở Hồ Trị An không?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Đảo Cô Tô không?,info,info
+Đi Thiên Cầm nên mang theo những gì?,info,info
+"Tôi cần đặt vé tàu đi Phú Quốc, bạn biết chỗ nào uy tín không?",info,info
+Ở Đảo Hòn Tằm có phong cảnh đẹp không?,info,info
+"Bạn ơi, Hà Giang có gì vui không?",info,info
+Ở Sa Pa có lạnh vào ban đêm không?,info,info
+Có tàu lửa đi Ninh Bình không bạn?,info,info
+Du khách thường làm gì khi đến Cần Thơ?,info,info
+Tôi nên đặt phòng ở khu nào khi đến Cam Ranh?,info,info
+Đặc sản nổi tiếng ở Chùa Hương là gì vậy?,info,info
+Người dân Sầm Sơn có phong tục đặc biệt gì?,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Đảo Hòn Tre không?,info,info
+Đi Huế vào cuối tuần có kẹt xe không?,info,info
+Tháng mấy là mùa đẹp nhất ở Cà Mau?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Đảo Hòn Tằm không?,info,info
+Ở Long Hải có lễ hội gì nổi tiếng không?,info,info
+Tôi có thể cắm trại ở Nam Định được không?,info,info
+Tây Ninh có bãi biển nào đẹp không?,info,info
+Tôi nên đi Quảng Ngãi bao nhiêu ngày là hợp lý?,info,info
+Bà Nà Hills có gì thú vị thế?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Đảo Cô Tô?,info,info
+Tôi nên ở bao lâu khi đi Tràng An?,info,info
+Tôi muốn biết thêm thông tin về Cát Bà.,info,info
+Ở Núi Sam có quán cà phê đẹp nào không?,info,info
+Tôi nên đi Nhà thờ Đức Bà bao nhiêu ngày là hợp lý?,info,info
+Bạn có thể kể top 5 đội bóng mạnh nhất thế giới?,none,none
+Đại Nội Huế có món nào hợp với người ăn chay không?,info,info
+Tôi nên đi Đất Mũi bao nhiêu ngày là hợp lý?,info,info
+Nên đi Thác Bản Giốc vào mùa nào là đẹp nhất?,info,info
+Bạn có thể giới thiệu về Pleiku không?,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Fansipan không?,info,info
+Marvel sắp ra phim mới nào vậy?,none,none
+Nếu tôi đến Nghệ An thì nên đi đâu đầu tiên?,info,info
+Ở Hồ Tây có quán cà phê đẹp nào không?,info,info
+Bạn gợi ý giúp tôi vài homestay đẹp ở Bình Định nhé.,info,info
+Review cho tôi về Sa Pa với.,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Nam Định không?,info,info
+Có món ăn nào nhất định phải thử ở Thác Bản Giốc không?,info,info
+Có tàu lửa đi Vườn quốc gia Phong Nha – Kẻ Bàng không bạn?,info,info
+"Bạn ơi, Nhà thờ con gà Đà Lạt có gì vui không?",info,info
+Mùa xuân ở Gia Lai có gì đặc biệt?,info,info
+Tôi nên đi tour hay tự túc khi du lịch An Giang?,info,info
+Ở Vườn quốc gia Phong Nha – Kẻ Bàng có địa điểm nào nên ghé thăm ạ?,info,info
+Đảo Thạnh An có hoạt động truyền thống nào thú vị không?,info,info
+Từ Hà Nội đến Hoa Lư đi bằng gì tiện nhất?,info,info
+Bạn có thể gợi ý những điểm check-in đẹp ở Bến Tre không?,info,info
+Có xe buýt đi Huế không?,info,info
+Giá phòng trung bình ở Hồ Trị An là bao nhiêu?,info,info
+Đặc sản nổi tiếng ở Đồng Hới là gì vậy?,info,info
+Mùa xuân ở Đại Nội Huế có gì đặc biệt?,info,info
+Có nên thuê hướng dẫn viên khi đi Khánh Hòa không?,info,info
+"Tôi muốn nghe nhạc Lo-fi, gợi ý giúp với.",none,none
+Ở Fansipan có phong cảnh đẹp không?,info,info
+Cà Mau có gì nổi tiếng vậy?,info,info
+Sầm Sơn có gì thú vị thế?,info,info
+Ở Nam Định có lễ hội gì nổi tiếng không?,info,info
+Có tour nào đi Huế 3 ngày 2 đêm không?,info,info
+Núi Sam có hoạt động truyền thống nào thú vị không?,info,info
+Sầm Sơn có gì nổi tiếng vậy?,info,info
+Có thể mua đặc sản Đảo Bình Hưng làm quà ở đâu?,info,info
+Review cho tôi về Điện Biên với.,info,info
+Có tàu lửa đi Sun World Hạ Long không bạn?,info,info
+Review cho tôi về Đắk Lắk với.,info,info
+Đường đến Hà Tĩnh có dễ đi không?,info,info
+"Bạn ơi, Chợ Bến Thành có gì vui không?",info,info
+Du lịch Đất Mũi cần lưu ý điều gì?,info,info
+Vũng Tàu có bị ảnh hưởng bởi bão không?,info,info
+Đi Đảo Hòn Tằm vào cuối tuần có kẹt xe không?,info,info
+Nếu đi Tam Cốc vào mùa mưa có sao không?,info,info
+Messi đang đá cho đội nào?,none,none
+Tháng mấy là mùa đẹp nhất ở Đảo Cát Bà?,info,info
+Tôi có thể đổi tiền ở đâu khi đến Thác Datanla?,info,info
+Núi Sam có gì nổi tiếng vậy?,info,info
+Tôi nên ở bao lâu khi đi Đảo Hòn Tre?,info,info
+Mùa xuân ở Chùa Hương có gì đặc biệt?,info,info
+Có thể mua đặc sản Bình Dương làm quà ở đâu?,info,info
+"Tôi nghe nói Quảng Trị có lễ hội rất đông, đúng không?",info,info
+Bạn có thể giới thiệu vài quán ăn ngon ở Núi Bà Đen không?,info,info
+Tôi nên đi Thác Datanla bao nhiêu ngày là hợp lý?,info,info
+Ở Thung lũng Tình yêu có gì mới mở không?,info,info
+Tháng mấy là mùa đẹp nhất ở Tây Ninh?,info,info
+Có thể mua đặc sản Lăng Tự Đức làm quà ở đâu?,info,info
+Có chuyến bay nào thẳng đến Sun World Hạ Long không?,info,info
+"Bạn ơi, Nghệ An có gì vui không?",info,info
+Lễ hội ở Vinpearl Land thường diễn ra vào tháng mấy?,info,info
+"Tôi muốn ăn hải sản ở Đồng Nai, bạn gợi ý giúp nhé?",info,info
+Trời có thường mưa khi đi Quảng Bình tháng 8 không?,info,info
+Bạn gợi ý giúp tôi vài homestay đẹp ở Ba Bể nhé.,info,info
+Tôi có thể thuê xe máy ở Sun World Hạ Long được không?,info,info
+Có thể mua đặc sản Trà Vinh làm quà ở đâu?,info,info
+Nếu đi Vườn quốc gia Cát Tiên vào mùa mưa có sao không?,info,info
+Homestay ở Cầu Vàng Đà Nẵng có phục vụ ăn sáng không?,info,info
+Đi Pleiku vào cuối tuần có kẹt xe không?,info,info
+Tôi có thể đổi tiền ở đâu khi đến Đảo Phú Quý?,info,info
+Nên đi Sầm Sơn vào mùa nào là đẹp nhất?,info,info
+Long An có món nào hợp với người ăn chay không?,info,info
+"Tôi muốn đi phượt Thành phố Hồ Chí Minh, có nguy hiểm không?",info,info
+Bạn có thể giới thiệu về Thái Nguyên không?,info,info
+Giá phòng trung bình ở Sóc Trăng là bao nhiêu?,info,info
+Tôi có thể cắm trại ở Fansipan được không?,info,info
+Bạn biết nhạc sĩ Đen Vâu không?,none,none
+Tôi nên mang gì khi đi Rạch Giá mùa này?,info,info
+Phong Nha – Kẻ Bàng có bãi biển nào đẹp không?,info,info
+Nghệ An có đặc sản gì không nhỉ?,info,info
+Từ sân bay đến trung tâm Sun World Hạ Long bao xa?,info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Vinpearl Land không?,info,info
+Bạn gợi ý giúp tôi vài homestay đẹp ở Nhà thờ Đức Bà nhé.,info,info
+Huế có hoạt động truyền thống nào thú vị không?,info,info
+Tôi nên ở bao lâu khi đi Phan Thiết?,info,info
+Ở Tây Ninh có khách sạn nào gần trung tâm không?,info,info
+Nếu tôi đến Đại Nội Huế thì nên đi đâu đầu tiên?,info,info
+Bạn có thể kể lịch sử của Mũi Né không?,info,info
+Ở Ninh Bình có quán cà phê đẹp nào không?,info,info
+Bạn gợi ý giúp tôi vài homestay đẹp ở Hồ Tây nhé.,info,info
+Ở Đảo Cát Bà có khách sạn nào gần điểm du lịch chính không?,info,info
+Ở Chùa Hương có gì mới mở không?,info,info
+Bạn có thể kể lịch sử của Phú Yên không?,info,info
+Trời có thường mưa khi đi Gia Lai tháng 8 không?,info,info
+Có chuyến bay nào thẳng đến Vĩnh Long không?,info,info
+Ở Đảo Cát Bà có phong cảnh đẹp không?,info,info
+Tôi có thể đổi tiền ở đâu khi đến Quản Bạ?,info,info
+Có resort nào ven biển ở Hạ Long không?,info,info
+Có xe buýt đi Châu Đốc không?,info,info
+Ở Phú Yên có chợ đêm bán đồ ăn không?,info,info
+Bạn có thể giới thiệu về Làng cổ Đường Lâm không?,info,info
+Ngũ Hành Sơn có món nào hợp với người ăn chay không?,info,info
+Có xe buýt đi Đảo Cô Tô không?,info,info
+Làm sao để học tốt tiếng Anh giao tiếp?,none,none
+Thời tiết ở Đại Nam tháng này thế nào?,info,info
+Tháng mấy là mùa đẹp nhất ở Thác Bản Giốc?,info,info
+Ngũ Hành Sơn có bãi biển nào đẹp không?,info,info
+Đảo Lý Sơn có đặc sản gì không nhỉ?,info,info
+Bạn có thể giới thiệu về Cần Thơ không?,info,info
+Ở Nhà thờ Đức Bà có cần đặt vé trước không?,info,info
+Bạn có thể giới thiệu về Chùa Hương không?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Phong Nha – Kẻ Bàng?,info,info
+Nên đi Bình Thuận vào mùa nào là đẹp nhất?,info,info
+Lào Cai có bị ảnh hưởng bởi bão không?,info,info
+Điện Biên có bãi biển nào đẹp không?,info,info
+Bạn có biết chỗ nghỉ nào view đẹp ở Thanh Hóa không?,info,info
+Từ Hà Nội đến Hà Giang đi bằng gì tiện nhất?,info,info
+Có thể xem múa rối nước ở Sầm Sơn không?,info,info
+Review cho tôi về Bình Dương với.,info,info
+Trời có thường mưa khi đi Buôn Ma Thuột tháng 8 không?,info,info
+Ở Làng cổ Đường Lâm có lễ hội gì nổi tiếng không?,info,info
+Ở Sơn La có khách sạn nào gần trung tâm không?,info,info
+Ở Bạc Liêu có di tích lịch sử nào nên tham quan?,info,info
+Ở Hồ Gươm có địa điểm nào nên ghé thăm ạ?,info,info
+Tôi muốn biết thêm thông tin về Tuyên Quang.,info,info
+Du lịch Mộc Châu cần lưu ý điều gì?,info,info
+"Bạn ơi, Lũng Cú có gì vui không?",info,info
+Có tàu lửa đi Đà Nẵng không bạn?,info,info
+Ở Bến Tre có lạnh vào ban đêm không?,info,info
+"Tôi muốn ăn hải sản ở Cà Mau, bạn gợi ý giúp nhé?",info,info
+Bạn có thể kể vài truyền thuyết liên quan đến Ba Bể không?,info,info
+Homestay ở Quảng Ninh có phục vụ ăn sáng không?,info,info
+Có thể xem múa rối nước ở Nha Trang không?,info,info
+Có tour nào đi Sầm Sơn 3 ngày 2 đêm không?,info,info
+Đi Đảo Hòn Tre vào cuối tuần có kẹt xe không?,info,info
+Đường đến Đà Lạt có dễ đi không?,info,info
+Có thể thanh toán bằng thẻ ở Đảo Nam Du không?,info,info
+Có chuyến bay nào thẳng đến Bình Dương không?,info,info
+Cao Bằng có bãi biển nào đẹp không?,info,info
+Tôi nên đi tour hay tự túc khi du lịch Tam Đảo?,info,info
+Đi Cam Ranh nên mang theo những gì?,info,info
+Lễ hội ở Bình Định thường diễn ra vào tháng mấy?,info,info
+Có tour nào đi Núi Sam 3 ngày 2 đêm không?,info,info
+Ở Asia Park có lạnh vào ban đêm không?,info,info
+Đảo Cù Lao Chàm có hoạt động truyền thống nào thú vị không?,info,info
+"Bạn ơi, Kỳ Co có gì vui không?",info,info
+Du khách thường làm gì khi đến Vườn quốc gia Cát Tiên?,info,info
+"Tôi nghe nói Sầm Sơn có lễ hội rất đông, đúng không?",info,info
+Có khách sạn nào ở Sun World Hạ Long phù hợp cho gia đình không?,info,info
+Ở Núi Bà Đen có khách sạn nào gần điểm du lịch chính không?,info,info
+Có nên đi Hà Nam vào mùa hè không?,info,info
+Châu Đốc có bị ảnh hưởng bởi bão không?,info,info
+Tôi nên đặt phòng ở khu nào khi đến Kiên Giang?,info,info
+Tôi muốn biết thêm thông tin về Long An.,info,info
