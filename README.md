@@ -16,6 +16,43 @@ An AI-powered travel **chatbot** that processes user text queries to provide inf
 
 (*): IT - University of Science - VNU
 
+# How-to Guide
+
+## 1. Create a Gemini API Key
+If you don’t have a Google AI Studio account yet, please create one at:
+https://aistudio.google.com
+
+Then follow these steps:
+
+- Go to https://aistudio.google.com/apikey
+
+- Click **Create API Key**
+
+- Select a project (or create a new one)
+
+- Copy the generated API key
+
+## 2. Add API Key to environment file
+Inside the `backend/` folder, create a `.env` file and add your API key:
+```bash
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
+Never share or upload your API key. Keep the .env file private.
+
+## 3. Run the API locally
+```bash
+cd backend 
+```
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+Run the server:
+```bash
+uvicorn app.api.main:app --reload
+```
+Open your browser to access API documentation (Swagger UI): http://localhost:8000/docs
+
 # Git Feature Branch Workflow
 
 We use **Feature Branch Workflow** to manage collaborative development efficiently.
