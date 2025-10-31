@@ -1,0 +1,168 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #e1cae8); /*nền chuyển màu*/
+  margin: 0;
+  padding: 0;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+.logo {
+  width: 50px;
+  height: 50px;
+  background-image: url("./Logoweb.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #f7f5ff;
+  border-radius: 12px;
+}
+
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  h3 {
+  text-align: left;
+}
+}
+
+header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+#avata {
+  background: #ffffff;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /*box-shadow: đổ bóng cho khối, cú pháp: box-shadow: <x-offset> <y-offset> <blur-radius> <color>*/
+}
+
+main {
+  max-width: 1000px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.introduce h2 {
+  color: #e1cae8;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.introduce h1 {
+  color: black;
+  font-size: 35px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.introduce p {
+  color: #554f55;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.suggest {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+  /*flex-wrap: cho phép phần tử tự xuống dòng mới khi dòng không đủ chỗ*/
+}
+
+.suggest button {
+  background: #e1cae8;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.05);
+  /*box-shadow: đổ bóng cho khối, cú pháp: box-shadow: <x-offset> <y-offset> <blur-radius> <color>*/
+  padding: 16px 22px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  max-width: 260px;
+  flex: 1 1 200px;
+  margin-top: 100px;
+}
+
+footer {
+  width: 100%;
+  max-width: 500px;
+  margin-top: auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+footer form {
+  background-color: #efe1f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 40px;
+  padding: 10px 20px;
+  box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.05);
+  /*box-shadow: đổ bóng cho khối, cú pháp: box-shadow: <x-offset> <y-offset> <blur-radius> <color>*/
+}
+
+footer label {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+footer input[type="file"] {
+  display: none;
+}
+
+footer input[type="text"] {
+  flex: 10;
+  border: none;
+  font-size: 15px;
+  padding: 8px;
+}
+
+footer button {
+  background: #f2f0ff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*bỏ khung của input khi thực hiện nhập liệu*/
+button:focus,
+input:focus {
+  outline: none;
+}
+
+/*khi di chuột vào các nút botton thì thay đổi sang màu color đã chọn*/
+.suggest button:hover,
+footer button:hover {
+  background-color: #f7f5ff;
+}
