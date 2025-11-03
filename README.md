@@ -60,7 +60,7 @@ We use **Feature Branch Workflow** to manage collaborative development efficient
 ## Branch Naming Convention
 
 - `main`: Stable production-ready code
-- `feature/<feature-name>`: New feature branches  
+- `feature/<feature-name>`: New feature branches
 
   > Example: `feature/hold-mechanic`, `feature/add-menu`
 
