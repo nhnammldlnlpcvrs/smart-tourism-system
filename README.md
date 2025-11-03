@@ -1,88 +1,139 @@
-# Project CT - Smart Tourism System
+# 🌏 Project CT - Smart Tourism System
 
-An AI-powered travel **chatbot** that processes user text queries to provide information about **Vietnamese tourist** destinations and their local cuisines.
+An AI-powered travel **chatbot** that processes user queries to provide information about **Vietnamese tourist** destinations, local cuisines, and real-time weather updates.
 
-## Team Members
+---
 
-| No. | Name                     | Role            |
-|-----|--------------------------|------------------|
-| 1   | Nguyen Nam      (*)     | Team Leader     |    
-| 2   | Hong Truc         (*)        | Member          |
-| 3   | Minh Khang         (*)       | Member          |
-| 4   | Tony Dang         (*)        | Member          |
-| 5   | Quoc Huy         (*)         | Member          |
-| 6   | Trung Hien       (*)         | Member          |
-| 7   | Thi Anh          (*)         | Member          |
+## 👥 Team Members
 
-(*): IT - University of Science - VNU
+| No. | Name            | Role         |
+|-----|------------------|--------------|
+| 1   | Nguyen Nam (*)   | Team Leader  |
+| 2   | Hong Truc (*)    | Member       |
+| 3   | Minh Khang (*)   | Member       |
+| 4   | Tony Dang (*)    | Member       |
+| 5   | Quoc Huy (*)     | Member       |
+| 6   | Trung Hien (*)   | Member       |
+| 7   | Thi Anh (*)      | Member       |
 
-# How-to Guide
+> (*) IT - University of Science - VNU
+
+---
+
+# 🚀 How-to Guide
 
 ## 1. Create a Gemini API Key
-If you don’t have a Google AI Studio account yet, please create one at:
-https://aistudio.google.com
+
+If you don’t have a **Google AI Studio** account yet, create one at:  
+👉 https://aistudio.google.com  
 
 Then follow these steps:
 
-- Go to https://aistudio.google.com/apikey
+1. Go to **[Google AI Studio API Keys](https://aistudio.google.com/apikey)**  
+2. Click **“Create API Key”**  
+3. Select an existing project (or create a new one)  
+4. Copy the generated API key  
 
-- Click **Create API Key**
+> ⚠️ **Note:** Keep this key private — never share or upload your `.env` file.
 
-- Select a project (or create a new one)
+---
 
-- Copy the generated API key
+## 2. Create an OpenWeather API Key
 
-## 2. Add API Key to environment file
-Inside the `backend/` folder, create a `.env` file and add your API key:
+To enable **real-time weather information**, you need an API key from **OpenWeather**.
+
+Follow these steps:
+
+1. Go to **[OpenWeather API](https://openweathermap.org/api)**  
+2. Click **“Sign up”** (if you don’t already have an account)  
+3. After logging in, navigate to:  
+   👉 [My API Keys](https://home.openweathermap.org/api_keys)
+4. Click **“Create Key”** and give it a name (e.g., `smart-tourism-weather`)  
+5. Copy the generated key (it looks like a long string of letters/numbers)
+
+---
+
+## 3. Add API Keys to Environment File
+
+Inside your `backend/` folder, create a `.env` file (if it doesn’t already exist) and add your keys:
+
 ```bash
 GOOGLE_API_KEY=your_gemini_api_key_here
+OPENWEATHER_API_KEY=your_openweather_api_key_here
 ```
-Never share or upload your API key. Keep the .env file private.
 
-## 3. Run the API locally
+> ⚠️ **Do not share or commit this file.**  
+> Always keep your API keys private and secure.
+
+---
+
+## 4. Run the API Locally
+
+Move into the backend folder:
 ```bash
-cd backend 
+cd backend
 ```
+
 Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-Run the server:
+
+Run the development server:
 ```bash
 uvicorn app.api.main:app --reload
 ```
-Open your browser to access API documentation (Swagger UI): http://localhost:8000/docs
 
-# Git Feature Branch Workflow
+Open your browser and visit Swagger UI for API documentation:  
+👉 http://localhost:8000/docs
 
-We use **Feature Branch Workflow** to manage collaborative development efficiently.
+---
+
+# 🌿 Git Feature Branch Workflow
+
+We use **Feature Branch Workflow** for clean, collaborative development.
 
 ## Branch Naming Convention
 
-- `main`: Stable production-ready code
-- `feature/<feature-name>`: New feature branches  
+| Branch Type | Description | Example |
+|--------------|-------------|----------|
+| `main` | Stable production-ready code | — |
+| `feature/<feature-name>` | New feature branches | `feature/add-weather-api` |
+| `bugfix/<description>` | Small fixes | `bugfix/fix-response-parser` |
+| `hotfix/<description>` | Urgent production fixes | `hotfix/api-crash` |
 
-  > Example: `feature/hold-mechanic`, `feature/add-menu`
-
-- `bugfix/<description>`: For small fixes  
-
-  > Example: `bugfix/ghost-piece`
-
-- `hotfix/<description>`: Urgent production fixes
+---
 
 ## Workflow Steps
-1. **Start a Feature**
+
+### 1️⃣ Start a New Feature
 ```bash
 git checkout main
 git pull origin main
 git checkout -b feature/your-feature-name
 ```
-2. **Work on the Feature**
+
+### 2️⃣ Work on the Feature
 ```bash
 git add .
 git commit -m "feat: short and clear message"
 ```
-3. **Push and Create Pull Request**
+
+### 3️⃣ Push and Create Pull Request
 ```bash
 git push -u origin feature/your-feature-name
 ```
+
+Then open a Pull Request on GitHub and request code review from your teammates.
+
+---
+
+## ✅ Example `.env` File (Final)
+```bash
+GOOGLE_API_KEY=AIzaSyBxxxxxx...
+OPENWEATHER_API_KEY=7026d46ce34xxxxxx...
+```
+
+> 📌 This enables both:
+> - **Gemini API** → AI chatbot responses  
+> - **OpenWeather API** → Real-time weather updates for destinations
