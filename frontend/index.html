@@ -8,7 +8,7 @@
     <!-- Thêm liên kết JS (có thuộc tính defer ròi nên ko lo lỗi nhe) -->
     <script src="script.js" defer></script>
     <title>FIT-HCMUS Chatbot</title>
-    <link rel="icon" type="image/webp" href="./Logoweb.webp" />
+    <link rel="icon" type="image/png" href="./logo.png" />
   </head>
 
   <body>
@@ -35,14 +35,14 @@
     <div class="main-content">
       <!-- Phần đầu -->
       <header>
-        <h3>Toi là FIT-HCMUS Chatbot của 7 vibe coder</h3>
+        <h3>FIT-HCMUS Chatbot</h3>
         <button id="avata" type="button">🧑‍💻</button>
       </header>
 
       <!-- Phần nội dung -->
       <div class="introduce">
-        <h2>Chào bạn nhó</h2>
-        <h1>Muốn gì thì nói?</h1>
+        <h2>Chào bạn! [tên người dùng]</h2>
+        <h1>Muốn gì thì nói</h1>
       </div>
 
       <!-- Vùng hiển thị tin nhắn (chat-container) -->
@@ -54,17 +54,8 @@
 
       <!-- Phần chân -->
       <footer>
-        <form id="chat-form">
-          <input
-            id="message-input"
-            type="text"
-            placeholder="Your message"
-            required
-            spellcheck
-          />
-
-          <!-- Nút chèn ảnh -->
-          <label for="image-input" class="file-btn">📷</label>
+        <!-- Nút chèn ảnh-->
+        <label for="image-input" class="file-btn">📷</label>
           <input
             id="image-input"
             type="file"
@@ -72,13 +63,13 @@
             style="display: none"
           />
 
-          <!-- Nút chèn âm thanh -->
-          <label for="audio-input" class="file-btn">🔊</label>
+        <form id="chat-form">
           <input
-            id="audio-input"
-            type="file"
-            accept="audio/*"
-            style="display: none"
+            id="message-input"
+            type="text"
+            placeholder="Your message"
+            required
+            spellcheck
           />
 
           <button type="submit">⮕</button>
@@ -89,7 +80,7 @@
     <!-- Thanh sidebar phải -->
     <aside class="right-sidebar">
       <div class="sidebar-section">
-        <h3>FIT-HCMUS Chatbot đay</h3>
+        <h3>FIT-HCMUS Chatbot</h3>
 
         <div class="provider-section">
           <h4>Select provider</h4>
