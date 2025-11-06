@@ -1,17 +1,13 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from app.api.llm_module import ask_gemini
+from app.api.router_chat import router as chat_router
+from app.service.router_map import router as map_router
+from app.service.router_weather import router as weather_router
 
-app = FastAPI(title="Smart Tourism Chatbot")
+app = FastAPI(
+    title="Tourist Guide Backend",
+    description="Backend cho ứng dụng hướng dẫn du lịch tích hợp Google Maps và Thời tiết."
+)
 
-class ChatRequest(BaseModel):
-    message: str
-
-@app.get("/")
-def root():
-    return {"message": "Smart Tourism Backend is running!"}
-
-@app.post("/chat")
-def chat(request: ChatRequest):
-    reply = ask_gemini(request.message)
-    return {"user_message": request.message, "bot_reply": reply}
+app.include_router(chat_router)
+app.include_router(map_router)
+app.include_router(weather_router)
