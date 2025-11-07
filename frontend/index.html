@@ -1,35 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="vi">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Tourism Chatbot</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+    <!-- Tui giúp Ánh sửa lại thành main rồi nhá -->
+    <link rel="stylesheet" href="main.css" />
+    <!-- Thêm liên kết JS (có thuộc tính defer ròi nên ko lo lỗi nhe) -->
+    <script src="script.js" defer></script>
+    <title>FIT-HCMUS Chatbot</title>
+    <link rel="icon" type="image/webp" href="./Logoweb.webp" />
+  </head>
 
-<body>
-    <div class="chat-container">
-        <header class="chat-header">
-            <img src="assets/img/logo.png" alt="Logo" class="logo" />
-            <h1>Smart Tourism Chatbot</h1>
-        </header>
+  <body>
+    <!-- Thanh sidebar phải-->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="./logo.png" alt="Logo" class="logo" />
+        <h3>History</h3>
+      </div>
+      <!-- Nút New Chat để tạo cuộc trò chuyện mới -->
+      <button id="new-chat">+ New Chat</button>
+      <!-- Danh sách lịch sử chat sẽ hiển thị ở đây -->
+      <ul id="chat-history-list">
+        <!-- Lịch sử chat sẽ được thêm vào đây tự động -->
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="clear-all">Clear All History</a>
+      </div>
+    </aside>
 
-        <div class="chat-body" id="chat-body">
-            <div class="bot-message">
-                👋 Xin chào! Tôi là trợ lý du lịch thông minh. Bạn muốn tìm hiểu về địa điểm nào hôm nay?
-            </div>
+    <!-- Phần thân -->
+    <div class="main-content">
+      <!-- Phần đầu -->
+      <header>
+        <h3>FIT-HCMUS Chatbot</h3>
+        <button id="avata" type="button">🧑‍💻</button>
+      </header>
+
+      <!-- Phần nội dung -->
+      <div class="introduce">
+        <h2>Chào bạn! [tên người dùng]</h2>
+        <h1>Muốn gì thì nói</h1>
+      </div>
+
+      <!-- Vùng hiển thị tin nhắn (chat-container) -->
+      <div id="chat-container">
+        <div id="messages">
+          <!-- hiển thị đây nè -->
         </div>
+      </div>
 
-        <div class="chat-footer">
-            <input type="text" id="user-input" placeholder="Nhập tin nhắn..." autocomplete="off" />
-            <button id="send-btn">Gửi</button>
-        </div>
+      <!-- Phần chân -->
+      <footer>
+        <!-- Nút chèn ảnh-->
+        <label for="image-input" class="file-btn">📷</label>
+          <input
+            id="image-input"
+            type="file"
+            accept="image/*"
+            style="display: none"
+          />
+
+        <form id="chat-form">
+          <input
+            id="message-input"
+            type="text"
+            placeholder="Your message"
+            required
+            spellcheck
+          />
+
+          <button type="submit">⮕</button>
+        </form>
+      </footer>
     </div>
 
-    <script src="assets/js/api.js"></script>
-    <script src="assets/js/ui.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
+    <!-- Thanh sidebar phải -->
+    <aside class="right-sidebar">
+      <div class="sidebar-section">
+        <h3>FIT-HCMUS Chatbot</h3>
 
+        <div class="provider-section">
+          <h4>Select provider</h4>
+          <div class="provider-option">
+            <input
+              type="radio"
+              id="openai"
+              name="provider"
+              value="openai"
+              checked
+            />
+            <label for="openai">OpenAI</label>
+            <a href="#" class="provider-link">OpenAI pricing page</a>
+          </div>
+          <div class="provider-option">
+            <input type="radio" id="google" name="provider" value="google" />
+            <label for="google">Google AI</label>
+            <span class="rate-limit">Rate limit: 60 requests per minute.</span>
+          </div>
+          <div class="provider-option">
+            <input
+              type="radio"
+              id="huggingface"
+              name="provider"
+              value="huggingface"
+            />
+            <label for="huggingface">HuggingFace</label>
+            <span class="rate-limit">Free access.</span>
+          </div>
+        </div>
+
+        <div class="api-section">
+          <h4>
+            OpenAI API Key - <a href="#" class="api-link">Get an API key</a>
+          </h4>
+          <input
+            type="password"
+            id="api-key"
+            placeholder="Enter your API key"
+          />
+          <div class="model-section">
+            <h5>Models and parameters</h5>
+            <label for="model-select">Choose OpenAI model-section</label>
+            <select id="model-select">
+              <option value="gpt-3.5-turbo-0125">gpt-3.5-turbo-0125</option>
+              <option value="gpt-4">gpt-4</option>
+              <option value="gpt-4-turbo">gpt-4-turbo</option>
+            </select>
+
+            <div class="temperature-section">
+              <label for="temperature">temperature</label>
+              <input
+                type="range"
+                id="temperature"
+                min="0"
+                max="1"
+                step="0.1"
+                value="0.7"
+              />
+              <span id="temp-value">0.7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </body>
 </html>

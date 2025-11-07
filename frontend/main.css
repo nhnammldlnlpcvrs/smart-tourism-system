@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #eaeaea;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 8px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: #6c63ff;
+  border-radius: 20px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.sidebar h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+/* Nút New Chat */
+#new-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+#new-chat:hover {
+  background-color: #5a52d5;
+}
+
+/* Danh sách lịch sử chat */
+#chat-history-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 80vh;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+#chat-history-list li {
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+#chat-history-list li:hover {
+  background-color: #f0f0f0;
+}
+
+#chat-history-list li.active {
+  background-color: #e9e7ff;
+  color: #6c63ff;
+  font-weight: 500;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+.sidebar-footer a {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+#avata {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#avata:hover {
+  background-color: #f0f0f0;
+}
+
+.introduce {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.introduce h2 {
+  color: #6c63ff;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.introduce h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.introduce p {
+  color: #666;
+  font-size: 14px;
+}
+
+#chat-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+#messages {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #6c63ff;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 18px;
+  max-width: 70%;
+  font-size: 15px;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+  border-radius: 18px 18px 18px 4px;
+  padding: 12px 18px;
+  max-width: 70%;
+  font-size: 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: #f5f5f5;
+  z-index: 10;
+  margin: 0;
+  position: sticky;
+  bottom: 0;
+}
+
+#chat-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;         
+  max-width: 500px;       
+  border-radius: 24px;
+  padding: 8px 12px 8px 20px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#message-input {
+  flex: 1;
+  border: none;
+  font-size: 15px;
+  padding: 10px 0px;
+  background: transparent;
+}
+
+#message-input:focus {
+  outline: none;
+}
+
+#chat-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6c63ff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-left: 1px solid #eaeaea;
+  box-shadow: -2px 0px 8px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.sidebar-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.sidebar-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 15px 0;
+  color: #333;
+}
+
+.provider-section {
+  margin: 25px 0;
+}
+
+.provider-option {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.provider-option input[type="radio"] {
+  margin-right: 10px;
+}
+
+.provider-link,
+.api-link {
+  display: block;
+  font-size: 12px;
+  color: #6c63ff;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.rate-limit {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.api-section {
+  margin-bottom: 20px;
+}
+
+.api-section h4 {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#api-key {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.model-section h5 {
+  margin: 20px 0 10px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.model-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.model-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.temperature-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.temperature-section label {
+  margin-bottom: 0;
+  flex: 1;
+  font-size: 14px;
+}
+
+#temperature {
+  flex: 2;
+}
+
+#temp-value {
+  width: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Hiệu ứng cuộn */
+#messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
