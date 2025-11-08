@@ -16,7 +16,7 @@ body {
   display: flex;
   min-height: 100vh;
   background-color: #f5f5f5;
-  background: linear-gradient(135deg, #ffb6c1, #6c63ff);
+  background: #f5f5f5;
   color: #333;
 }
 
@@ -77,6 +77,7 @@ body {
 /* Danh sách lịch sử chat */
 #chat-history-list {
   overflow-y: auto;
+  overflow-x: hidden;
   max-height: 80vh;
   list-style: none;
   padding: 0;
@@ -188,6 +189,7 @@ header h3 {
   flex: 1;
   gap: 15px;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 10px;
 }
 
@@ -211,20 +213,26 @@ header h3 {
 }
 
 footer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
   width: 100%;
-  max-width: 500px;
-  margin-top: auto;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  margin: 0 auto;
+  padding: 20px 0;
+  background: #f5f5f5;
+  z-index: 10;
+  margin: 0;
   position: sticky;
+  bottom: 0;
 }
 
 #chat-form {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 90%;         
+  max-width: 500px;       
   border-radius: 24px;
-  padding: 8px 8px 8px 20px;
+  padding: 8px 12px 8px 20px;
   background-color: white;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
