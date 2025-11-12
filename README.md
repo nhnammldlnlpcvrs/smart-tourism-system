@@ -1,10 +1,10 @@
-# 🌏 Project CT - Smart Tourism System
+# Project CT - Smart Tourism System
 
 An AI-powered travel **chatbot** that processes user queries to provide information about **Vietnamese tourist** destinations, local cuisines, and real-time weather updates.
 
 ---
 
-## 👥 Team Members
+## Team Members
 
 | No. | Name            | Role         |
 |-----|------------------|--------------|
@@ -20,12 +20,11 @@ An AI-powered travel **chatbot** that processes user queries to provide informat
 
 ---
 
-# 🚀 How-to Guide
+# How-to Guide
 
 ## 1. Create a Gemini API Key
 
-If you don’t have a **Google AI Studio** account yet, create one at:  
-👉 https://aistudio.google.com  
+If you don’t have a **Google AI Studio** account yet, create one at: https://aistudio.google.com  
 
 Then follow these steps:
 
@@ -34,7 +33,7 @@ Then follow these steps:
 3. Select an existing project (or create a new one)  
 4. Copy the generated API key  
 
-> ⚠️ **Note:** Keep this key private — never share or upload your `.env` file.
+> **Note:** Keep this key private — never share or upload your `.env` file.
 
 ---
 
@@ -46,8 +45,7 @@ Follow these steps:
 
 1. Go to **[OpenWeather API](https://openweathermap.org/api)**  
 2. Click **“Sign up”** (if you don’t already have an account)  
-3. After logging in, navigate to:  
-   👉 [My API Keys](https://home.openweathermap.org/api_keys)
+3. After logging in, navigate to: [My API Keys](https://home.openweathermap.org/api_keys)
 4. Click **“Create Key”** and give it a name (e.g., `smart-tourism-weather`)  
 5. Copy the generated key (it looks like a long string of letters/numbers)
 
@@ -62,7 +60,7 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 OPENWEATHER_API_KEY=your_openweather_api_key_here
 ```
 
-> ⚠️ **Do not share or commit this file.**  
+> **Do not share or commit this file.**  
 > Always keep your API keys private and secure.
 
 ---
@@ -84,12 +82,11 @@ Run the development server:
 uvicorn app.api.main:app --reload
 ```
 
-Open your browser and visit Swagger UI for API documentation:  
-👉 http://localhost:8000/docs
+Open your browser and visit Swagger UI for API documentation: http://localhost:8000/docs
 
 ---
 
-# 🌿 Git Feature Branch Workflow
+# Git Feature Branch Workflow
 
 We use **Feature Branch Workflow** for clean, collaborative development.
 
@@ -106,20 +103,20 @@ We use **Feature Branch Workflow** for clean, collaborative development.
 
 ## Workflow Steps
 
-### 1️⃣ Start a New Feature
+### 1Start a New Feature
 ```bash
 git checkout main
 git pull origin main
 git checkout -b feature/your-feature-name
 ```
 
-### 2️⃣ Work on the Feature
+### Work on the Feature
 ```bash
 git add .
 git commit -m "feat: short and clear message"
 ```
 
-### 3️⃣ Push and Create Pull Request
+### Push and Create Pull Request
 ```bash
 git push -u origin feature/your-feature-name
 ```
@@ -128,12 +125,12 @@ Then open a Pull Request on GitHub and request code review from your teammates.
 
 ---
 
-## ✅ Example `.env` File (Final)
+## Example `.env` File (Final)
 ```bash
 GOOGLE_API_KEY=AIzaSyBxxxxxx...
 OPENWEATHER_API_KEY=7026d46ce34xxxxxx...
 ```
 
-> 📌 This enables both:
+> This enables both:
 > - **Gemini API** → AI chatbot responses  
 > - **OpenWeather API** → Real-time weather updates for destinations

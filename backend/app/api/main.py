@@ -4,7 +4,7 @@ from app.service.router_map import router as map_router
 from app.service.router_weather import router as weather_router
 
 app = FastAPI(
-    title="Tourist Guide Backend",
+    title="Smart Tourism System",
     description="Backend cho ứng dụng hướng dẫn du lịch tích hợp Google Maps và Thời tiết."
 )
 
