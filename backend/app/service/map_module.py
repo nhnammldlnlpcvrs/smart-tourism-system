@@ -1,72 +1,138 @@
 import httpx
-import os
+import asyncio
 
-# 🔑 Lấy key Google Maps từ biến môi trường
-GOOGLE_MAPS_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
+# 🗺️ Không cần API key — Dùng OpenStreetMap (Nominatim)
+# ⚠️ Phải có User-Agent riêng để tránh bị từ chối request
 
-def create_map_link(place_id: str, place_name: str) -> str:
+# 📍 Hàm lấy tọa độ từ tên địa điểm (Geocoding)
+async def get_location(query: str):
     """
-    Tạo liên kết Google Maps từ place_id.
-    Google khuyến nghị dùng place_id vì chính xác và luôn đúng vị trí.
-    
-    encoded_name -> giúp hiển thị tiêu đề địa điểm khi mở Maps
-    query_place_id -> xác định chính xác địa điểm
+    Lấy tọa độ (lat, lng) từ tên địa điểm bằng Nominatim (OpenStreetMap).
+    - query: chuỗi tên địa điểm (VD: 'Ninh Thuận', 'Hà Nội', 'Đà Nẵng')
+    - Không cần API key, giới hạn nhẹ (1 request/s).
     """
-    encoded_name = place_name.replace(" ", "+")  # mã hóa ký tự khoảng trắng thành '+'
-    return f"https://www.google.com/maps/search/?api=1&query={encoded_name}&query_place_id={place_id}"
+    try:
+        url = f"https://nominatim.openstreetmap.org/search"
+        params = {"q": query, "format": "json", "limit": 1}
+        headers = {"User-Agent": "TourismAssistant/1.0 (contact@example.com)"}
 
-# 🗺️ API lấy danh sách địa điểm gần đó
-async def get_nearby_places(lat: float, lng: float, radius: int):
+        async with httpx.AsyncClient() as client:
+            res = await client.get(url, params=params, headers=headers)
+            data = res.json()
+
+            if not data:
+                return None
+
+            return {
+                "lat": float(data[0]["lat"]),
+                "lng": float(data[0]["lon"]),
+                "address": data[0].get("display_name", query)
+            }
+
+    except Exception as e:
+        print("🌍 Lỗi lấy tọa độ (Nominatim):", e)
+        return None
+
+
+# 🗺️ Hàm tạo liên kết mở Google Maps từ lat/lng
+def create_map_link(lat: float, lng: float) -> str:
     """
-    Gọi Google Places API Nearby Search.
-    - lat,lng: tọa độ trung tâm tìm kiếm
+    Tạo link Google Maps từ tọa độ.
+    Dù dữ liệu lấy từ OpenStreetMap, vẫn mở trên Google Maps cho dễ xem.
+    """
+    return f"https://www.google.com/maps?q={lat},{lng}"
+
+
+# 📌 Hàm tìm địa điểm gần đó (chuyển từ Google sang Overpass API)
+async def get_nearby_places(lat: float, lng: float, radius: int = 1000, type: str = "tourism"):
+    """
+    Tìm các điểm du lịch gần tọa độ sử dụng Overpass API (nguồn dữ liệu OpenStreetMap).
+    - lat, lng: tọa độ trung tâm
     - radius: bán kính tìm kiếm (m)
-    - language: 'vi' -> trả về dữ liệu tiếng Việt
-    
-    Sau khi lấy dữ liệu, thêm trường google_maps_link dùng để hiển thị cho người dùng.
+    - type: loại địa điểm (vd: tourism, restaurant, hotel, ...)
     """
-    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-    params = {
-        "key": GOOGLE_MAPS_KEY,
-        "location": f"{lat},{lng}",
-        "radius": radius,
-        "language": "vi"
-    }
+    try:
+        overpass_url = "https://overpass-api.de/api/interpreter"
+        query = f"""
+        [out:json];
+        (
+          node["{type}"](around:{radius},{lat},{lng});
+          way["{type}"](around:{radius},{lat},{lng});
+          relation["{type}"](around:{radius},{lat},{lng});
+        );
+        out center;
+        """
 
-    async with httpx.AsyncClient() as client:
-        res = await client.get(url, params=params)
-        data = res.json()
+        async with httpx.AsyncClient() as client:
+            res = await client.post(overpass_url, data=query)
+            data = res.json()
 
-        # ✅ Kiểm tra và chèn link Google Maps vào mỗi địa điểm
-        if 'results' in data:
-            for place in data['results']:
-                place_id = place.get('place_id')
-                place_name = place.get('name', 'Địa điểm')  # fallback nếu không có name
-                if place_id:
-                    place['google_maps_link'] = create_map_link(place_id, place_name)
+            places = []
+            for el in data.get("elements", []):
+                name = el.get("tags", {}).get("name")
+                if not name:
+                    continue
+                center = el.get("center", el)
+                lat_p, lon_p = center["lat"], center["lon"]
+                places.append({
+                    "name": name,
+                    "latitude": lat_p,
+                    "longitude": lon_p,
+                    "address": el.get("tags", {}).get("addr:full", "Không rõ địa chỉ"),
+                    "google_maps_link": create_map_link(lat_p, lon_p)
+                })
 
-        return data
+            return {"results": places}
+
+    except Exception as e:
+        print("🚩 Lỗi lấy địa điểm gần đó (Overpass):", e)
+        return {"results": []}
 
 
-# 🚗 API tính khoảng cách và thời gian di chuyển
+# 🚗 Hàm tính khoảng cách (sử dụng Haversine formula)
+from math import radians, sin, cos, sqrt, atan2
+
 async def get_distance(origin: str, destination: str):
     """
-    Gọi Google Directions API.
-    - origin: điểm bắt đầu (VD: 'Hanoi')
-    - destination: điểm đến (VD: 'Da Nang')
-    
-    Trả về JSON chứa:
-        distance -> quãng đường
-        duration -> thời gian di chuyển
+    Tính khoảng cách giữa 2 địa điểm bằng công thức Haversine.
+    Không cần API, chỉ dựa trên lat/lng từ Nominatim.
     """
-    url = "https://maps.googleapis.com/maps/api/directions/json"
-    params = {
-        "key": GOOGLE_MAPS_KEY,
-        "origin": origin,
-        "destination": destination,
-        "language": "vi"
-    }
+    try:
+        loc1 = await get_location(origin)
+        loc2 = await get_location(destination)
 
-    async with httpx.AsyncClient() as client:
-        res = await client.get(url, params=params)
-        return res.json()
+        if not loc1 or not loc2:
+            return {"error": "Không tìm thấy tọa độ của địa điểm."}
+
+        R = 6371.0  # bán kính Trái Đất (km)
+
+        lat1, lon1 = radians(loc1["lat"]), radians(loc1["lng"])
+        lat2, lon2 = radians(loc2["lat"]), radians(loc2["lng"])
+
+        dlon = lon2 - lon1
+        dlat = lat2 - lat1
+        a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+        c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        distance_km = R * c
+
+        return {
+            "distance_text": f"{distance_km:.2f} km",
+            "origin": loc1["address"],
+            "destination": loc2["address"]
+        }
+
+    except Exception as e:
+        print("📏 Lỗi tính khoảng cách:", e)
+        return {"error": str(e)}
+
+
+# 🧪 Test nhanh module
+if __name__ == "__main__":
+    async def main():
+        print(await get_location("Đà Lạt"))
+        loc = await get_location("Nha Trang")
+        if loc:
+            print(await get_nearby_places(loc["lat"], loc["lng"], 1000))
+        print(await get_distance("Hà Nội", "Đà Nẵng"))
+
+    asyncio.run(main())

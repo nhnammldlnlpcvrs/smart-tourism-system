@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query
-from app.service.map_module import get_nearby_places, get_distance
+from app.service.map_module import get_nearby_places, get_distance, get_location
 
 # Tạo router cho API Google Maps
 router = APIRouter(prefix="/map", tags=["Google Map"])

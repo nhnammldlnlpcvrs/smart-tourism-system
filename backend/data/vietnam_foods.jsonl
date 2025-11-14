@@ -1,0 +1,379 @@
+{"id":1,"province":"Hà Giang","food":"Thịt trâu gác bếp","description":"Thịt trâu ướp gia vị rừng, hun khói trên bếp than tạo mùi thơm đặc trưng, là món ăn bảo quản lâu của người dân vùng cao."}
+{"id":2,"province":"Hà Giang","food":"Xôi ngũ sắc","description":"Xôi được nhuộm từ các loại lá rừng tạo năm màu rực rỡ, dùng trong lễ hội và dịp đặc biệt của đồng bào dân tộc."}
+{"id":3,"province":"Hà Giang","food":"Mèn mén","description":"Món ăn dân dã làm từ ngô xay hoặc bột ngô, thường ăn kèm thịt và rau rừng, giàu năng lượng cho người vùng cao."}
+{"id":4,"province":"Hà Giang","food":"Cháo ấu tẩu","description":"Cháo đặc chế với củ ấu tẩu (qua xử lý), có vị cay nồng, được người dân tộc dùng như bài thuốc và món ăn lạ miệng."}
+{"id":5,"province":"Hà Giang","food":"Gà đồi nướng","description":"Gà thả đồi được ướp gia vị đơn giản và nướng than, thịt chắc, thơm mùi khói và thảo mộc rừng."}
+{"id":6,"province":"Hà Giang","food":"Mật ong bạc hà","description":"Mật ong nguyên chất từ hoa bạc hà trên cao nguyên, vị thơm đặc trưng và màu sắc trong suốt."}
+{"id":7,"province":"Hà Giang","food":"Chè shan tuyết","description":"Chè cổ thụ (shan tuyết) với hương vị thơm, vị chát dịu, được thu hái ở vùng núi cao và là đặc sản trà vùng."}
+{"id":8,"province":"Cao Bằng","food":"Bánh cuốn Cao Bằng (bánh ướt trứng)","description":"Bánh ướt mỏng cuộn trứng và nhân đơn giản, ăn kèm nước chấm chua ngọt và rau sống, là món ăn sáng đặc trưng."}
+{"id":9,"province":"Cao Bằng","food":"Bánh khảo","description":"Bánh khảo khô, giòn, làm từ bột và mật, là món bánh cổ truyền dùng trong lễ tết ở Cao Bằng."}
+{"id":10,"province":"Cao Bằng","food":"Măng rừng kho cá","description":"Măng rừng được sơ chế và kho cùng cá suối, mang vị chua ngọt và đậm đà hương vị núi rừng."}
+{"id":11,"province":"Cao Bằng","food":"Cá suối nướng","description":"Cá suối tươi nướng than hoặc nướng giấy bạc, giữ vị ngọt tự nhiên và mùi thơm khói nhẹ."}
+{"id":12,"province":"Cao Bằng","food":"Lưỡi lợn muối (lạp sườn kiểu vùng)","description":"Lưỡi lợn được ướp và bảo quản theo kiểu muối hun, cay nồng và dùng như món nhắm hoặc ăn kèm cơm."}
+{"id":13,"province":"Cao Bằng","food":"Kẹo lạc truyền thống","description":"Kẹo lạc giòn ngậy, làm từ lạc rang kết hợp mật hoặc đường, là món quà quê phổ biến ở vùng."}
+{"id":14,"province":"Bắc Kạn","food":"Rượu ngô Bắc Kạn","description":"Rượu nấu từ ngô địa phương, nồng ấm, thường dùng trong lễ tục của các dân tộc miền núi."}
+{"id":15,"province":"Bắc Kạn","food":"Cá sông muối chua","description":"Cá sông được muối chua theo phương pháp truyền thống, có vị chua mặn đặc trưng dùng kèm các món luộc hoặc nướng."}
+{"id":16,"province":"Bắc Kạn","food":"Măng khô xào","description":"Măng rừng phơi khô, xào với thịt hoặc gia vị tạo món ăn đậm đà và hay dùng trong ngày thường."}
+{"id":17,"province":"Bắc Kạn","food":"Thịt lợn gác bếp","description":"Thịt lợn tẩm ướp, treo gác bếp hun khói, có mùi thơm đặc trưng và thời gian bảo quản lâu."}
+{"id":18,"province":"Bắc Kạn","food":"Xôi nếp rếp","description":"Xôi nếp dẻo, thường làm từ gạo nếp địa phương và có hương vị thơm, dùng trong dịp lễ của cộng đồng."}
+{"id":19,"province":"Bắc Kạn","food":"Bánh ngải (món dân tộc)","description":"Bánh làm từ bột gạo trộn lá ngải cứu, có vị đắng nhẹ và thường dùng trong nghi lễ hoặc làm thuốc."}
+{"id":20,"province":"Lạng Sơn","food":"Bánh chưng đen (bánh chưng gù)","description":"Bánh chưng hình dạng đặc biệt, vỏ có màu sẫm do loại gạo và lá đặc trưng, là đặc sản lễ tết của vùng."}
+{"id":21,"province":"Lạng Sơn","food":"Măng ớt, măng chua","description":"Măng rừng được chế biến cay hoặc chua, thường dùng làm thức ăn kèm hoặc món kho đậm vị."}
+{"id":22,"province":"Lạng Sơn","food":"Mì Quảng Lạng Sơn (phiên bản địa phương)","description":"Phiên bản miền Bắc của mì Quảng với sợi mì và nước dùng đặc trưng theo khẩu vị địa phương."}
+{"id":23,"province":"Lạng Sơn","food":"Phở cuốn Lạng Sơn","description":"Phở cuốn mỏng cuộn nhân thịt và rau, chấm nước mắm hoặc tương theo phong vị vùng biên."}
+{"id":24,"province":"Lạng Sơn","food":"Bánh đa nem (bánh đa cua bản địa)","description":"Bánh đa giòn dùng để cuốn nem hoặc ăn kèm các món hải sản, có hương vị đặc thù vùng."}
+{"id":25,"province":"Lạng Sơn","food":"Ô mai Lạng Sơn","description":"Ô mai trái cây sấy, có nhiều loại vị mặn, chua, cay, là đặc sản làm quà nổi tiếng."}
+{"id":26,"province":"Tuyên Quang","food":"Gà đồi Tuyên Quang","description":"Gà thả vườn thịt săn chắc, thường được nấu hoặc nướng đơn giản để giữ vị ngọt tự nhiên."}
+{"id":27,"province":"Tuyên Quang","food":"Bánh khảo, kẹo lạc","description":"Bánh khảo và kẹo lạc là các loại bánh mứt truyền thống, dùng trong dịp lễ tết và mang hương vị quê."}
+{"id":28,"province":"Tuyên Quang","food":"Cá khe nướng","description":"Cá suối nhỏ nướng than chấm muối ớt, giữ hương vị tươi và mùi khói đặc trưng vùng núi."}
+{"id":29,"province":"Tuyên Quang","food":"Mật ong rừng","description":"Mật ong thượng hạng lấy từ hoa rừng, vị ngọt dịu và mùi hoa đặc trưng."}
+{"id":30,"province":"Tuyên Quang","food":"Xôi ngô","description":"Xôi làm từ ngô nếp hoặc bột ngô dẻo, là món ăn dân dã phổ biến ở các bản làng."}
+{"id":31,"province":"Tuyên Quang","food":"Măng nứa chế biến","description":"Măng nứa rừng được chế biến thành nhiều món xào, kho, hoặc canh với hương vị thanh mát."}
+{"id":32,"province":"Thái Nguyên","food":"Chè Thái Nguyên (trà đặc sản)","description":"Trà xanh nổi tiếng, lá trà thơm và vị chát thanh khi pha, là đặc sản xuất khẩu và thưởng thức."}
+{"id":33,"province":"Thái Nguyên","food":"Bánh chưng, bánh dày","description":"Phiên bản địa phương của bánh chưng/bánh dày với gạo và nhân truyền thống dùng trong lễ tết."}
+{"id":34,"province":"Thái Nguyên","food":"Gà đồi nấu lá giang","description":"Gà thả vườn nấu với lá giang cho vị chua nhẹ, canh thanh và thơm mùi thảo mộc."}
+{"id":35,"province":"Thái Nguyên","food":"Cá suối kho","description":"Cá suối kho mặn hoặc kho tương, thịt cá săn và đậm đà, dùng với cơm nóng."}
+{"id":36,"province":"Thái Nguyên","food":"Mít sấy, mứt chè","description":"Mít sấy và các sản phẩm mứt từ chè hoặc trái cây, chế biến từ nguyên liệu địa phương làm đặc sản khô."}
+{"id":37,"province":"Thái Nguyên","food":"Chè lam, kẹo lạc","description":"Chè lam dẻo và kẹo lạc giòn ngậy là món quà truyền thống, thường xuất hiện trong dịp lễ."}
+{"id":38,"province":"Bắc Giang","food":"Bánh đa Kế","description":"Bánh đa mỏng giòn, thường ăn kèm các món nước hoặc cuốn cùng rau, đặc sản vùng Kế."}
+{"id":39,"province":"Bắc Giang","food":"Vải thiều Lục Ngạn (sản phẩm chế biến)","description":"Vải tươi và các sản phẩm từ vải (sấy, mứt) nổi tiếng bởi vị ngọt thanh và hương thơm đặc trưng."}
+{"id":40,"province":"Bắc Giang","food":"Bánh chưng Bảo Lộc (phiên bản địa phương)","description":"Phiên bản bánh chưng địa phương với gói và thành phần hơi khác, thường dùng trong ngày Tết."}
+{"id":41,"province":"Bắc Giang","food":"Nem chua Bắc Giang","description":"Nem chua thính vị chua cay, kết cấu dai, thường ăn kèm rau sống và chấm tương ớt."}
+{"id":42,"province":"Bắc Giang","food":"Gà đồi Đông Triều","description":"Gà thả đồi thịt chắc, chế biến nhiều món như nướng, luộc, hấp với vị ngọt tự nhiên."}
+{"id":43,"province":"Bắc Giang","food":"Măng, rau rừng chế biến","description":"Măng và các loại rau rừng được chế biến thành nhiều món xào, canh đặc trưng hương vị miền núi thấp."}
+{"id":44,"province":"Phú Thọ","food":"Xôi vò","description":"Xôi làm từ đỗ xanh tán, dẻo và thơm, thường dùng trong lễ hội và làm quà sáng."}
+{"id":45,"province":"Phú Thọ","food":"Bánh chưng Phú Thọ","description":"Bánh chưng địa phương có cách gói và tỉ lệ nhân-vỏ đặc trưng, dùng trong dịp Tết và giỗ tổ."}
+{"id":46,"province":"Phú Thọ","food":"Bún chả Bát Đa (phiên bản địa phương)","description":"Phiên bản bún chả mang hương vị vùng Phú Thọ, nước chấm và gia giảm gia vị theo khẩu vị địa phương."}
+{"id":47,"province":"Phú Thọ","food":"Gà đồi Hùng Lô","description":"Gà đồi thả rông, thịt săn chắc, hay được chế biến nướng hoặc hấp lá chanh đặc trưng."}
+{"id":48,"province":"Phú Thọ","food":"Chè hạt sen","description":"Chè làm từ hạt sen tươi, ngọt dịu và thơm, thường dùng như món tráng miệng thanh mát."}
+{"id":49,"province":"Phú Thọ","food":"Cá kho làng Vũ Đại (phiên bản địa phương)","description":"Cá kho theo công thức truyền thống, lửa nhỏ và gia vị thấm, cho thành phẩm màu sánh và đậm đà."}
+{"id":50,"province":"Yên Bái","food":"Xôi ngũ sắc","description":"Xôi nhiều màu sắc được nhuộm từ lá tự nhiên, dùng trong lễ hội của đồng bào miền núi."}
+{"id":51,"province":"Yên Bái","food":"Thịt lợn bản gác bếp","description":"Thịt lợn bản ướp và hun khói, bảo quản lâu và có hương vị mặn mà, cay nhẹ."}
+{"id":52,"province":"Yên Bái","food":"Thịt trâu nấu lá lồm","description":"Thịt trâu nấu cùng lá lồm tạo mùi thơm và vị đậm, món đặc trưng vùng cao."}
+{"id":53,"province":"Yên Bái","food":"Mật ong rừng","description":"Mật ong lấy từ rừng núi, có hương hoa rừng và vị ngọt thanh, được thu hoạch thủ công."}
+{"id":54,"province":"Yên Bái","food":"Gạo nếp Tú Lệ","description":"Gạo nếp thơm, dẻo đặc sản Tú Lệ, thường dùng làm xôi hoặc bánh truyền thống."}
+{"id":55,"province":"Yên Bái","food":"Chè Shan Tuyết","description":"Trà shan tuyết cổ thụ, hương thơm đặc trưng và vị chát dịu, được thu hái ở vùng cao."}
+{"id":56,"province":"Sơn La","food":"Cá suối nướng","description":"Cá suối được nướng than chấm muối chanh, thịt ngọt và thơm khói rừng."}
+{"id":57,"province":"Sơn La","food":"Thịt gác bếp","description":"Thịt rừng hoặc lợn được hun khói, mặn mà, là món nhậu và thức ăn dự trữ của người vùng cao."}
+{"id":58,"province":"Sơn La","food":"Mạch nha (món ngọt truyền thống)","description":"Mạch nha làm từ gạo hoặc lúa nếp lên men, tạo vị ngọt dẻo, thường dùng làm món ăn truyền thống."}
+{"id":59,"province":"Sơn La","food":"Xôi nếp nương","description":"Xôi nếp được nấu từ gạo nương vùng cao, dẻo và thơm mùi gạo nguyên chất."}
+{"id":60,"province":"Sơn La","food":"Măng khô chế biến","description":"Măng rừng phơi khô, chế biến xào hoặc kho cùng gia vị, giữ mùi vị đặc trưng vùng núi."}
+{"id":61,"province":"Sơn La","food":"Rượu táo mèo","description":"Rượu nấu từ táo mèo vùng cao, thơm mùi trái cây và vị chua ngọt đặc trưng."}
+{"id":62,"province":"Điện Biên","food":"Thịt trâu gác bếp Điện Biên","description":"Thịt trâu ướp gia vị và hun khói, có mùi thơm quyến rũ của gia vị núi rừng bản địa."}
+{"id":63,"province":"Điện Biên","food":"Xôi nếp nương","description":"Xôi làm từ gạo nương bản địa, dẻo và thơm, thường dùng trong lễ hội và bữa sáng."}
+{"id":64,"province":"Điện Biên","food":"Mèn mén Điện Biên","description":"Mèn mén (bột ngô) đặc trưng vùng Điện Biên, làm thành nhiều món ăn dân dã bổ dưỡng."}
+{"id":65,"province":"Điện Biên","food":"Cá suối nướng","description":"Cá suối nhỏ nướng trên than hoa, giữ vị ngọt tự nhiên và hương khói đặc trưng."}
+{"id":66,"province":"Điện Biên","food":"Lam gà (gà nướng ống tre)","description":"Gà làm sạch bỏ vào ống tre nướng, thấm mùi tre và gia vị đơn giản, thịt mềm và thơm."}
+{"id":67,"province":"Điện Biên","food":"Chè Shan","description":"Trà Shan vùng cao có hương vị đặc trưng, lá to và ủ/pha theo cách truyền thống."}
+{"id":68,"province":"Lai Châu","food":"Thịt trâu gác bếp","description":"Thịt trâu ướp gia vị rừng, treo gác bếp hun khói, ăn dai và thơm mùi đặc trưng miền núi."}
+{"id":69,"province":"Lai Châu","food":"Xôi tím, xôi ngũ sắc","description":"Xôi nhuộm màu tự nhiên từ lá rừng, xôi tím hoặc ngũ sắc thường dùng trong lễ hội dân tộc."}
+{"id":70,"province":"Lai Châu","food":"Măng rừng xào","description":"Măng tươi rừng xào cùng gia vị, giữ vị giòn và mùi thơm của măng rừng."}
+{"id":71,"province":"Lai Châu","food":"Cá suối khô","description":"Cá suối phơi khô, bảo quản lâu và dùng kho hoặc chiên, có vị đậm và mặn vừa."}
+{"id":72,"province":"Lai Châu","food":"Rượu táo mèo / rượu ngô","description":"Rượu táo mèo thơm mùi trái cây, rượu ngô nồng ấm, đều là thức uống truyền thống của vùng."}
+{"id":73,"province":"Lai Châu","food":"Thịt lợn bản luộc chấm chẩm chéo","description":"Lợn bản luộc chín, ăn với chẩm chéo (mắm, ớt, thảo mộc) tạo vị cay nồng đặc trưng."}
+{"id":74,"province":"Lào Cai","food":"Bánh dày Sapa","description":"Bánh dày làm từ gạo nếp ủ dẻo, phiên bản Sapa có hương vị quê và dùng trong lễ tết."}
+{"id":75,"province":"Lào Cai","food":"Cá hồi Sapa chế biến (nhiều nơi)","description":"Cá hồi nuôi/nuôi trồng ở vùng cao được chế biến sashimi, nướng hoặc om, thịt mềm và thơm."}
+{"id":76,"province":"Lào Cai","food":"Thắng cố (phiên bản vùng)","description":"Món lòng/nội tạng và thịt gia súc hầm với gia vị đặc trưng của người H'Mông, mùi thơm nồng và cay."}
+{"id":77,"province":"Lào Cai","food":"Thịt trâu gác bếp","description":"Thịt trâu ướp và hun khói, là món ăn truyền thống dùng trong các dịp lễ của dân tộc vùng cao."}
+{"id":78,"province":"Lào Cai","food":"Rượu táo mèo, mật ong rừng","description":"Rượu táo mèo thơm và mật ong rừng ngọt thanh, đều là sản vật từ vườn rừng cao nguyên."}
+{"id":79,"province":"Lào Cai","food":"Xôi ngũ sắc","description":"Xôi nhiều màu, thường dùng trong nghi lễ và lễ hội dân tộc, màu nhuộm tự nhiên từ lá cây."}
+{"id":80,"province":"Hà Nội","food":"Phở Hà Nội","description":"Phở truyền thống với nước dùng trong, thơm xương và gia vị, bánh phở mềm, thường ăn sáng nổi tiếng cả nước."}
+{"id":81,"province":"Hà Nội","food":"Bún chả","description":"Thịt nướng than ăn cùng bún tươi, rau sống và nước chấm pha chua ngọt đặc trưng Hà Nội."}
+{"id":82,"province":"Hà Nội","food":"Chả cá Lã Vọng","description":"Cá làm sạch ướp nghệ, nướng trên than, ăn kèm thì là và bánh đa, món đặc sản có lịch sử lâu đời."}
+{"id":83,"province":"Hà Nội","food":"Bún thang","description":"Món bún thanh nhã với nước dùng thơm, gồm nhiều lớp nhân tinh tế như trứng, giò, gà xé và mắm tôm nhẹ."}
+{"id":84,"province":"Hà Nội","food":"Bánh tôm hồ Tây","description":"Bánh tôm chiên giòn với tôm tươi, bột mỏng, thường ăn kèm rau sống và nước chấm chua ngọt."}
+{"id":85,"province":"Hà Nội","food":"Kem Tràng Tiền","description":"Kem que truyền thống Hà Nội, vị béo và mát lạnh, là món ăn vặt biểu tượng thành phố."}
+{"id":86,"province":"Hà Nội","food":"Bánh cốm","description":"Bánh dẻo nhân đậu xanh lẫn cốm non thơm, là đặc sản làm quà của Hà Nội vào mùa thu."}
+{"id":87,"province":"Hưng Yên","food":"Vải thiều Hưng Yên","description":"Vải tươi ngọt, thơm, nổi tiếng ở Lục Ngạn (Hưng Yên) và nhiều sản phẩm chế biến từ vải."}
+{"id":88,"province":"Hưng Yên","food":"Bánh cuốn làng Kênh (phiên bản địa phương)","description":"Bánh cuốn mỏng, thơm và mềm, ăn kèm chả và nước mắm pha theo khẩu vị địa phương."}
+{"id":89,"province":"Hưng Yên","food":"Nem chua Hưng Yên","description":"Nem chua lên men vừa phải, vị chua cay thanh, kết cấu dai vừa ăn, thường làm quà quê."}
+{"id":90,"province":"Hưng Yên","food":"Mắm tép chưng","description":"Mắm tép được chưng thơm với đường ớt và gia vị, dùng kèm cơm hoặc rau luộc."}
+{"id":91,"province":"Hưng Yên","food":"Khoai lang, các sản phẩm chế biến từ vải","description":"Khoai lang và các sản phẩm từ vải (sấy, mứt) là hàng đặc sản địa phương, chế biến đa dạng."}
+{"id":92,"province":"Hưng Yên","food":"Bánh đúc nóng truyền thống","description":"Bánh đúc nóng mềm mịn, ăn cùng nước mắm chua ngọt hoặc hành phi, là món ăn dân dã."}
+{"id":93,"province":"Hải Dương","food":"Bánh gai Hải Dương","description":"Bánh gai nhân đậu xanh hoặc dừa, vỏ có mùi lá gai đặc trưng, là món quà truyền thống."}
+{"id":94,"province":"Hải Dương","food":"Nem chua Thanh Hà","description":"Nem chua Thanh Hà nổi tiếng dai, chua, cay vừa phải, thường làm món ăn vặt và quà."}
+{"id":95,"province":"Hải Dương","food":"Bún cá Hải Dương","description":"Bún cá nước dùng ngọt vị cá, kèm rau thơm và cá chiên hoặc kho, là món đặc sản vùng."}
+{"id":96,"province":"Hải Dương","food":"Bánh đậu xanh (Hải Dương/ Hưng Yên khu vực)","description":"Bánh đậu xanh xay mịn, bùi và ngọt dịu, hay được làm quà tặng."}
+{"id":97,"province":"Hải Dương","food":"Hàu Nghi Sơn (đoạn ven biển tỉnh giáp)","description":"Hàu tươi/khô đặc sản vùng ven biển, thịt ngọt, có thể chế biến đa dạng."}
+{"id":98,"province":"Hải Dương","food":"Bánh cuốn, bánh đa","description":"Các loại bánh cuốn và bánh đa địa phương phục vụ bữa sáng và món ăn gia đình, mang đặc trưng vùng đồng bằng."}
+{"id":99,"province":"Hải Phòng","food":"Bún cá Hải Phòng","description":"Bún cá với nước dùng đậm đà, cá tươi và rau thơm, là biểu tượng ẩm thực biển cả của Hải Phòng."}
+{"id":100,"province":"Hải Phòng","food":"Nem cua bể","description":"Nem cua bể giòn rụm nhân cua tươi, là món ăn nổi tiếng và hấp dẫn khách du lịch."}
+{"id":101,"province":"Hải Phòng","food":"Bánh đa cua","description":"Bánh đa ăn cùng nước dùng cua đậm vị, có hành và rau thơm, món hải sản đặc trưng địa phương."}
+{"id":102,"province":"Hải Phòng","food":"Sá sùng kho, sá sùng chưng","description":"Sá sùng (loài hải sản nhỏ) được chế biến khô, kho hay chưng, có mùi vị đậm đà và được ưa chuộng."}
+{"id":103,"province":"Hải Phòng","food":"Hải sản tươi sống (ghẹ, cua)","description":"Hải sản tươi từ vịnh biển, chế biến luộc, hấp, nướng giữ vị ngọt và tươi ngon tự nhiên."}
+{"id":104,"province":"Hải Phòng","food":"Bánh mì que (phiên bản địa phương)","description":"Bánh mì que nhỏ, giòn rụm, thường ăn kèm pate hoặc ruốc, là món ăn vặt đặc trưng."}
+{"id":105,"province":"Hòa Bình","food":"Cá suối nướng","description":"Cá suối nướng than với gia vị đơn giản, giữ nguyên vị ngọt và thơm mùi khói rừng."}
+{"id":106,"province":"Hòa Bình","food":"Thịt lợn gác bếp","description":"Thịt lợn bản ướp gia vị và gác bếp hun khói, mặn mà, thường dùng trong các dịp lễ."}
+{"id":107,"province":"Hòa Bình","food":"Xôi nếp nương","description":"Xôi được nấu từ gạo nếp nương vùng cao, thơm và dẻo, là thực phẩm chính trong nhiều gia đình."}
+{"id":108,"province":"Hòa Bình","food":"Rau rừng, măng khô chế biến","description":"Rau rừng và măng khô được chế biến thành nhiều món xào, canh, có vị đặc trưng mùi rừng."}
+{"id":109,"province":"Hòa Bình","food":"Chè lam","description":"Chè lam dẻo, làm từ gạo nếp và mật mía, có vị ngọt bùi, thường xuất hiện trong lễ Tết."}
+{"id":110,"province":"Hòa Bình","food":"Rượu cần (một số dân tộc)","description":"Rượu cần truyền thống được lên men trong ống tre, dùng trong nghi lễ cộng đồng và tiệc tùng."}
+{"id":111,"province":"Hà Nam","food":"Bánh cuốn Phủ Lý","description":"Bánh cuốn mỏng, dai, thường ăn kèm chả hoặc nước mắm pha đặc trưng của vùng Phủ Lý."}
+{"id":112,"province":"Hà Nam","food":"Cốm làng Vòng (gần Hà Nội nhưng vùng đồng bằng)","description":"Cốm non dẻo, thơm mùi lúa non, thường dùng làm quà hoặc nguyên liệu làm bánh."}
+{"id":113,"province":"Hà Nam","food":"Dưa chua, rau muối địa phương","description":"Dưa muối và rau muối theo công thức truyền thống, chua nhẹ, dùng ăn kèm nhiều món."}
+{"id":114,"province":"Hà Nam","food":"Bún thang / bún chả phiên bản địa","description":"Phiên bản địa phương của các món bún trộn với nước dùng và gia vị phù hợp khẩu vị vùng."}
+{"id":115,"province":"Hà Nam","food":"Cá kho làng Vũ (phiên bản địa phương)","description":"Cá kho truyền thống bằng niêu đất, lửa liu riu khiến gia vị thấm đều, màu sánh và hương vị đậm đà."}
+{"id":116,"province":"Hà Nam","food":"Bánh gai (một số làng)","description":"Bánh gai nhân đậu xanh với vỏ bao từ lá gai, có mùi thơm đặc trưng và là món quà truyền thống."}
+{"id":117,"province":"Nam Định","food":"Phở bánh đa nem (đặc sản biến thể)","description":"Phiên bản phở kết hợp bánh đa, nước dùng đậm vị và topping phong phú theo ẩm thực địa phương."}
+{"id":118,"province":"Nam Định","food":"Nem chua Nam Định","description":"Nem chua với vị chua cay vừa phải, được làm theo công thức truyền thống và ưa chuộng làm quà."}
+{"id":119,"province":"Nam Định","food":"Bún cá, bún mọc Nam Định","description":"Bún cá hoặc bún mọc với nước dùng thanh ngọt, ăn kèm rau sống và gia vị địa phương."}
+{"id":120,"province":"Nam Định","food":"Xôi xéo","description":"Xôi xéo bùi thơm với đậu xanh tán và hành phi, là món sáng phổ biến ở miền Bắc."}
+{"id":121,"province":"Nam Định","food":"Bánh nhãn, chè","description":"Bánh nhãn và các loại chè ngọt là món tráng miệng truyền thống, thường thấy trong lễ hội."}
+{"id":122,"province":"Nam Định","food":"Bánh gai Phủ Lý (vùng gần)","description":"Bánh gai phiên bản địa phương, vỏ dai mùi lá gai, nhân thường là đậu xanh hoặc dừa."}
+{"id":123,"province":"Thái Bình","food":"Bánh đa Thái Bình","description":"Bánh đa ăn kèm nước dùng hoặc cuốn, có vị giòn và mùi thơm đặc trưng vùng ven biển."}
+{"id":124,"province":"Thái Bình","food":"Hải sản ven biển (sò, nghêu)","description":"Hải sản tươi bắt ven biển, chế biến luộc, hấp hoặc nướng giữ vị ngọt tự nhiên."}
+{"id":125,"province":"Thái Bình","food":"Bánh gối, bánh rán nóng","description":"Bánh gối nhân thịt và rau, bánh rán nóng giòn, là món ăn vặt phổ biến trong vùng."}
+{"id":126,"province":"Thái Bình","food":"Rượu làng Vũ","description":"Rượu làng truyền thống nấu từ gạo địa phương, hương thơm và độ nồng vừa phải."}
+{"id":127,"province":"Thái Bình","food":"Cơm niêu (phiên bản địa phương)","description":"Cơm niêu nấu trên lửa, phần cơm cháy giòn là điểm nhấn, thường ăn cùng mắm hoặc rau."}
+{"id":128,"province":"Thái Bình","food":"Bánh gai, kẹo lạc","description":"Bánh gai và kẹo lạc là đặc sản vùng, ngọt bùi và thường dùng làm quà tặng."}
+{"id":129,"province":"Ninh Bình","food":"Cơm cháy Ninh Bình","description":"Cơm cháy giòn rụm ăn kèm nước mắm hoặc topping thịt/ruốc, là món đặc sản nổi tiếng."}
+{"id":130,"province":"Ninh Bình","food":"Dê núi Ninh Bình (dê tái, dê nướng)","description":"Thịt dê núi săn chắc, chế biến tái, nướng hoặc xào với hương vị đậm đà miền núi."}
+{"id":131,"province":"Ninh Bình","food":"Chả mực Ninh Bình (phiên bản địa phương)","description":"Chả mực phiên bản đất liền, kết cấu dai và vị mặn ngọt vừa phải, thường được chiên vàng."}
+{"id":132,"province":"Ninh Bình","food":"Canh cá rô đồng","description":"Canh làm từ cá rô đồng tươi, vị ngọt thanh và thường có rau thơm đồng quê."}
+{"id":133,"province":"Ninh Bình","food":"Mắm tép chưng (vùng đồng bằng)","description":"Mắm tép chưng thơm nồng, ăn kèm với rau luộc hoặc cơm trắng, là món gia vị đậm đà."}
+{"id":134,"province":"Ninh Bình","food":"Rượu Kim Sơn (đặc sản địa phương)","description":"Rượu nấu truyền thống ở Kim Sơn, có hương vị gạo đặc trưng và được dùng trong lễ hội làng."}
+{"id":135,"province":"Vĩnh Phúc","food":"Bánh khảo Vĩnh Phúc","description":"Bánh khảo giòn, làm từ bột và mật, thường xuất hiện trong dịp lễ truyền thống."}
+{"id":136,"province":"Vĩnh Phúc","food":"Cá thính Lập Thạch","description":"Cá được thính (ủ gạo) theo phương pháp truyền thống, có vị đặc trưng và thường dùng với rau sống."}
+{"id":137,"province":"Vĩnh Phúc","food":"Chè lam, kẹo lạc","description":"Chè lam dẻo và kẹo lạc giòn là những món quà quê thơm ngon, xuất hiện trong lễ tết."}
+{"id":138,"province":"Vĩnh Phúc","food":"Xôi ngũ sắc (bản địa)","description":"Xôi nhuộm màu tự nhiên, dùng trong lễ hội và nghi lễ của cộng đồng địa phương."}
+{"id":139,"province":"Vĩnh Phúc","food":"Gà đồi nướng","description":"Gà đồi thịt săn, nướng trên than với gia vị đơn giản, giữ độ ngọt tự nhiên."}
+{"id":140,"province":"Vĩnh Phúc","food":"Rau đặc sản vùng đồng núi","description":"Các loại rau rừng và rau đồng núi tươi ngon, dùng trong nhiều món ăn địa phương."}
+{"id":141,"province":"Bắc Ninh","food":"Bánh đa Kế (phiên bản)","description":"Bánh đa giòn và thơm, ăn kèm các món nước hoặc làm nền cho nhiều món ăn."}
+{"id":142,"province":"Bắc Ninh","food":"Bún đũa, bún cá địa phương","description":"Bún đũa và bún cá theo phong vị địa phương, nước dùng thanh và topping tươi ngon."}
+{"id":143,"province":"Bắc Ninh","food":"Món chay và hương ẩm thực chùa chiền","description":"Ẩm thực chay vùng Bắc Ninh phong phú, dùng trong các lễ chùa và ngày rằm."}
+{"id":144,"province":"Bắc Ninh","food":"Kẹo lạc, bánh khảo","description":"Kẹo lạc và bánh khảo là đồ ngọt truyền thống, thường dùng làm quà và trong lễ gia đình."}
+{"id":145,"province":"Bắc Ninh","food":"Nem, chả nước Phật Tích (phiên bản)","description":"Nem và chả địa phương mang hương vị truyền thống, thường dùng trong các dịp cúng tế."}
+{"id":146,"province":"Bắc Ninh","food":"Món bánh tẻ, bánh rán","description":"Bánh tẻ và bánh rán là thức ăn gia đình, vỏ giòn hoặc mềm tùy cách chế biến."}
+{"id":147,"province":"Quảng Ninh","food":"Sá sùng, sá sùng khô","description":"Sá sùng là hải sản đặc sản, được chế biến khô hoặc chưng, vị đậm và thơm đặc trưng biển."}
+{"id":148,"province":"Quảng Ninh","food":"Hàu Hạ Long","description":"Hàu tươi của vịnh Hạ Long, thịt ngọt, có thể ăn sống, nướng hoặc nấu mỡ hành."}
+{"id":149,"province":"Quảng Ninh","food":"Chả mực Hạ Long","description":"Chả mực giã tay, dai và thơm mùi mực tươi, là đặc sản nổi tiếng vùng Hạ Long."}
+{"id":150,"province":"Quảng Ninh","food":"Mực một nắng","description":"Mực phơi một nắng giữ độ ngọt và độ dẻo, thường nướng hoặc chiên ăn kèm gia vị."}
+{"id":151,"province":"Quảng Ninh","food":"Bún bề bề (tôm tít)","description":"Bún nước hoặc xào với bề bề (tôm tít), nước dùng ngọt từ hải sản và topping tươi."}
+{"id":152,"province":"Quảng Ninh","food":"Bánh gật gù (đặc sản làng)","description":"Bánh dân gian có hương vị truyền thống, ăn nhẹ hoặc dùng trong dịp lễ làng."}
+{"id":153,"province":"Thanh Hóa","food":"Nem chua Thanh Hóa","description":"Nem chua với hương vị chua cay đặc trưng, dai và thơm, là đặc sản nổi tiếng của tỉnh."}
+{"id":154,"province":"Thanh Hóa","food":"Bánh gai Tứ Trụ","description":"Bánh gai nhân đậm đà, vỏ làm từ lá gai, thường xuất hiện trong dịp lễ truyền thống."}
+{"id":155,"province":"Thanh Hóa","food":"Cá rô kho niêu (đặc sản đồng bằng)","description":"Cá rô kho niêu đất lửa liu riu cho vị ngọt và mặn thấm đều vào thịt cá."}
+{"id":156,"province":"Thanh Hóa","food":"Chả tôm, chả cá truyền thống","description":"Chả tôm và chả cá làm từ nguyên liệu tươi, giã tay hoặc xay, chiên vàng thơm."}
+{"id":157,"province":"Thanh Hóa","food":"Mực khô, hải sản vùng biển Sầm Sơn","description":"Hải sản phơi khô hoặc tươi vùng biển Sầm Sơn, thích hợp chế biến nhiều món."}
+{"id":158,"province":"Thanh Hóa","food":"Bánh cuốn Thanh Hóa","description":"Bánh cuốn phiên bản địa phương ăn kèm chả, nước mắm pha và rau sống đặc trưng."}
+{"id":159,"province":"Nghệ An","food":"Bánh đa Cầu Đước","description":"Bánh đa giòn ăn kèm nước dùng hoặc gói nem, đặc trưng ẩm thực địa phương."}
+{"id":160,"province":"Nghệ An","food":"Cháo lươn Nghệ An","description":"Cháo nấu cùng lươn xay hoặc thái nhỏ, thơm và bổ dưỡng, thường ăn ấm."}
+{"id":161,"province":"Nghệ An","food":"Vỏ bánh cuốn, nem chua rán","description":"Vỏ bánh cuốn dẻo và nem chua rán vàng giòn, là các món ăn vặt phổ biến."}
+{"id":162,"province":"Nghệ An","food":"Cá trắm sông Lam chế biến","description":"Cá trắm sông Lam được chế biến thành nhiều món như kho, rán hoặc nướng, thịt thơm và chắc."}
+{"id":163,"province":"Nghệ An","food":"Mắm tép Cửa Lò","description":"Mắm tép Cửa Lò có hương vị đặc trưng biển, dùng làm gia vị chấm cho nhiều món."}
+{"id":164,"province":"Nghệ An","food":"Rượu cần vùng miền núi","description":"Rượu cần của các dân tộc vùng miền núi với hương gạo và thảo mộc, dùng trong nghi lễ."}
+{"id":165,"province":"Hà Tĩnh","food":"Cháo canh (phiên bản miền Trung)","description":"Cháo canh sợi to, nước dùng đậm vị xương hoặc hải sản, ăn kèm rau thơm và ớt."}
+{"id":166,"province":"Hà Tĩnh","food":"Nem chua Hà Tĩnh","description":"Nem chua thơm và vị chua hài hòa, là sản phẩm truyền thống của vùng."}
+{"id":167,"province":"Hà Tĩnh","food":"Mực nháy, hải sản ven biển","description":"Mực nháy tươi ngon, chế biến nướng, chiên hoặc nấu canh, giữ vị ngọt tự nhiên."}
+{"id":168,"province":"Hà Tĩnh","food":"Cơm hến, các món gà đồi","description":"Cơm hến thơm vị biển, gà đồi thịt săn đặc trưng vùng núi, chế biến đa dạng."}
+{"id":169,"province":"Hà Tĩnh","food":"Bánh gai, kẹo lạc","description":"Bánh gai và kẹo lạc làm từ nguyên liệu địa phương, thường dùng trong lễ tết."}
+{"id":170,"province":"Hà Tĩnh","food":"Bún quê, bún chả","description":"Các loại bún dân dã với nước dùng thanh, ăn kèm rau sống và gia vị truyền thống."}
+{"id":171,"province":"Quảng Bình","food":"Cháo canh Quảng Bình","description":"Cháo canh sợi dày, nước dùng ngọt và sánh, ăn kèm rau thơm và ớt tươi."}
+{"id":172,"province":"Quảng Bình","food":"Bánh xèo, bánh khoái miền Trung","description":"Bánh xèo, bánh khoái giòn rụm, nhân hải sản hoặc thịt, chấm mắm nêm theo miền Trung."}
+{"id":173,"province":"Quảng Bình","food":"Chả cá Lăng (sông Gianh vùng)","description":"Chả làm từ cá Lăng địa phương, dai và thơm mùi cá sông, thường chiên hoặc hấp."}
+{"id":174,"province":"Quảng Bình","food":"Mắm ruốc Cảnh Dương","description":"Mắm ruốc địa phương với mùi nồng đặc trưng, dùng làm gia vị cho nhiều món miền Trung."}
+{"id":175,"province":"Quảng Bình","food":"Hến sông, hải sản ven biển","description":"Hến và hải sản tươi chế biến thành nhiều món dân dã, vị ngọt và thơm biển."}
+{"id":176,"province":"Quảng Bình","food":"Bánh bèo, bánh nậm phong cách Quảng","description":"Bánh bèo, bánh nậm mềm mịn, nhân tôm, mộc nhĩ và nước chấm đậm đà."}
+{"id":177,"province":"Quảng Trị","food":"Bánh đa Quảng Trị","description":"Bánh đa dai giòn, ăn cùng nước dùng đặc trưng hoặc cuốn với rau sống."}
+{"id":178,"province":"Quảng Trị","food":"Mắm ruốc Cùa (nổi tiếng)","description":"Mắm ruốc Cùa có hương vị đậm đà, là gia vị không thể thiếu trong bữa ăn địa phương."}
+{"id":179,"province":"Quảng Trị","food":"Chả lá lốt, nem","description":"Chả lá lốt và nem được làm từ thịt tươi, ướp gia vị và nướng hoặc chiên, thơm phức."}
+{"id":180,"province":"Quảng Trị","food":"Cá lóc kho tộ (vùng đồng)","description":"Cá lóc kho trong niêu đất với nước mắm và gia vị, thịt cá mềm và thơm."}
+{"id":181,"province":"Quảng Trị","food":"Bún hến/ bún mắm miền Trung","description":"Bún hến hoặc bún mắm với nước dùng đậm đà hương biển, ăn cùng rau thơm."}
+{"id":182,"province":"Quảng Trị","food":"Hải sản ven biển địa phương","description":"Hải sản tươi chế biến đa dạng: luộc, nướng, hấp, giữ vị ngọt tự nhiên."}
+{"id":183,"province":"Thừa Thiên Huế","food":"Bún bò Huế","description":"Bún bò nước dùng cay nồng, thơm mắm ruốc và sả, kèm giò heo, thịt bò thái lát."}
+{"id":184,"province":"Thừa Thiên Huế","food":"Cơm hến Huế","description":"Cơm hến gồm cơm trắng ăn cùng hến xào mỡ hành, tóp mỡ và rau thơm, vị mặn ngọt cân bằng."}
+{"id":185,"province":"Thừa Thiên Huế","food":"Bánh bèo, bánh lọc Huế","description":"Bánh bèo mềm, bánh lọc trong dai, thường ăn kèm mỡ hành và tôm khô."}
+{"id":186,"province":"Thừa Thiên Huế","food":"Nem lụi, bánh nậm","description":"Nem lụi nướng trên than và bánh nậm mềm mịn, là đặc sản đường phố Huế."}
+{"id":187,"province":"Thừa Thiên Huế","food":"Chè Huế (chè hẻm, chè bắp…)","description":"Các loại chè Huế phong phú với vị ngọt thanh, là món tráng miệng đặc trưng."}
+{"id":188,"province":"Thừa Thiên Huế","food":"Bánh khoái Huế","description":"Bánh khoái giòn rụm nhân tôm, thịt, ăn kèm rau sống và nước chấm đặc biệt."}
+{"id":189,"province":"Đà Nẵng","food":"Mì Quảng","description":"Mì Quảng có sợi to, nước dùng ít nhưng đậm đà, ăn kèm rau sống, đậu phộng và bánh tráng."}
+{"id":190,"province":"Đà Nẵng","food":"Bánh tráng cuốn thịt heo Đà Nẵng","description":"Thịt heo luộc mềm cuốn với bánh tráng mỏng, rau sống và nước chấm mắm nêm hoặc mắm tỏi."}
+{"id":191,"province":"Đà Nẵng","food":"Bánh xèo miền Trung","description":"Bánh xèo miền Trung mỏng giòn, nhân tôm hoặc thịt, chấm mắm nêm và ăn kèm rau."}
+{"id":192,"province":"Đà Nẵng","food":"Bún chả cá Đà Nẵng","description":"Bún nước với chả cá thơm dai, nước dùng ngọt thanh từ cá và xương."}
+{"id":193,"province":"Đà Nẵng","food":"Bánh bèo, bánh căn","description":"Bánh bèo nhỏ mềm và bánh căn nướng thơm, là món ăn vặt đặc trưng xứ Quảng."}
+{"id":194,"province":"Đà Nẵng","food":"Hải sản tươi (mực, ốc, tôm)","description":"Hải sản tươi sống chế biến nướng, hấp hoặc luộc, rất đa dạng và ngon miệng."}
+{"id":195,"province":"Quảng Nam","food":"Cao lầu Hội An","description":"Mì đặc trưng Hội An với sợi bản, thịt heo, rau sống và nước sốt làm từ nước lèo xương."}
+{"id":196,"province":"Quảng Nam","food":"Mì Quảng (phiên bản Quảng Nam)","description":"Mì Quảng bản địa có topping đa dạng và nước dùng đặc biệt, thường ăn kèm bánh tráng."}
+{"id":197,"province":"Quảng Nam","food":"Bánh ít lá gai","description":"Bánh ít nhân dừa hoặc đậu xanh, bọc trong lá gai tạo mùi thơm và màu sậm đặc trưng."}
+{"id":198,"province":"Quảng Nam","food":"Bánh bao, bánh vạc (Hoi An)","description":"Bánh vạc (white rose) và bánh bao kiểu Hội An, nhân tôm/ thịt, trình bày tinh tế và nhẹ nhàng."}
+{"id":199,"province":"Quảng Nam","food":"Bánh tráng cuốn thịt heo (Hội An)","description":"Thịt heo luộc chín cuốn với rau sống và nước chấm, phong cách Hội An nổi bật."}
+{"id":200,"province":"Quảng Nam","food":"Bánh xèo, bánh bèo","description":"Các loại bánh truyền thống, giòn và thơm, phổ biến trong ẩm thực địa phương."}
+{"id":201,"province":"Quảng Ngãi","food":"Mì Quảng Quảng Ngãi (phiên bản)","description":"Phiên bản mì Quảng địa phương với sợi và nước dùng đặc trưng, topping đa dạng."}
+{"id":202,"province":"Quảng Ngãi","food":"Bánh tráng cuốn dẫu","description":"Bánh tráng cuốn kèm mắm nêm hoặc nước chấm đặc biệt, có vị đậm đà và hơi cay."}
+{"id":203,"province":"Quảng Ngãi","food":"Tỏi, hành, mắm nêm địa phương","description":"Sản phẩm tỏi và mắm nêm địa phương nổi bật hương vị đặc trưng trong các món miền Trung."}
+{"id":204,"province":"Quảng Ngãi","food":"Cá kho tộ (đặc sản vùng)","description":"Cá kho trong niêu đất với gia vị vùng, vị đậm đà và thơm mùi tiêu, hành."}
+{"id":205,"province":"Quảng Ngãi","food":"Bánh ít trần","description":"Bánh ít nhân dừa hoặc đậu xanh, vỏ mềm và thơm, thường dùng trong lễ truyền thống."}
+{"id":206,"province":"Quảng Ngãi","food":"Hải sản ven biển","description":"Hải sản tươi chế biến nhiều món: nướng, hấp, chiên; giữ vị ngọt và tươi rói."}
+{"id":207,"province":"Bình Định","food":"Bún chả cá Quy Nhơn","description":"Bún chả cá với chả cá dai làm từ cá tươi, nước dùng ngọt và cay nhẹ hợp vị miền Trung."}
+{"id":208,"province":"Bình Định","food":"Bánh hỏi lòng heo","description":"Bánh hỏi mảnh, ăn cùng lòng heo nướng hoặc luộc, chấm mắm pha đặc trưng."}
+{"id":209,"province":"Bình Định","food":"Nem chợ Huyện","description":"Nem nướng ngon đặc sản địa phương, thơm mùi than và gia vị, ăn kèm rau sống."}
+{"id":210,"province":"Bình Định","food":"Mắm nêm, mắm cá cơm","description":"Mắm nêm và mắm cá cơm vị đậm, dùng làm nước chấm cho nhiều món miền Trung."}
+{"id":211,"province":"Bình Định","food":"Bánh ít lá gai (phiên bản)","description":"Bánh ít với vỏ làm từ lá gai, nhân đậu xanh hoặc dừa, thường là thức quà truyền thống."}
+{"id":212,"province":"Bình Định","food":"Hải sản biển tươi","description":"Hải sản tươi ở Quy Nhơn phong phú: tôm, mực, cá, chế biến đa dạng và ngon miệng."}
+{"id":213,"province":"Phú Yên","food":"Cá ngừ đại dương Phú Yên (sản phẩm chế biến)","description":"Cá ngừ tươi và các sản phẩm chế biến (khô, nướng), thịt chắc và thơm, nổi tiếng xuất khẩu."}
+{"id":214,"province":"Phú Yên","food":"Bánh xèo Phú Yên","description":"Bánh xèo giòn rụm, nhân hải sản hoặc thịt, ăn kèm rau sống và nước chấm đặc trưng."}
+{"id":215,"province":"Phú Yên","food":"Gỏi cá mai","description":"Gỏi cá mai tươi ăn sống với nước mắm chua ngọt và các loại rau thơm, vị ngọt thanh của cá."}
+{"id":216,"province":"Phú Yên","food":"Cháo hàu, hải sản ven biển","description":"Cháo hoặc canh hàu tươi thơm, bùi và bổ dưỡng, thường ăn nóng."}
+{"id":217,"province":"Phú Yên","food":"Bánh canh hẹ","description":"Bánh canh béo ngậy với topping hải sản hoặc xương, thường thơm mùi hẹ."}
+{"id":218,"province":"Phú Yên","food":"Mực một nắng","description":"Mực phơi một nắng giữ vị ngọt và độ dai, thích hợp nướng hoặc chiên."}
+{"id":219,"province":"Khánh Hòa","food":"Nem nướng Ninh Hòa","description":"Nem nướng Ninh Hòa thơm, dai và đậm vị than nướng, ăn kèm bánh tráng và rau thơm."}
+{"id":220,"province":"Khánh Hòa","food":"Bún chả cá Nha Trang","description":"Bún nước với chả cá tươi, nước dùng thanh và hơi ngọt, là món đặc sản Nha Trang."}
+{"id":221,"province":"Khánh Hòa","food":"Hải sản (tôm, mực, cá)","description":"Hải sản tươi phong phú, chế biến luộc, nướng, sashimi giữ vị tươi ngon."}
+{"id":222,"province":"Khánh Hòa","food":"Bánh căn, bánh xèo Nha Trang","description":"Bánh căn và bánh xèo địa phương, thơm mùi bột gạo và nhân đa dạng."}
+{"id":223,"province":"Khánh Hòa","food":"Bánh ướt, bánh cuốn địa phương","description":"Bánh ướt mỏng mềm ăn kèm chả hoặc nước mắm, là món ăn sáng phổ biến."}
+{"id":224,"province":"Khánh Hòa","food":"Rượu nho (một số vùng)","description":"Rượu nho sản xuất tại địa phương với hương trái cây, thường là đặc sản nhỏ lẻ."}
+{"id":225,"province":"Ninh Thuận","food":"Nho Ninh Thuận (sản phẩm chế biến)","description":"Nho tươi và sản phẩm từ nho (mứt, rượu), nổi bật bởi khí hậu khô hạn thích hợp trồng nho."}
+{"id":226,"province":"Ninh Thuận","food":"Bánh căn, bánh xèo Ninh Thuận","description":"Bánh căn và bánh xèo địa phương, ăn cùng nước mắm hoặc mắm nêm đặc trưng."}
+{"id":227,"province":"Ninh Thuận","food":"Hải sản khô, cá một nắng","description":"Hải sản phơi khô hoặc một nắng, dễ bảo quản và đậm đà vị biển."}
+{"id":228,"province":"Ninh Thuận","food":"Mắm nêm, mắm ruốc địa phương","description":"Mắm nêm và mắm ruốc đậm vị, dùng làm gia vị cho nhiều món Nam Trung Bộ."}
+{"id":229,"province":"Ninh Thuận","food":"Bò một nắng (phiên bản vùng)","description":"Thịt bò phơi nắng chín một phần, tẩm ướp gia vị, ăn nướng hoặc chiên, vị đậm đà."}
+{"id":230,"province":"Ninh Thuận","food":"Các món ăn từ nho","description":"Các sản phẩm từ nho như mứt, rượu và các món chế biến sáng tạo địa phương."}
+{"id":231,"province":"Bình Thuận","food":"Bánh căn Phan Thiết","description":"Bánh căn nhỏ nướng giòn rụm, nhân hải sản hoặc thịt, ăn kèm nước chấm đặc trưng."}
+{"id":232,"province":"Bình Thuận","food":"Bánh quai vạc, bánh xèo","description":"Bánh quai vạc và bánh xèo miền biển nhân tôm hoặc hải sản, giòn và thơm."}
+{"id":233,"province":"Bình Thuận","food":"Hải sản (sò, ốc, mực)","description":"Hải sản tươi nơi đây phong phú, chế biến hấp, luộc, nướng hoặc lẩu."}
+{"id":234,"province":"Bình Thuận","food":"Thanh long Bình Thuận (sản phẩm chế biến)","description":"Thanh long tươi và các sản phẩm từ thanh long (sấy, mứt) nổi tiếng cả nước."}
+{"id":235,"province":"Bình Thuận","food":"Lẩu cá bớp","description":"Lẩu làm từ cá bớp tươi, nước lẩu chua cay đậm đà, thường ăn nhóm."}
+{"id":236,"province":"Bình Thuận","food":"Mắm ruốc Phan Thiết","description":"Mắm ruốc đặc sản Phan Thiết có hương vị đậm, dùng để chấm và nêm nếm."}
+{"id":237,"province":"Kon Tum","food":"Gà nướng cơm lam","description":"Gà nướng ăn kèm cơm lam (cơm nếp nướng trong ống tre), mùi tre và gia vị làm nên hương vị đặc trưng."}
+{"id":238,"province":"Kon Tum","food":"Cơm lam, cá suối nướng","description":"Cơm lam dẻo thơm kết hợp với cá suối nướng than, là bữa ăn dân dã của người miền núi."}
+{"id":239,"province":"Kon Tum","food":"Thịt gác bếp","description":"Thịt rừng ướp gia vị và hun khói, dùng như món nhậu truyền thống của vùng."}
+{"id":240,"province":"Kon Tum","food":"Măng rừng xào","description":"Măng rừng tươi xào cùng gia vị và thịt, giữ vị giòn và mùi thơm tự nhiên."}
+{"id":241,"province":"Kon Tum","food":"Rượu cần, rượu cần lam","description":"Rượu cần lên men thùng tre, uống trong lễ hội, vị ngọt nhẹ và nồng ấm đặc trưng."}
+{"id":242,"province":"Kon Tum","food":"Mật ong rừng","description":"Mật ong lấy từ nguồn hoa rừng, vị ngọt thanh và hương hoa đặc sắc."}
+{"id":243,"province":"Gia Lai","food":"Phở khô Gia Lai (phở khô Pleiku)","description":"Phở khô sợi to, ăn kèm nước chấm hoặc nước lèo đặc trưng, thường ăn kèm rau và đồ chua."}
+{"id":244,"province":"Gia Lai","food":"Cơm lam, gà nướng","description":"Cơm lam và gà nướng là món ăn truyền thống của vùng cao nguyên, thơm mùi tre và than."}
+{"id":245,"province":"Gia Lai","food":"Bò một nắng (Gia Lai)","description":"Thịt bò phơi nắng, tẩm ướp gia vị, ăn nướng hoặc chấm mắm, có vị dậy mùi đặc trưng."}
+{"id":246,"province":"Gia Lai","food":"Rượu cần","description":"Rượu cần truyền thống dùng trong lễ hội, lên men tự nhiên từ gạo hoặc ngô."}
+{"id":247,"province":"Gia Lai","food":"Măng rừng chế biến","description":"Măng rừng xào hoặc nấu canh, giữ độ giòn và hương vị núi rừng."}
+{"id":248,"province":"Gia Lai","food":"Mật ong, cà phê vùng cao nguyên","description":"Mật ong rừng và cà phê Buôn Ma Thuột vùng cao, hương vị đặc trưng và chất lượng nổi tiếng."}
+{"id":249,"province":"Đắk Lắk","food":"Cà phê Buôn Ma Thuột (sản phẩm và chế biến)","description":"Cà phê nổi tiếng, hạt rang thơm và có vị đậm, là sản phẩm chủ lực của vùng."}
+{"id":250,"province":"Đắk Lắk","food":"Bún đỏ (món địa phương)","description":"Bún đỏ đặc sản địa phương với nước dùng đậm đà, thường kèm topping thịt hoặc hải sản."}
+{"id":251,"province":"Đắk Lắk","food":"Cơm lam, gà nướng","description":"Cơm lam dẻo nướng trong ống tre ăn cùng gà nướng gia vị rừng, hương vị dân dã."}
+{"id":252,"province":"Đắk Lắk","food":"Thịt nai/ trâu gác bếp","description":"Thịt nai hoặc trâu ướp gia vị và hun khói, món ăn truyền thống của vùng cao nguyên."}
+{"id":253,"province":"Đắk Lắk","food":"Bánh pía (phiên bản miền Tây được du nhập)","description":"Bánh pía bản địa biến thể, nhân đậu xanh hoặc sầu riêng, thơm và bùi."}
+{"id":254,"province":"Đắk Lắk","food":"Mật ong rừng","description":"Mật ong thu hái thủ công từ hoa rừng, vị ngọt thanh và hương hoa đặc trưng."}
+{"id":255,"province":"Đắk Nông","food":"Cà phê vùng cao","description":"Cà phê trồng ở vùng cao, hạt chất lượng và vị đậm, thường chế biến rang xay tại địa phương."}
+{"id":256,"province":"Đắk Nông","food":"Thịt rừng chế biến","description":"Thịt rừng đa dạng (nai, heo rừng) được chế biến thành nhiều món đặc sản vùng."}
+{"id":257,"province":"Đắk Nông","food":"Măng rừng, rau rừng","description":"Măng và rau rừng tươi được chế biến thành món xào hoặc canh, đậm hương vị tự nhiên."}
+{"id":258,"province":"Đắk Nông","food":"Cá suối nướng","description":"Cá suối nướng than, gia vị đơn giản, giữ vị ngọt của cá và mùi khói nhẹ."}
+{"id":259,"province":"Đắk Nông","food":"Rượu cần, mật ong","description":"Rượu cần dùng trong nghi lễ cộng đồng và mật ong rừng là sản phẩm quý của vùng."}
+{"id":260,"province":"Đắk Nông","food":"Các sản phẩm từ sắn, khoai","description":"Sắn và khoai được chế biến thành nhiều sản phẩm như bột, mứt hoặc đồ khô địa phương."}
+{"id":261,"province":"Lâm Đồng","food":"Bánh mì Đà Lạt (phong cách địa phương)","description":"Bánh mì Đà Lạt có vỏ giòn và nhân phong phú, chịu ảnh hưởng từ ẩm thực miền Nam và Pháp."}
+{"id":262,"province":"Lâm Đồng","food":"Rau quả Đà Lạt (dâu, atiso — sản phẩm chế biến)","description":"Rau quả tươi (dâu, atiso) và các sản phẩm chế biến như mứt, rượu, là đặc sản địa phương."}
+{"id":263,"province":"Lâm Đồng","food":"Bánh tráng nướng Đà Lạt (món vặt nổi tiếng)","description":"Bánh tráng nướng giòn rôm, nhân đa dạng từ trứng đến phô mai, là streetfood đặc trưng."}
+{"id":264,"province":"Lâm Đồng","food":"Nem nướng Đà Lạt","description":"Nem nướng thơm, thường ăn kèm bánh tráng và rau sống, vị đậm đà và hấp dẫn."}
+{"id":265,"province":"Lâm Đồng","food":"Bắp nướng, khoai lang nướng đường phố","description":"Đồ nướng đường phố như bắp, khoai lang nướng phết đường hoặc mật, thơm và ngọt."}
+{"id":266,"province":"Lâm Đồng","food":"Lẩu gà lá é (Đà Lạt/Đồng Nai vùng lân cận)","description":"Lẩu gà dùng lá é tạo mùi thơm the, nước lẩu chua cay dịu, là món ưa thích mùa lạnh."}
+{"id":267,"province":"Bình Phước","food":"Hạt điều Bình Phước (sản phẩm chế biến)","description":"Hạt điều rang muối, chất lượng cao, là sản phẩm nông nghiệp chế biến chính của tỉnh."}
+{"id":268,"province":"Bình Phước","food":"Mứt, trái cây sấy","description":"Trái cây sấy và mứt làm từ sản phẩm địa phương, thích hợp làm quà và tiêu thụ lâu."}
+{"id":269,"province":"Bình Phước","food":"Gà nướng cơm lam (phiên bản khu vực)","description":"Gà nướng ăn kèm cơm lam, mùi tre và gia vị rừng tạo nên hương vị dân dã."}
+{"id":270,"province":"Bình Phước","food":"Cá suối, nước mắm chua ngọt địa phương","description":"Cá suối tươi và nước mắm chua ngọt đặc trưng dùng ăn kèm rau luộc hoặc cơm."}
+{"id":271,"province":"Bình Phước","food":"Măng, rau rừng chế biến","description":"Măng và rau rừng được chế biến xào, nấu canh, giữ hương vị tươi và hơi đắng nhẹ."}
+{"id":272,"province":"Bình Phước","food":"Rượu cần (một vài dân tộc)","description":"Rượu cần lên men truyền thống dùng trong nghi lễ và liên hoan cộng đồng."}
+{"id":273,"province":"Tây Ninh","food":"Bánh tráng phơi sương (dùng cho các món cuốn)","description":"Bánh tráng phơi sương mỏng dai, lý tưởng để cuốn thịt heo và rau sống theo phong vị Nam Bộ."}
+{"id":274,"province":"Tây Ninh","food":"Bò tơ Tây Ninh","description":"Bò tơ thịt mềm, béo vừa phải, thường chế biến nướng, xào hoặc làm lẩu."}
+{"id":275,"province":"Tây Ninh","food":"Bánh canh Trảng Bàng","description":"Bánh canh Trảng Bàng nổi tiếng với bánh canh dai và nước lèo thơm, thường ăn kèm rau sống."}
+{"id":276,"province":"Tây Ninh","food":"Mứt, đồ khô","description":"Mứt miền Tây và đồ khô làm từ trái cây, thích hợp làm quà và bảo quản lâu."}
+{"id":277,"province":"Tây Ninh","food":"Hủ tiếu Tây Ninh (phiên bản địa phương)","description":"Hủ tiếu theo phong cách Tây Ninh với nước dùng và topping phù hợp khẩu vị vùng."}
+{"id":278,"province":"Tây Ninh","food":"Mắm nêm, muối chấm miền Tây Bắc","description":"Các loại mắm và muối chấm đặc trưng dùng để tăng hương vị cho nhiều món ăn."}
+{"id":279,"province":"Bình Dương","food":"Bánh cuốn nóng (phiên bản công nhân, địa phương)","description":"Bánh cuốn nóng mỏng mềm, thường phục vụ công nhân và dân lao động, ăn kèm chả và nước mắm."}
+{"id":280,"province":"Bình Dương","food":"Gà nướng xôi","description":"Gà nướng ăn kèm xôi dẻo, là món ăn phổ biến trong các buổi họp mặt và lễ hội địa phương."}
+{"id":281,"province":"Bình Dương","food":"Nem nướng, bún thịt nướng","description":"Nem nướng thơm và bún thịt nướng đậm vị, phục vụ như món ăn nhanh và quen thuộc."}
+{"id":282,"province":"Bình Dương","food":"Bánh tráng, đồ ăn vặt địa phương","description":"Bánh tráng và đồ ăn vặt phong phú, phù hợp khẩu vị công nghiệp và thành thị."}
+{"id":283,"province":"Bình Dương","food":"Mứt, sản phẩm địa phương","description":"Mứt và sản phẩm chế biến từ trái cây, phù hợp làm quà và tiêu thụ địa phương."}
+{"id":284,"province":"Bình Dương","food":"Bánh tét (phiên bản vùng nhập cư)","description":"Bánh tét do cộng đồng nhập cư mang đến, nhân phong phú và hương vị đa dạng."}
+{"id":285,"province":"Đồng Nai","food":"Bò nướng (đặc sản trang trại)","description":"Bò nuôi tại trang trại, thịt nướng thơm và mềm, thường dùng trong tiệc và nhà hàng."}
+{"id":286,"province":"Đồng Nai","food":"Cá lóc nướng trui","description":"Cá lóc nướng trui thơm, chấm mắm me hoặc muối ớt, là món dân dã miền Nam."}
+{"id":287,"province":"Đồng Nai","food":"Cơm tấm Đồng Nai (phiên bản địa phương)","description":"Cơm tấm với sườn nướng, chả, trứng và nước mắm pha, mang nét Sài Gòn nhưng có biến tấu địa phương."}
+{"id":288,"province":"Đồng Nai","food":"Gỏi trái cây, trái cây sấy","description":"Gỏi trái cây tươi và trái cây sấy làm từ sản phẩm vườn, có mùi vị tươi ngon và tiện lợi."}
+{"id":289,"province":"Đồng Nai","food":"Nem nướng, chả lụa địa phương","description":"Nem nướng thơm và chả lụa mịn, thường dùng trong bữa ăn gia đình và tiệc nhỏ."}
+{"id":290,"province":"Đồng Nai","food":"Mật ong, sản phẩm nông nghiệp","description":"Mật ong và các sản phẩm nông nghiệp địa phương, chất lượng tốt do khí hậu vùng."}
+{"id":291,"province":"Bà Rịa – Vũng Tàu","food":"Hải sản tươi (ghẹ, tôm, mực)","description":"Hải sản bắt ngay ven biển, tươi và đa dạng, chế biến hấp, luộc hoặc nướng."}
+{"id":292,"province":"Bà Rịa – Vũng Tàu","food":"Bánh khọt Vũng Tàu","description":"Bánh khọt giòn rụm nhân tôm, ăn kèm rau sống và nước chấm chua ngọt."}
+{"id":293,"province":"Bà Rịa – Vũng Tàu","food":"Bánh canh ghẹ","description":"Bánh canh với nước dùng ngọt từ ghẹ, sợi bánh canh mềm và topping ghẹ tươi."}
+{"id":294,"province":"Bà Rịa – Vũng Tàu","food":"Bún sứa Vũng Tàu","description":"Bún nước với sứa tươi, nước dùng nhẹ và nhiều rau thơm, phổ biến miền biển."}
+{"id":295,"province":"Bà Rịa – Vũng Tàu","food":"Nem chua, mắm tôm vùng biển","description":"Nem chua và mắm tôm đặc trưng, gia vị đậm đà dùng trong ẩm thực ven biển."}
+{"id":296,"province":"Bà Rịa – Vũng Tàu","food":"Cá khô, hải sản một nắng","description":"Hải sản phơi một nắng hoặc khô, dễ bảo quản và phù hợp làm quà."}
+{"id":297,"province":"TP. Hồ Chí Minh","food":"Bánh mì Sài Gòn","description":"Bánh mì với vỏ giòn, nhân phong phú (pate, thịt, rau) và nước sốt hấp dẫn, là biểu tượng ẩm thực đường phố."}
+{"id":298,"province":"TP. Hồ Chí Minh","food":"Hủ tiếu Nam Vang (phiên bản Sài Gòn)","description":"Hủ tiếu Nam Vang phong phú topping, nước dùng ngọt nhẹ và sợi hủ tiếu dai."}
+{"id":299,"province":"TP. Hồ Chí Minh","food":"Cơm tấm Sài Gòn","description":"Cơm tấm sườn nướng, chả và trứng ốp la, nước mắm pha đậm đà, là món ăn nhanh phổ biến."}
+{"id":300,"province":"TP. Hồ Chí Minh","food":"Bún mắm/ bún riêu/ bún nước lèo (đa dạng)","description":"Hệ thống bún đa dạng với nước dùng đặc trưng, phục vụ nhiều khẩu vị miền Nam."}
+{"id":301,"province":"TP. Hồ Chí Minh","food":"Gỏi cuốn, chả giò","description":"Gỏi cuốn tươi mát và chả giò giòn rụm là món ăn phổ biến, dễ ăn và phù hợp mọi lứa tuổi."}
+{"id":302,"province":"TP. Hồ Chí Minh","food":"Bánh tráng trộn (món vặt đặc trưng)","description":"Bánh tráng trộn là món vặt đường phố với vị mặn, cay, chua và ngọt hòa quyện."}
+{"id":303,"province":"Long An","food":"Lẩu mắm miền Tây (phiên bản địa phương)","description":"Lẩu mắm đặc trưng miền Tây với nước dùng thơm, mắm đậm và nhiều loại hải sản, cá."}
+{"id":304,"province":"Long An","food":"Bánh xèo, bánh tét Long An","description":"Bánh xèo giòn và bánh tét nhân đa dạng là đặc sản Tết và bữa ăn gia đình."}
+{"id":305,"province":"Long An","food":"Cá rô kho tộ","description":"Cá rô kho trong niêu đất với nước mắm và gia vị, vị mặn ngọt hài hòa."}
+{"id":306,"province":"Long An","food":"Bánh tráng, mắm","description":"Bánh tráng và các loại mắm địa phương dùng trong nhiều món cuốn và chấm."}
+{"id":307,"province":"Long An","food":"Trái cây sông nước (xoài, sầu riêng…)","description":"Trái cây miền sông nước tươi ngon, đa dạng và nhiều sản phẩm chế biến."}
+{"id":308,"province":"Long An","food":"Nem nướng, hủ tiếu địa phương","description":"Nem nướng thơm lừng và hủ tiếu bản địa là món ăn thường ngày và thức vặt."}
+{"id":309,"province":"Tiền Giang","food":"Bánh tét, bánh ú tro","description":"Bánh tét và bánh ú tro là các loại bánh Tết và lễ truyền thống, nhân đa dạng và thơm nếp."}
+{"id":310,"province":"Tiền Giang","food":"Hủ tiếu Mỹ Tho","description":"Hủ tiếu Mỹ Tho với nước dùng ngọt và topping phong phú, là đặc sản miền Tây."}
+{"id":311,"province":"Tiền Giang","food":"Bánh chuối, bánh ít Nam bộ","description":"Bánh chuối và bánh ít là món tráng miệng truyền thống, vỏ mềm và nhân thơm."}
+{"id":312,"province":"Tiền Giang","food":"Cá lóc nướng trui","description":"Cá lóc nướng trui thơm, chấm muối ớt hoặc nước mắm me, món ruột miền Tây."}
+{"id":313,"province":"Tiền Giang","food":"Trái cây (vườn) và các sản phẩm chế biến","description":"Vườn trái cây phong phú với xoài, vú sữa, sầu riêng và nhiều sản phẩm chế biến."}
+{"id":314,"province":"Tiền Giang","food":"Bánh mì bột lọc (phiên bản miền Tây)","description":"Bánh bột lọc nhân tôm/ thịt quấn trong bánh tráng, dai và thơm, biến thể địa phương."}
+{"id":315,"province":"Bến Tre","food":"Dừa Bến Tre (nước dừa, kẹo dừa)","description":"Dừa tươi và các sản phẩm từ dừa (kẹo dừa, nước cốt) là thương hiệu nổi tiếng của Bến Tre."}
+{"id":316,"province":"Bến Tre","food":"Bánh tráng, bánh xèo miền Tây","description":"Bánh tráng phơi sương và bánh xèo miền Tây nhân tôm, thịt, ăn cùng rau và nước mắm."}
+{"id":317,"province":"Bến Tre","food":"Nghêu sò, hải sản nước lợ","description":"Hải sản nước lợ tươi ngon, chế biến luộc, hấp hoặc nướng, hương vị đặc trưng sông nước."}
+{"id":318,"province":"Bến Tre","food":"Bánh phồng tôm (phiên bản địa phương)","description":"Bánh phồng tôm giòn, nhân tôm đặc trưng, thường làm quà và món ăn vặt."}
+{"id":319,"province":"Bến Tre","food":"Bánh tét nhân cốm, nhân chuối","description":"Bánh tét nhân cốm hoặc chuối là biến thể phong phú của món Tết miền Nam."}
+{"id":320,"province":"Bến Tre","food":"Mứt dừa, kẹo dừa truyền thống","description":"Mứt và kẹo dừa chế biến tinh xảo, ngọt bùi và thường là quà đặc sản."}
+{"id":321,"province":"Trà Vinh","food":"Bún nước lèo Trà Vinh","description":"Bún nước lèo có vị ngọt từ hải sản và nước lèo đặc trưng vùng sông nước."}
+{"id":322,"province":"Trà Vinh","food":"Bánh pía (phiên bản địa phương)","description":"Bánh pía nhân sầu riêng hoặc đậu xanh, vỏ mềm và thơm, là đặc sản miền Tây."}
+{"id":323,"province":"Trà Vinh","food":"Cá rô, cá bống kho tộ","description":"Cá rô và cá bống kho niêu với nước mắm và gia vị, vị ngon đậm đà phù hợp ăn cùng cơm."}
+{"id":324,"province":"Trà Vinh","food":"Bánh tét, kẹo dừa","description":"Bánh tét và kẹo dừa là món truyền thống, phổ biến trong dịp lễ và làm quà."}
+{"id":325,"province":"Trà Vinh","food":"Hủ tiếu, bún hến địa phương","description":"Hủ tiếu và bún hến với nước dùng thanh, topping phong phú từ hải sản sông nước."}
+{"id":326,"province":"Trà Vinh","food":"Mắm, cá khô miền Tây","description":"Mắm và cá khô chế biến theo cách truyền thống, mùi vị đậm đà và dễ bảo quản."}
+{"id":327,"province":"Vĩnh Long","food":"Bánh xèo Vĩnh Long","description":"Bánh xèo nhân tôm và giá, giòn rụm, ăn kèm rau sống và nước mắm chua ngọt."}
+{"id":328,"province":"Vĩnh Long","food":"Cá lóc bống nướng trui","description":"Cá lóc nướng trui trên lửa, thịt săn và thơm, thường chấm muối tiêu chanh."}
+{"id":329,"province":"Vĩnh Long","food":"Bánh tét, bún nước lèo","description":"Bánh tét và bún nước lèo đặc trưng miền Tây với nước dùng đậm và topping phong phú."}
+{"id":330,"province":"Vĩnh Long","food":"Trái cây và các món ăn từ dừa","description":"Trái cây vườn và các món chế biến từ dừa (sữa, mứt) là sản phẩm nổi bật."}
+{"id":331,"province":"Vĩnh Long","food":"Lẩu mắm miền Tây","description":"Lẩu mắm đậm đà hương vị mắm, kết hợp nhiều loại hải sản và rau miệt vườn."}
+{"id":332,"province":"Vĩnh Long","food":"Bánh bò, bánh chuối miền Tây","description":"Bánh bò thơm và bánh chuối mềm, là món tráng miệng dân dã miền Nam."}
+{"id":333,"province":"Đồng Tháp","food":"Bánh lá (bánh khoai, bánh tằm)","description":"Các loại bánh làm từ bột và lá, thường là đồ ăn dân dã, thơm và dẻo."}
+{"id":334,"province":"Đồng Tháp","food":"Lẩu mắm Đồng Tháp","description":"Lẩu mắm với nước lèo đậm, nhiều loại cá và rau đặc trưng miền Tây sông nước."}
+{"id":335,"province":"Đồng Tháp","food":"Cá rô đồng kho tộ","description":"Cá rô đồng kho niêu với nước mắm và gia vị, ăn kèm cơm nóng rất đưa cơm."}
+{"id":336,"province":"Đồng Tháp","food":"Bánh tét nhân chuối hoặc đậu xanh","description":"Bánh tét nhân chuối hoặc đậu xanh là món Tết truyền thống vùng Đồng Tháp."}
+{"id":337,"province":"Đồng Tháp","food":"Trái cây Sa Đéc (hoa kiểng, chế biến)","description":"Sa Đéc nổi tiếng vườn trái cây và hoa kiểng, sản phẩm chế biến đa dạng như mứt và sấy."}
+{"id":338,"province":"Đồng Tháp","food":"Bánh xèo, bún riêu","description":"Bánh xèo miền Tây và bún riêu cua địa phương với nước dùng đặc trưng."}
+{"id":339,"province":"An Giang","food":"Lẩu mắm","description":"Lẩu mắm đậm đà, sử dụng mắm đặc sản và nhiều loại cá, rau miệt vườn, rất phổ biến ở An Giang."}
+{"id":340,"province":"An Giang","food":"Bún cá, bún nước lèo","description":"Bún cá và bún nước lèo với nước dùng ngọt từ cá, ăn kèm rau sống và gia vị miền Tây."}
+{"id":341,"province":"An Giang","food":"Bánh tét (đặc sản Tết vùng)","description":"Bánh tét nhân đậu xanh hoặc chuối, là món Tết đặc trưng miền Tây sông nước."}
+{"id":342,"province":"An Giang","food":"Thốt nốt (mứt, kẹo, rượu)","description":"Sản phẩm từ trái thốt nốt như mứt, kẹo và rượu, đặc sản vùng Đồng Bằng Sông Cửu Long."}
+{"id":343,"province":"An Giang","food":"Khô cá linh, mắm cá linh","description":"Khô cá linh và mắm cá linh là đặc sản chế biến từ nguồn cá đồng phong phú."}
+{"id":344,"province":"An Giang","food":"Chè chuối, chè thốt nốt","description":"Các loại chè truyền thống làm từ chuối và thốt nốt, ngọt thanh và phổ biến trong vùng."}
+{"id":345,"province":"Kiên Giang","food":"Gỏi cá trích Phú Quốc","description":"Gỏi cá trích tươi ngon, chanh tươi và nước mắm Phú Quốc tạo vị chua ngọt đặc trưng."}
+{"id":346,"province":"Kiên Giang","food":"Nước mắm Phú Quốc","description":"Nước mắm truyền thống ủ từ cá cơm lên men lâu năm, vị mặn đậm và mùi thơm quyến rũ."}
+{"id":347,"province":"Kiên Giang","food":"Hột vịt lộn muối tiêu (đặc sản địa phương)","description":"Hột vịt lộn nấu và ướp muối tiêu chấm, là món ăn vặt phổ biến ở đảo và ven biển."}
+{"id":348,"province":"Kiên Giang","food":"Hải sản đảo (sò, ốc, mực)","description":"Hải sản tươi bắt từ đảo, chế biến đa dạng và giữ được vị biển tươi ngon."}
+{"id":349,"province":"Kiên Giang","food":"Bún mắm, lẩu mắm","description":"Bún mắm và lẩu mắm đậm đà mùi mắm, kết hợp nhiều hải sản và rau rừng."}
+{"id":350,"province":"Kiên Giang","food":"Bánh bò, bánh tráng phơi sương","description":"Bánh bò mềm và bánh tráng phơi sương dùng để cuốn hoặc ăn kèm nhiều món."}
+{"id":351,"province":"Cần Thơ","food":"Lẩu mắm (Cần Thơ/Bến Ninh Kiều)","description":"Lẩu mắm nhiều loại cá và rau miệt vườn, nước lèo đậm đà, là món tụ họp của người miền Tây."}
+{"id":352,"province":"Cần Thơ","food":"Bún mắm Cần Thơ","description":"Bún mắm Cần Thơ có nước dùng thơm mùi mắm, topping đa dạng và rau sống tươi."}
+{"id":353,"province":"Cần Thơ","food":"Hủ tiếu Cần Thơ","description":"Hủ tiếu với nước dùng ngọt nhẹ, kết hợp hải sản hoặc thịt, là món sáng phổ biến."}
+{"id":354,"province":"Cần Thơ","food":"Cá lóc nướng trui","description":"Cá lóc nướng trui ăn kèm bún và rau sống, chấm muối ớt hoặc mắm nêm."}
+{"id":355,"province":"Cần Thơ","food":"Bánh xèo, bún đậu mắm tôm (phiên bản miền Tây)","description":"Bánh xèo giòn và bún đậu mắm tôm phong cách miền Tây với nước mắm đặc trưng."}
+{"id":356,"province":"Cần Thơ","food":"Trái cây miền sông nước","description":"Trái cây miệt vườn đa dạng và tươi ngon: xoài, vú sữa, măng cụt và nhiều loại khác."}
+{"id":357,"province":"Hậu Giang","food":"Các món cá đồng (cá rô, cá linh)","description":"Cá đồng chế biến thành nhiều món như kho, chiên hoặc làm lẩu, hương vị dân dã miền Tây."}
+{"id":358,"province":"Hậu Giang","food":"Bánh tét, bánh lá","description":"Bánh tét và các loại bánh lá truyền thống dùng trong lễ Tết và cúng kiếng."}
+{"id":359,"province":"Hậu Giang","food":"Lẩu mắm, bún nước lèo","description":"Lẩu mắm và bún nước lèo với nước dùng đặc trưng, nhiều cá và rau miệt vườn."}
+{"id":360,"province":"Hậu Giang","food":"Bánh bò, bánh chuối địa phương","description":"Bánh bò mềm xốp và bánh chuối thơm ngọt, là món tráng miệng thông dụng."}
+{"id":361,"province":"Hậu Giang","food":"Trái cây và nông sản chế biến","description":"Trái cây và nông sản chế biến như mứt, sấy, là nguồn thu nhập chính cho địa phương."}
+{"id":362,"province":"Sóc Trăng","food":"Bánh pía","description":"Bánh pía nhân đậu xanh hoặc sầu riêng, vỏ mỏng và thơm, có nguồn gốc văn hóa Khmer và Hoa."}
+{"id":363,"province":"Sóc Trăng","food":"Bún nước lèo Sóc Trăng","description":"Bún nước lèo đặc trưng với nước dùng hải sản và vị hơi chua, ăn kèm rau và ớt."}
+{"id":364,"province":"Sóc Trăng","food":"Bánh xèo, bánh tét","description":"Bánh xèo miền Tây giòn và bánh tét truyền thống, xuất hiện nhiều trong dịp lễ."}
+{"id":365,"province":"Sóc Trăng","food":"Khô cá, mắm","description":"Khô cá và mắm được chế biến theo truyền thống, mùi vị đậm đà phù hợp nêm nếm."}
+{"id":366,"province":"Sóc Trăng","food":"Chè Thưng (chè Khmer)","description":"Chè Thưng là món chè truyền thống của cộng đồng Khmer, ngọt và béo, thường có đậu và bột."}
+{"id":367,"province":"Sóc Trăng","food":"Bánh hoa đậu xanh (đặc sản)","description":"Bánh hoa làm từ đậu xanh tinh tế, hình dáng đẹp mắt và vị ngọt nhẹ."}
+{"id":368,"province":"Bạc Liêu","food":"Tôm, cua biển chế biến","description":"Hải sản tươi như tôm và cua chế biến luộc, rang me hoặc nướng, thịt ngọt và tươi."}
+{"id":369,"province":"Bạc Liêu","food":"Bánh tôm Bạc Liêu (phiên bản địa phương)","description":"Bánh tôm giòn rụm nhân tôm tươi, ăn kèm rau sống và nước chấm đậm đà."}
+{"id":370,"province":"Bạc Liêu","food":"Hột vịt lộn đặc sản","description":"Hột vịt lộn chế biến cùng muối tiêu hoặc nước mắm, là món ăn vặt phổ biến."}
+{"id":371,"province":"Bạc Liêu","food":"Cá kho khô, mắm cá","description":"Cá kho và mắm cá chế biến theo phương pháp truyền thống, cho hương vị đậm đà."}
+{"id":372,"province":"Bạc Liêu","food":"Lẩu cá kèo (vùng đồng)","description":"Lẩu cá kèo dùng nước lèo chua nhẹ, ăn kèm rau rừng và bún, rất phổ biến vùng đồng bằng."}
+{"id":373,"province":"Bạc Liêu","food":"Bánh bò/ bánh cáy (phiên bản địa phương)","description":"Bánh bò mềm và bánh cáy giòn là món truyền thống, thường dùng trong lễ tết."}
+{"id":374,"province":"Cà Mau","food":"Hải sản Cà Mau (tôm, cua, cá biển)","description":"Hải sản phong phú bắt từ vùng biển cực Nam, tươi ngon và chế biến đa dạng."}
+{"id":375,"province":"Cà Mau","food":"Gỏi cuốn hải sản địa phương","description":"Gỏi cuốn nhân hải sản tươi, rau sống và bún, chấm nước mắm chua ngọt đặc trưng."}
+{"id":376,"province":"Cà Mau","food":"Gà nòi Cà Mau (chế biến đặc sản)","description":"Gà nòi thịt săn chắc, thường chế biến nướng hoặc om gia vị địa phương."}
+{"id":377,"province":"Cà Mau","food":"Mắm tôm, mắm cá miền cực","description":"Mắm tôm và mắm cá được sản xuất theo phương pháp truyền thống, có hương vị đậm đà."}
+{"id":378,"province":"Cà Mau","food":"Chả giò hải sản","description":"Chả giò làm từ hải sản tươi, chiên giòn và thường ăn kèm rau sống."}
+{"id":379,"province":"Cà Mau","food":"Bánh tét, đặc sản từ đồng ruộng biển","description":"Bánh tét và các sản phẩm từ gạo, kết hợp nguồn hải sản và nông sản phong phú của vùng."}
