@@ -16,7 +16,7 @@ An AI-powered travel **chatbot** that processes user queries to provide informat
 | 6   | Trung Hien (*)   | Member       |
 | 7   | Thi Anh (*)      | Member       |
 
-> (*) IT - University of Science - VNU
+(*) IT - University of Science - VNU
 
 ---
 
@@ -33,7 +33,7 @@ Then follow these steps:
 3. Select an existing project (or create a new one)  
 4. Copy the generated API key  
 
-> **Note:** Keep this key private — never share or upload your `.env` file.
+**Note:** Keep this key private — never share or upload your `.env` file.
 
 ---
 
@@ -60,8 +60,8 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 OPENWEATHER_API_KEY=your_openweather_api_key_here
 ```
 
-> **Do not share or commit this file.**  
-> Always keep your API keys private and secure.
+**Do not share or commit this file.**  
+Always keep your API keys private and secure.
 
 ---
 
