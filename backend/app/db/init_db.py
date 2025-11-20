@@ -4,7 +4,7 @@ from .base import Base
 
 # Import models
 from .models.tourism_model import (
-    TourismPlace, TourismActivity, TourismFood, TourismTag
+    TourismPlace, TourismActivity, TourismTag
 )
 from .models.hotel_model import Hotel
 from .models.foods_model import Food
