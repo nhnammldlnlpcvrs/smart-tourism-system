@@ -1,20 +1,39 @@
 import google.generativeai as genai
-from typing import List
+from typing import List, Dict, Any, Optional    
 import numpy as np
 
-"""
-    Trả về mảng numpy shape (n_texts, dim).
-    - texts: danh sách các đoạn văn
-    - model_name: tên model embedding (có thể đổi)
-"""
-def get_embedding(texts : List[str], model_name : str = "model/embedding-001") -> np.ndarray:
-    vectors = []
-    for t in texts:
-        # gọi gemini
-        respond = genai.embed_content(model = model_name, content = t)
 
-        # sau khi gemini trả lời bằng file json , lấy chỉ số embed
-        vectors.append(respond["embedding"])
+DEFAULT_EMBED_MODEL = "models/embedding-001"
+
+"""
+    Nhận list các record (dict) và trả về numpy.ndarray shape (n, d).
+    - Nếu batch=False: gọi embed cho từng record.
+    - Nếu batch=True: cố gắng gọi batch (tuỳ driver embed có hỗ trợ hay không).
+    Lưu ý: content có thể là dict — Gemini hỗ trợ embedding structured JSON.
+"""
+def get_embeddings(records: List[Dict[str, Any]], model_name: str = DEFAULT_EMBED_MODEL, batch: bool = False) -> np.ndarray:
     
-    return np.array(vectors, dtype = "float32")
+    vectors = []
+
+    if batch:
+        try:
+            contents = [r["record"] for r in records]
+            resp = genai.embed_content(model=model_name, content=contents)
+            if isinstance(resp, list):
+                for item in resp:
+                    vectors.append(item["embedding"])
+            else:
+                data = resp.get("data") or resp.get("embeddings") or []
+                for it in data:
+                    vectors.append(it["embedding"])
+        except Exception:
+            for r in records:
+                resp = genai.embed_content(model=model_name, content=r["record"])
+                vectors.append(resp["embedding"])
+    else:
+        for r in records:
+            resp = genai.embed_content(model=model_name, content=r["record"])
+            vectors.append(resp["embedding"])
+
+    return np.array(vectors, dtype="float32")
 
