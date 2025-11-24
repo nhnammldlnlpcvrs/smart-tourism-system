@@ -1,33 +1,24 @@
-# generator.py
 from typing import List, Dict
 from llm_module import ask_gemini
+import json
 
 """
     Tạo prompt kết hợp giữa contexts (list record dicts) và câu hỏi.
     retrieved_contexts: list of dict (record).
+    Mỗi record được serialize đầy đủ sang JSON để gửi cho LLM.
 """
 def build_prompt(user_query: str, retrieved_contexts: List[Dict]) -> str:
-    # Chuyển mỗi record thành block text ngắn để prompt rõ ràng.
     context_texts = []
     for r in retrieved_contexts:
-        # Lấy một số field hay có: name, province, description — fallback stringify
-        name = r.get("name") or r.get("title") or ""
-        province = r.get("province", "")
-        desc = r.get("description", "") or r.get("desc", "")
-        # Nếu record có cấu trúc khác, stringify một đoạn gọn
-        if not (name or province or desc):
-            # stringify top-level keys (ngắn)
-            items = []
-            for k, v in r.items():
-                items.append(f"{k}: {v}")
-            desc = "; ".join(items)
-        block = f"Tên: {name}\nTỉnh: {province}\nMô tả: {desc}"
-        context_texts.append(block)
+        # Serialize toàn bộ record sang JSON, giữ UTF-8 và readable
+        record_json = json.dumps(r, ensure_ascii=False, indent=2)
+        context_texts.append(record_json)
 
+    # Nối các record với separator để LLM phân biệt
     context_text = "\n\n---\n\n".join(context_texts)
 
     prompt = f"""
-Dưới đây là các thông tin tham khảo (đã trích xuất):
+Dưới đây là các thông tin tham khảo (toàn bộ dữ liệu các record đã retrieve):
 
 {context_text}
 
