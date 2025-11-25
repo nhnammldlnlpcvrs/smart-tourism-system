@@ -17,7 +17,10 @@ def get_embeddings(records: List[Dict[str, Any]], model_name: str = DEFAULT_EMBE
 
     if batch:
         try:
-            contents = [r["record"] for r in records]
+            contents = []
+            for r in records:
+                contents.append(r["record"])
+
             resp = genai.embed_content(model=model_name, content=contents)
             if isinstance(resp, list):
                 for item in resp:

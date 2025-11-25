@@ -64,7 +64,6 @@ class VectorStore:
         inds = indices[0].tolist()
         result = []
         for i in inds:
-            # in case index returns -1 for padding
             if i < 0 or i >= len(self.records):
                 continue
             result.append(self.records[i])
