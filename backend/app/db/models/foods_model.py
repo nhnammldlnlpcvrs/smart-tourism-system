@@ -1,13 +1,12 @@
-from sqlalchemy import Column, Integer, Text
-from sqlalchemy.ext.declarative import declarative_base
+# models/foods_model.py
+from sqlalchemy import Column, Integer, Text, ARRAY
+from app.db.base import Base
 
-Base = declarative_base()
+class VietnamFood(Base):
+    __tablename__ = "vietnam_foods"
 
-
-class Food(Base):
-    __tablename__ = "foods"
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True)
     province = Column(Text)
-    name = Column(Text)
+    food = Column(Text)
     description = Column(Text)
+    tags = Column(ARRAY(Text))

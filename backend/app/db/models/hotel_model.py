@@ -1,12 +1,13 @@
-from sqlalchemy import Column, Integer, Text, Float
+# models/hotel_model.py
+from sqlalchemy import Column, BigInteger, Float, Text
 from app.db.base import Base
 
-class Hotel(Base):
-    __tablename__ = "hotels"
+class VietnamHotel(Base):
+    __tablename__ = "vietnam_hotels"
 
-    id = Column(Integer, primary_key=True, autoincrement=True)  # locationId
-    name = Column(Text, nullable=False)
+    locationId = Column(BigInteger, primary_key=True)
+    name = Column(Text)
     latitude = Column(Float)
     longitude = Column(Float)
-    parent_geo = Column(Text)       # parentGeo
-    parent_geo_id = Column(Integer) # parentGeoId
+    parentGeo = Column(Text)
+    parentGeoId = Column(BigInteger)
