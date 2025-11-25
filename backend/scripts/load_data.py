@@ -1,117 +1,81 @@
-from app.db.base import Base
-from app.db.session import engine, SessionLocal
-from app.db.models.tourism_model import TourismPlace, TourismActivity, TourismTag
-from app.db.models.hotel_model import Hotel
-from app.db.models.foods_model import Food
+# scripts/load_data.py
+import argparse
+import os
+import sys
 
-import json
-from pathlib import Path
+# Cho phép import từ thư mục project root
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-Base.metadata.create_all(bind=engine)
-
-DATA_DIR = Path(__file__).parent.parent / "data"
-
-def load_tourism():
-    db = SessionLocal()
-    print("=== Start loading tourism data into PostgreSQL ===")
-    file_path = DATA_DIR / "vietnam_tourism.jsonl"
-
-    # Xóa dữ liệu cũ
-    db.query(TourismActivity).delete()
-    db.query(TourismTag).delete()
-    db.query(TourismPlace).delete()
-    db.commit()
-
-    places_to_add = []
-    activities_to_add = []
-    tags_to_add = []
-
-    with open(file_path, "r", encoding="utf-8") as f:
-        for line in f:
-            item = json.loads(line)
-            place = TourismPlace(
-                name=item.get("name"),
-                type=item.get("type"),
-                province=item.get("province"),
-                description=item.get("description"),
-                best_time_to_visit=item.get("best_time_to_visit")
-            )
-            db.add(place)
-            db.flush()  # tạo id tạm để dùng cho child records
-
-            for act in item.get("activities", []):
-                activities_to_add.append(TourismActivity(tourism_id=place.id, activity=act))
-
-            for tag in item.get("tags", []):
-                tags_to_add.append(TourismTag(tourism_id=place.id, tag=tag))
-
-    db.bulk_save_objects(activities_to_add)
-    db.bulk_save_objects(tags_to_add)
-    db.commit()
-    db.close()
-    print("Tourism data loaded.")
+from utils.create_tables import (
+    load_tourism,
+    load_foods,
+    load_hotels
+)
 
 
-def load_hotels():
-    db = SessionLocal()
-    print("=== Start loading hotels data into PostgreSQL ===")
-    file_path = DATA_DIR / "vietnam_hotel.jsonl"
+def main():
+    parser = argparse.ArgumentParser(description="Load JSONL datasets into PostgreSQL.")
 
-    db.query(Hotel).delete()
-    db.commit()
+    parser.add_argument(
+        "--tourism",
+        action="store_true",
+        help="Load vietnam_tourism.jsonl into PostgreSQL"
+    )
 
-    hotels_to_add = []
-    with open(file_path, "r", encoding="utf-8") as f:
-        for line in f:
-            item = json.loads(line)
+    parser.add_argument(
+        "--foods",
+        action="store_true",
+        help="Load vietnam_foods.jsonl into PostgreSQL"
+    )
 
-            latitude = float(item.get("latitude")) if item.get("latitude") not in (None, "") else None
-            longitude = float(item.get("longitude")) if item.get("longitude") not in (None, "") else None
-            parent_geo_id = int(item.get("parentGeoId")) if item.get("parentGeoId") not in (None, "") else None
+    parser.add_argument(
+        "--hotels",
+        action="store_true",
+        help="Load vietnam_hotels.jsonl into PostgreSQL"
+    )
 
-            hotel = Hotel(
-                name=item.get("name"),
-                latitude=latitude,
-                longitude=longitude,
-                parent_geo=item.get("parentGeo"),
-                parent_geo_id=parent_geo_id
-            )
-            hotels_to_add.append(hotel)
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Load all datasets into PostgreSQL"
+    )
 
-    db.bulk_save_objects(hotels_to_add)
-    db.commit()
-    db.close()
-    print("Hotels data loaded.")
+    args = parser.parse_args()
+
+    data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 
-def load_foods():
-    db = SessionLocal()
-    print("=== Start loading foods data into PostgreSQL ===")
-    file_path = DATA_DIR / "vietnam_foods.jsonl"
+    tourism_path = os.path.join(data_dir, "vietnam_tourism.jsonl")
+    foods_path   = os.path.join(data_dir, "vietnam_foods.jsonl")
+    hotels_path  = os.path.join(data_dir, "vietnam_hotels.jsonl")
 
-    db.query(Food).delete()
-    db.commit()
+    if args.all:
+        print("Loading ALL datasets...")
+        load_tourism(tourism_path)
+        load_foods(foods_path)
+        load_hotels(hotels_path)
+        print("All datasets loaded successfully.")
+        return
 
-    foods_to_add = []
-    with open(file_path, "r", encoding="utf-8") as f:
-        for line in f:
-            item = json.loads(line)
-            food = Food(
-                province=item.get("province"),
-                name=item.get("food"),
-                description=item.get("description")
-            )
-            foods_to_add.append(food)
+    if args.tourism:
+        print("Loading tourism data...")
+        load_tourism(tourism_path)
 
-    db.bulk_save_objects(foods_to_add)
-    db.commit()
-    db.close()
-    print("Foods data loaded.")
+    if args.foods:
+        print("Loading foods data...")
+        load_foods(foods_path)
+
+    if args.hotels:
+        print("Loading hotels data...")
+        load_hotels(hotels_path)
+
+    if not (args.tourism or args.foods or args.hotels or args.all):
+        print("\nBạn chưa chọn dataset để load.")
+        print("Ví dụ:")
+        print("  python scripts/load_data.py --tourism")
+        print("  python scripts/load_data.py --foods")
+        print("  python scripts/load_data.py --all\n")
 
 
 if __name__ == "__main__":
-    print("=== Start loading data into PostgreSQL ===")
-    load_tourism()
-    load_hotels()
-    load_foods()
-    print("All data loaded successfully!")
+    main()
