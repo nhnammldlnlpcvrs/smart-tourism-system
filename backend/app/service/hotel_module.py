@@ -4,7 +4,7 @@ import os
 
 DATA_PATH = os.path.join(
     os.path.dirname(__file__),
-    "..", "..", "data", "vietnam_hotel.jsonl"
+    "..", "..", "data", "vietnam_hotels.jsonl"
 )
 DATA_PATH = os.path.abspath(DATA_PATH)
 

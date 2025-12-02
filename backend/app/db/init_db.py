@@ -1,9 +1,9 @@
 # db/init_db.py
-from app.db.session import engine
-from app.db.base import Base
-from app.db.models.tourism_model import TourismPlace
-from app.db.models.foods_model import VietnamFood
-from app.db.models.hotel_model import VietnamHotel
+from backend.app.db.session import engine
+from backend.app.db.base import Base
+from backend.app.db.models.tourism_model import TourismPlace
+from backend.app.db.models.foods_model import VietnamFood
+from backend.app.db.models.hotel_model import VietnamHotel
 
 def init_tables():
     Base.metadata.create_all(bind=engine)

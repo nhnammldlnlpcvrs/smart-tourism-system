@@ -1,6 +1,6 @@
 # models/tourism_model.py
 from sqlalchemy import Column, Integer, Float, Text, ARRAY
-from app.db.base import Base
+from backend.app.db.base import Base
 
 class TourismPlace(Base):
     __tablename__ = "tourism_places"
