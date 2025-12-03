@@ -2,3 +2,4 @@
 __pycache__/
 backend/models/
 logs/
+.ipynb_checkpoints/
