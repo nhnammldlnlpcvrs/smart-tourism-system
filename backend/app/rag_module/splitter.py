@@ -1,13 +1,8 @@
-from typing import List, Dict, Any
-
-"""
-    Trả về list các dict có tối thiểu: { "id": int, "record": Dict }
- """
-def split_documents(data: List[Dict]) -> List[Dict[str, Any]]:
+def split_documents(data):
     chunks = []
-    for i, item in enumerate(data):
+    for item in data:
         chunks.append({
-            "id": i,
-            "record": item
+            "id": item["id"],
+            "record": item["record"]
         })
     return chunks
