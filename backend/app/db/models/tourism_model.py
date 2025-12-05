@@ -1,4 +1,4 @@
-# models/tourism_model.py
+# backend/app/db/models/tourism_model.py
 from sqlalchemy import Column, Integer, Float, Text, ARRAY
 from app.db.base import Base
 
