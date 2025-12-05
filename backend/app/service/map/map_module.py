@@ -1,10 +1,7 @@
 import httpx
 import asyncio
 
-# 🗺️ Không cần API key — Dùng OpenStreetMap (Nominatim)
-# ⚠️ Phải có User-Agent riêng để tránh bị từ chối request
-
-# 📍 Hàm lấy tọa độ từ tên địa điểm (Geocoding)
+#  Hàm lấy tọa độ từ tên địa điểm (Geocoding)
 async def get_location(query: str):
     """
     Lấy tọa độ (lat, lng) từ tên địa điểm bằng Nominatim (OpenStreetMap).
@@ -34,7 +31,7 @@ async def get_location(query: str):
         return None
 
 
-# 🗺️ Hàm tạo liên kết mở Google Maps từ lat/lng
+# Hàm tạo liên kết mở Google Maps từ lat/lng
 def create_map_link(lat: float, lng: float) -> str:
     """
     Tạo link Google Maps từ tọa độ.
@@ -43,7 +40,7 @@ def create_map_link(lat: float, lng: float) -> str:
     return f"https://www.google.com/maps?q={lat},{lng}"
 
 
-# 📌 Hàm tìm địa điểm gần đó (chuyển từ Google sang Overpass API)
+#  Hàm tìm địa điểm gần đó (chuyển từ Google sang Overpass API)
 async def get_nearby_places(lat: float, lng: float, radius: int = 1000, type: str = "tourism"):
     """
     Tìm các điểm du lịch gần tọa độ sử dụng Overpass API (nguồn dữ liệu OpenStreetMap).
@@ -85,11 +82,11 @@ async def get_nearby_places(lat: float, lng: float, radius: int = 1000, type: st
             return {"results": places}
 
     except Exception as e:
-        print("🚩 Lỗi lấy địa điểm gần đó (Overpass):", e)
+        print(" Lỗi lấy địa điểm gần đó (Overpass):", e)
         return {"results": []}
 
 
-# 🚗 Hàm tính khoảng cách (sử dụng Haversine formula)
+# Hàm tính khoảng cách (sử dụng Haversine formula)
 from math import radians, sin, cos, sqrt, atan2
 
 async def get_distance(origin: str, destination: str):
@@ -125,14 +122,3 @@ async def get_distance(origin: str, destination: str):
         print("📏 Lỗi tính khoảng cách:", e)
         return {"error": str(e)}
 
-
-# 🧪 Test nhanh module
-if __name__ == "__main__":
-    async def main():
-        print(await get_location("Đà Lạt"))
-        loc = await get_location("Nha Trang")
-        if loc:
-            print(await get_nearby_places(loc["lat"], loc["lng"], 1000))
-        print(await get_distance("Hà Nội", "Đà Nẵng"))
-
-    asyncio.run(main())

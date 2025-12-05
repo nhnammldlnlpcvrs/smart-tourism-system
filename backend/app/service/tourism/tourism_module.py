@@ -1,6 +1,7 @@
 from app.db.session import SessionLocal
 from app.db.models.tourism_model import TourismPlace as Tourism
 
+<<<<<<< HEAD
 
 def get_all_provinces():
     session = SessionLocal()
@@ -12,6 +13,24 @@ def get_all_provinces():
         session.close()
 
 
+=======
+def get_provinces():
+    session = SessionLocal()
+    try:
+        # Query lấy danh sách các tỉnh duy nhất (DISTINCT)
+        # Kết quả trả về dạng list các tuple: [('Quảng Ngãi',), ('Đà Nẵng',), ...]
+        rows = session.query(Tourism.province).distinct().all()
+        
+        # Chuyển đổi thành list string và sắp xếp
+        # Lọc bỏ các giá trị None hoặc rỗng nếu có
+        return sorted([row[0] for row in rows if row[0]])
+    except Exception as e:
+        print(f"Error getting provinces: {e}")
+        return []
+    finally:
+        session.close()
+
+>>>>>>> 726c261a4888baa19632f336fe1ddff549a38933
 def get_category_tree_by_province(province: str):
     session = SessionLocal()
     try:
