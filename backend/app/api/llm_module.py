@@ -1,202 +1,101 @@
 import os
-import json
+import asyncio
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-# Import các module API con
-from app.service.map_module import get_nearby_places, get_distance, get_location  #map
-from app.service.weather_module import get_weather  # weather
-from app.service.hotel_module import recommend_hotels
-from app.service.food_module import get_recommend_foods
+from app.service.weather.weather_module import get_current_weather
+from app.service.map.map_module import get_nearby_places, get_distance
+from app.service.tourism.tourism_module import get_category_tree_by_province
+from app.service.hotel.hotel_module import get_hotels_by_province_and_place_id
+from app.service.foods.food_module import get_foods_by_province_and_tag
 
-# 🔇 Tắt log gRPC để tránh spam console
+# CẤU HÌNH VÀ KHỞI TẠO MODEL
+# Tắt logging GRPC (Để terminal sạch sẽ hơn)
 os.environ["GRPC_VERBOSITY"] = "NONE"
 os.environ["GRPC_TRACE"] = ""
 
-# 📌 Load biến môi trường từ file .env
 load_dotenv()
-
-# 🔑 Lấy GEMINI_API_KEY từ .env để cấu hình cho Gemini API
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-# ⚙️ Cấu hình sinh văn bản của model
-generation_config = {
-    "temperature": 0.3,  # kiểm soát độ sáng tạo (thấp -> chính xác hơn)
-    "top_p": 0.95,
-    "top_k": 64,
-    "max_output_tokens": 2048,
-    "response_mime_type": "text/plain",
-}
-
-# 🛡️ Cấu hình an toàn nội dung
-safety_settings = [
-    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
-    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+# Tổng hợp tất cả các tools mà Chatbot có thể sử dụng
+chat_tools = [
+    get_current_weather,
+    get_nearby_places,
+    get_distance,
+    get_category_tree_by_province, # Để lấy cấu trúc du lịch
+    get_hotels_by_province_and_place_id, # Gợi ý khách sạn
+    get_foods_by_province_and_tag    # Gợi ý món ăn
 ]
 
-# Khởi tạo mô hình Gemini với hướng dẫn hệ thống (system instruction)
-model = genai.GenerativeModel(
-    model_name="gemini-2.0-flash",
-    generation_config=generation_config,
-    safety_settings=safety_settings,
-    system_instruction="""
-Bạn là **trợ lý du lịch thông minh tại Việt Nam**, giúp người dùng tra cứu **khách sạn, địa điểm, món ăn và thời tiết**.
-Trả lời bằng tiếng Việt thân thiện, tự nhiên.
+chat_model = genai.GenerativeModel(
+    model_name="gemini-2.5-flash", # Dùng model 2.5 flash cho tốc độ
+    tools=chat_tools,
+    system_instruction="Bạn là Trợ lý Du lịch Việt Nam, chuyên cung cấp thông tin thời tiết, địa điểm, món ăn và chỗ ở. Trả lời ngắn gọn, thân thiện và sử dụng các công cụ khi cần thiết."
+)
+# Khởi tạo session chat để giữ lịch sử hội thoại
+chat_session = chat_model.start_chat(history=[])
 
----
-
-###  Quy tắc hoạt động
-1️⃣ Khi người dùng hỏi, hãy tự động xác định nhu cầu (ví dụ: khách sạn, quán ăn, món ăn, thời tiết, khoảng cách...).
-2️⃣ Nếu cần thông tin từ công cụ, hãy gọi **các hàm Python có sẵn** để lấy dữ liệu (chẳng hạn `get_weather`, `recommend_hotels`, `get_nearby_places`, `get_distance`...).
-3️⃣ **Không bao giờ hiển thị hoặc in mã lệnh, code, hay tool_code.**
-4️⃣ Sau khi lấy dữ liệu, **tự tổng hợp lại và trả lời bằng tiếng Việt tự nhiên, thân thiện, ngắn gọn.**
-5️⃣ **Không trả lời bằng tiếng Anh trừ khi người dùng yêu cầu rõ.**
-6️⃣ Nếu không có dữ liệu, hãy trả lời lịch sự, ví dụ: “Xin lỗi, mình chưa có thông tin chính xác về khu vực này.”
-
----
-
-###  Các công cụ bạn có thể gọi
-- `recommend_hotels(city)` → Gợi ý khách sạn từ cơ sở dữ liệu nội bộ. 
-- `get_recommend_foods(province)` → Gợi ý món ăn đặc sản từ cơ sở dữ liệu nội bộ. 
-- `get_nearby_places(location, type, radius)` → Tìm địa điểm du lịch, nhà hàng, quán cà phê quanh vị trí.  
-- `get_distance(origin, destination)` → Tính khoảng cách giữa hai địa điểm.  
-- `get_weather(city)` → Lấy thông tin thời tiết hiện tại của một thành phố.  
-
----
-
-### 🗂️ Cấu trúc câu trả lời
-Tùy theo mục đích, hãy định dạng như sau:
-
-📌 Format khách sạn:
-🏨 <Tên>
-⭐ Đánh giá: <rating>
-📍 <Địa chỉ>
-🔗 <Google Map>
-
-📌 Format địa điểm:
-⭐ <Tên điểm đến>
-📍 <Địa chỉ>
-🔗 <Google Map>
-
-📌 Format thời tiết:
-🌤️ Thời tiết tại <city>:
-- Mô tả: <weather>
-- Nhiệt độ: <temp>°C
-- Độ ẩm: <humidity>%
-- Gió: <wind_speed> m/s
-
-📌 Format món ăn:
-🍽️ <Tên món>
-📝 Mô tả: <description>
----
-
-### 💬 Cách trình bày
-- Luôn viết giọng thân thiện, ngắn gọn, tự nhiên (giống như một người Việt Nam đang trò chuyện).  
-- Có thể thêm emoji phù hợp: ☀️🌧️☕🏝️📍  
-- **Không bao giờ in đoạn mã hoặc ký hiệu ```tool_code``` hay ```python```** trong phản hồi.  
-
----
-Ví dụ:  
-> ☁️ Thời tiết hôm nay ở quận Tân Phú, TP.HCM: 31°C, độ ẩm 70%, trời nhiều mây.  
-> Dưới đây là vài quán cà phê gần bạn có thể ghé thử:
-> ☕ Runam Bistro – [Xem bản đồ](https://maps.app.goo.gl/...)  
-> ☕ The Coffee House – [Xem bản đồ](https://maps.app.goo.gl/...)  
-
-"""
+# MODEL CHUYÊN DỤNG: WRITER (Viết lời bình)
+writer_model = genai.GenerativeModel(
+    model_name="gemini-2.5-flash",
+    generation_config={"temperature": 0.8, "max_output_tokens": 200},
+    system_instruction="Bạn là một hướng dẫn viên du lịch vui tính, am hiểu văn hóa Việt Nam."
 )
 
-# Tạo session chat
-chat_session = model.start_chat(history=[])
+# CHUYÊN TẠO LỜI BÌNH LUẬN CHO APP (Sử dụng writer_model)
+async def generate_smart_comment(city: str, service_type: str) -> str:
+    """
+    Sinh ra một câu bình luận ngắn gọn, thú vị dựa trên địa điểm và dịch vụ người dùng đang xem.
+    """
+    prompt = ""
+    
+    if service_type == "hotel":
+        prompt = f"Người dùng đang tìm khách sạn tại {city}. Hãy viết một câu (1-2 câu) khen ngợi {city} và mời họ xem danh sách khách sạn bên dưới. Ví dụ: 'Woa, {city} mùa này đẹp lắm! Dưới đây là mấy khách sạn view xịn mình tìm được nè 👇'"
+    elif service_type == "food":
+        prompt = f"Người dùng đang tìm món ăn tại {city}. Hãy viết một câu (1-2 câu) nhắc đến một đặc sản nổi tiếng của {city} và mời họ xem danh sách. Ví dụ: 'Đến {city} mà không ăn [đặc sản] là phí lắm nha! Xem ngay list quán ngon này 👇'"
+    elif service_type == "place":
+        prompt = f"Người dùng đang xem địa điểm tham quan tại {city}. Hãy viết một câu hào hứng rủ họ xách ba lô lên và đi."
+    else:
+        prompt = f"Chào mừng bạn đến với {city}. Dưới đây là thông tin bạn cần."
 
-# 🧩 Hàm chính dùng để hỏi Gemini và xử lý kết quả từ tool
-async def ask_gemini(prompt: str) -> str:
     try:
-        # Gửi tin nhắn người dùng lên Gemini
-        response = await chat_session.send_message_async(prompt)
-        candidates = response.candidates
+        # Gọi model sinh text thuần túy -> Nhanh & Rẻ
+        response = await writer_model.generate_content_async(prompt)
+        return response.text.strip()
+    except Exception:
+        return f"Chào bạn! Dưới đây là danh sách {service_type} tại {city} mình tìm được nha! 👇"
 
-        # 🔍 Nếu Gemini yêu cầu gọi công cụ API
-        if candidates and hasattr(candidates[0], "tool_calls"):
-            tool_calls = candidates[0].tool_calls
-            result_text = ""
+# HÀM CHÍNH: XỬ LÝ CHATBOT TỰ DO (Sử dụng chat_session)
+async def ask_gemini(user_prompt: str):
+    """
+    Xử lý yêu cầu của người dùng, gọi các công cụ (tools) nếu cần thiết.
+    """
+    response = await chat_session.send_message_async(user_prompt)
 
-            # Xử lý từng lời gọi công cụ
-            for tool_call in tool_calls:
-                function_name = tool_call.function.name
-                args = json.loads(tool_call.function.arguments)
+    if response.function_calls:
+        print(f" DEBUG: Model quyết định gọi {len(response.function_calls)} tool.")
+        
+        # Tạo list các task (công việc) bất đồng bộ để gọi các tool
+        tool_results = []
+        for call in response.function_calls:
+            # Lấy hàm cần gọi từ global scope
+            tool_func = globals().get(call.name)
+            if tool_func:
+                # Thực hiện gọi hàm với các đối số mà model cung cấp
+                # Dùng asyncio.to_thread nếu hàm là blocking (như các hàm DB/requests không phải async)
+                # Hoặc gọi trực tiếp nếu hàm là async (như httpx/asyncpg)
+                if asyncio.iscoroutinefunction(tool_func):
+                    result = await tool_func(**dict(call.args))
+                else:
+                    result = await asyncio.to_thread(tool_func, **dict(call.args))
+                
+                tool_results.append(
+                    genai.types.Part.from_function_response(name=call.name, response=result)
+                )
+            else:
+                 print(f"Tool {call.name} not found.")
+        
+        # Gửi kết quả của tool trở lại cho Model để nó tổng hợp câu trả lời
+        response = await chat_session.send_message_async(tool_results)
 
-               # 1️⃣ Gợi ý khách sạn
-                if function_name == "recommend_hotels":
-                    if "latitude" not in args or "longitude" not in args:
-                        loc = await get_location(args.get("query", prompt))
-                        if not loc:
-                            return "❌ Không tìm thấy địa điểm để gợi ý khách sạn."
-                        args.update({"latitude": loc["lat"], "longitude": loc["lng"]})
-
-                    hotels = await recommend_hotels(**args)
-                    if not hotels:
-                        return "❌ Không có khách sạn phù hợp gần đây."
-
-                    for h in hotels[:5]:
-                        result_text += (
-                            f"🏨 {h['name']}\n"
-                            f"⭐ Đánh giá: {h.get('rating', 'Chưa có')}\n"
-                            f"📍 {h['address']}\n"
-                            f"🔗 https://www.google.com/maps?q={h['latitude']},{h['longitude']}\n\n"
-                        )
-                    return result_text.strip()
-
-                # 2️⃣ Địa điểm gần đó
-                elif function_name == "get_nearby_places":
-                    data = await get_nearby_places(**args)
-                    items = data.get("results", [])[:5]
-                    for p in items:
-                        result_text += (
-                            f"⭐ {p.get('name')}\n"
-                            f"📍 {p.get('vicinity')}\n"
-                            f"🔗 {p.get('google_maps_link', '')}\n\n"
-                        )
-                    return result_text.strip()
-
-                # 3️⃣ Khoảng cách
-                elif function_name == "get_distance":
-                    data = await get_distance(**args)
-                    leg = data["routes"][0]["legs"][0]
-                    return f"📏 {leg['distance']['text']} — ⏱ {leg['duration']['text']}"
-
-                # 4️⃣ Thời tiết
-                elif function_name == "get_weather":
-                    w = await get_weather(**args)
-                    return (
-                        f"🌤️ Thời tiết tại {w['city']}:\n"
-                        f"- Mô tả: {w['weather']}\n"
-                        f"- 🌡 {w['temperature']}°C\n"
-                        f"- 💧 {w['humidity']}%\n"
-                        f"- 💨 {w['wind_speed']} m/s"
-                    )
-
-                # 5️⃣ Món ăn đặc sản
-                elif function_name == "get_recommend_foods":
-                    foods = await get_recommend_foods(**args)
-                    if not foods:
-                        return "🍽️ Không tìm thấy đặc sản phù hợp."
-                    for f in foods[:5]:
-                        result_text += (
-                            f"🍽️ {f['food']}\n"
-                            f"📍 {f['province']}\n"
-                            f"📝 {f['description']}\n\n"
-                        )
-                    return result_text.strip() 
-
-            # 🔁 Khi không có dữ liệu hợp lệ
-            return "Xin lỗi, dữ liệu bạn cần chưa sẵn sàng."
-
-        else:
-            # Nếu Gemini trả lời không gọi tool (văn bản bình thường)
-            return response.text
-
-    except Exception as e:
-        # Bắt lỗi chung để debug dễ hơn
-        return f"Lỗi: {e.__class__.__name__} - {e}"
+    return response.text.strip()

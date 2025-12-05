@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from app.api.router_chat import router as chat_router
-from app.service.router_map import router as map_router
-from app.service.router_weather import router as weather_router
-from app.service.food_router import router as food_router
-from app.service.hotel_router import router as hotel_router
+from app.service.map.map_router import router as map_router
+from app.service.weather.weather_router import router as weather_router
+from app.service.foods.food_router import router as food_router
+from app.service.hotel.hotel_router import router as hotel_router
 from app.service.tourism.tourism_router import router as tourism_router
 
 app = FastAPI(
