@@ -1,16 +1,20 @@
+# backend/app/rag_module/embedder.py
 from sentence_transformers import SentenceTransformer
-import numpy as np
+from typing import List, Dict, Any
+from .loader import record_to_text
 
-_e5_model = SentenceTransformer("intfloat/multilingual-e5-small")
+class Embedder:
+    def __init__(self, model_name="intfloat/multilingual-e5-small"):
+        self.model = SentenceTransformer(model_name)
 
-def _record_to_text(record):
-    if isinstance(record, dict):
-        return " ".join(f"{k}: {v}" for k, v in record.items() if v)
-    elif isinstance(record, str):
-        return record
-    raise TypeError(f"Unsupported record type: {type(record)}")
+    def encode(self, texts: List[str]):
+        return self.model.encode(texts, convert_to_numpy=True)
 
-def get_embeddings(records):
-    texts = [_record_to_text(r["record"]) for r in records]
-    emb = _e5_model.encode(texts, convert_to_numpy=True, show_progress_bar=False)
-    return emb.astype("float32")
+    # NEW — encode records
+    def encode_records(self, records: List[Dict[str, Any]]):
+        texts = [record_to_text(r["record"]) for r in records]
+        return self.encode(texts)
+
+    # NEW — convert a single record
+    def record_to_text(self, record: Dict[str, Any]) -> str:
+        return record_to_text(record)
