@@ -1,6 +1,6 @@
 # models/foods_model.py
 from sqlalchemy import Column, Integer, Text, ARRAY
-from backend.app.db.base import Base
+from app.db.base import Base
 
 class VietnamFood(Base):
     __tablename__ = "vietnam_foods"
