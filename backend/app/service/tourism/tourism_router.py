@@ -1,4 +1,6 @@
+# backend/app/service/tourism/tourism_router.py
 from fastapi import APIRouter, Query
+from fastapi import Body
 from .tourism_module import (
     get_all_provinces,
     get_category_tree_by_province,
