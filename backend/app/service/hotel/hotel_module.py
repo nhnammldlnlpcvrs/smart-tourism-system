@@ -1,3 +1,4 @@
+# backend/app/service/hotel/hotel_module.py
 import json
 import os
 import math
@@ -5,14 +6,12 @@ import urllib.parse
 from app.db.session import SessionLocal
 from app.db.models.tourism_model import TourismPlace
 
-# 1. Cấu hình đường dẫn
 DATA_PATH = os.path.join(
     os.path.dirname(__file__),
     "..", "..", "..", "data", "vietnam_hotels.jsonl"
 )
 DATA_PATH = os.path.abspath(DATA_PATH)
 
-# 2. Load dữ liệu & Tạo Link Google Maps chuẩn
 def load_hotels():
     hotels = []
     if os.path.exists(DATA_PATH):
@@ -23,13 +22,10 @@ def load_hotels():
                     lat = raw.get("latitude")
                     lon = raw.get("longitude")
                     
-                    # --- TẠO LINK BẢN ĐỒ ---
                     map_link = ""
                     if lat and lon:
-                        # Link thả ghim chính xác tại toạ độ
                         map_link = f"https://www.google.com/maps?q={lat},{lon}"
                     else:
-                        # Fallback: Tìm theo tên + địa chỉ nếu không có toạ độ
                         query_str = f"{raw['name']} {raw.get('parentGeo', '')}"
                         encoded_query = urllib.parse.quote(query_str)
                         map_link = f"https://www.google.com/maps/search/?api=1&query={encoded_query}"
@@ -41,14 +37,13 @@ def load_hotels():
                         "address": raw.get("address", raw.get("parentGeo", "")),
                         "latitude": float(lat) if lat else None,
                         "longitude": float(lon) if lon else None,
-                        "link": map_link  # <--- Link Google Maps
+                        "link": map_link
                     })
                 except: continue
     return hotels
 
 HOTELS = load_hotels()
 
-# 3. Hàm tính khoảng cách (Haversine)
 def haversine(lat1, lon1, lat2, lon2):
     if not lat1 or not lon1 or not lat2 or not lon2:
         return float('inf')
@@ -63,7 +58,6 @@ def haversine(lat1, lon1, lat2, lon2):
     except:
         return float('inf')
 
-# 4. Hàm chính: Tìm kiếm & Gợi ý
 def get_hotels_by_province_and_place_id(province: str, place_id: int):
     """
     - province: Tên tỉnh (để lọc sơ bộ).
@@ -96,7 +90,6 @@ def get_hotels_by_province_and_place_id(province: str, place_id: int):
         if not item["province"] or item["province"].strip().lower() != prov_norm:
             continue
 
-        # TRƯỜNG HỢP 1: Tìm theo địa điểm (Có place_id + có toạ độ)
         if target_lat and target_lon and item["latitude"] and item["longitude"]:
             dist = haversine(item["latitude"], item["longitude"], target_lat, target_lon)
             
@@ -107,7 +100,6 @@ def get_hotels_by_province_and_place_id(province: str, place_id: int):
                 data["distance"] = dist
                 results.append(data)
         
-        # TRƯỜNG HỢP 2: Tìm theo tỉnh thường (Không nhập place_id)
         elif not place_id:
             data = item.copy()
             data["description"] = f"Địa chỉ: {item['address']}"
