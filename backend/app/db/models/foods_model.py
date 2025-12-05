@@ -1,4 +1,4 @@
-# models/foods_model.py
+# backend/app/db/models/foods_model.py
 from sqlalchemy import Column, Integer, Text, ARRAY
 from app.db.base import Base
 
