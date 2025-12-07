@@ -1,7 +1,7 @@
 # backend/app/service/itinerary/itinerary_router.py
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from typing import List, Dict, Any
+from typing import List
 from sqlalchemy.orm import Session
 
 from app.db.models.tourism_model import TourismPlace
@@ -11,108 +11,138 @@ from app.api.rag_itinerary_module import generate_itinerary_for_request
 router = APIRouter(prefix="/itinerary", tags=["Itinerary RAG"])
 
 
-# API TRẢ VỀ TOÀN BỘ OPTIONS CHO FE
-@router.get("/options")
-def get_fixed_options(db: Session = Depends(get_db)):
-    """
-    Trả về toàn bộ lựa chọn cố định từ dữ liệu thực tế trong DB.
-    Các trường được lấy từ model TourismPlace.
-    """
+# 1. API: Extract tags từ danh sách địa điểm
+class ExtractTagsRequest(BaseModel):
+    place_ids: List[int]
 
-    places = db.query(TourismPlace).all()
 
-    # Các tập hợp để collect unique values
-    special_for_set = set()
-    activities_set = set()
-    seasonal_event_set = set()
-    budget_range_set = set()
-    duration_set = set()
+@router.post("/extract-tags")
+def extract_tags(req: ExtractTagsRequest, db: Session = Depends(get_db)):
+    places = db.query(TourismPlace).filter(
+        TourismPlace.id.in_(req.place_ids)
+    ).all()
 
-    for place in places:
+    if not places:
+        return {
+            "activities": [],
+            "special_for": [],
+            "seasonal_events": [],
+            "highlights": [],
+            "price_range": [],
+            "duration_recommend": [],
+            "best_time_to_visit": [],
+            "nearby_places": []
+        }
 
-        # special_for: ARRAY(Text)
-        if place.special_for:
-            for item in place.special_for:
-                if item and item.strip():
-                    special_for_set.add(item.strip())
+    activities = set()
+    special_for = set()
+    seasonal_events = set()
+    highlights = set()
+    price_range = set()
+    duration_recommend = set()
+    best_time_to_visit = set()
+    nearby_places = set()
 
-        # activities: ARRAY(Text)
-        if place.activities:
-            for item in place.activities:
-                if item and item.strip():
-                    activities_set.add(item.strip())
+    for p in places:
+        if p.activities:
+            activities.update([a for a in p.activities if a])
+        if p.special_for:
+            special_for.update([s for s in p.special_for if s])
+        if p.seasonal_events:
+            seasonal_events.update([ev for ev in p.seasonal_events if ev])
+        if p.highlights:
+            if isinstance(p.highlights, list):
+                highlights.update([h for h in p.highlights if h])
+            else:
+                highlights.add(p.highlights)
+        if p.price_range:
+            price_range.add(p.price_range)
 
-        # seasonal_events: ARRAY(Text)
-        if place.seasonal_events:
-            for item in place.seasonal_events:
-                if item and item.strip():
-                    seasonal_event_set.add(item.strip())
+        if p.duration_recommend:
+            duration_recommend.add(str(p.duration_recommend))
 
-        # price_range: Text
-        if place.price_range:
-            budget_range_set.add(place.price_range.strip())
+        if p.best_time_to_visit:
+            best_time_to_visit.add(p.best_time_to_visit)
 
-        # duration_recommend: Text (VD: "2-3 giờ", "Nửa ngày")
-        if place.duration_recommend:
-            duration_set.add(place.duration_recommend.strip())
+        if p.nearby_places:
+            if isinstance(p.nearby_places, list):
+                nearby_places.update([nb for nb in p.nearby_places if nb])
+            else:
+                nearby_places.add(p.nearby_places)
 
     return {
-        "special_for": sorted(list(special_for_set)),
-        "activities": sorted(list(activities_set)),
-        "seasonal_events": sorted(list(seasonal_event_set)),
-        "price_range": sorted(list(budget_range_set)),
-        "duration_recommend": sorted(list(duration_set)),
+        "activities": sorted(list(activities)),
+        "special_for": sorted(list(special_for)),
+        "seasonal_events": sorted(list(seasonal_events)),
+        "highlights": sorted(list(highlights)),
+        "price_range": sorted(list(price_range)),
+        "duration_recommend": sorted(list(duration_recommend)),
+        "best_time_to_visit": sorted(list(best_time_to_visit)),
+        "nearby_places": sorted(list(nearby_places))
     }
 
 
-# REQUEST MODEL CHO API TẠO LỊCH TRÌNH
-class ItineraryRequest(BaseModel):
-    province: str
-    categories: List[str]
-    subcategories: List[str]
-    places: List[Dict[str, Any]]
-
+# 2. API Generate
+class GenerateRequest(BaseModel):
+    place_ids: List[int]
+    place_tags: List[str]
+    days: int
+    audience: str | None = None
     start_date: str | None = None
     end_date: str | None = None
-    days: int | None = None
-
-    activities: List[str] = []
-    special_for: str | None = None
-    seasonal_event: str | None = None
-
-    budget_per_person: str | None = None
+    budget_per_person: int | str | None = None
     top_k: int = 5
 
 
-# API CHÍNH: TẠO LỊCH TRÌNH
 @router.post("/generate")
-def generate_itinerary(req: ItineraryRequest):
+def generate_itinerary(req: GenerateRequest, db: Session = Depends(get_db)):
 
-    days = req.days or 2
+    place_objs = db.query(TourismPlace).filter(
+        TourismPlace.id.in_(req.place_ids)
+    ).all()
 
-    itinerary_text = generate_itinerary_for_request(
-        province=req.province,
-        categories=req.categories,
-        subcategories=req.subcategories,
-        places=req.places,
-        days=days,
-        audience=req.special_for,
+    if not place_objs:
+        raise HTTPException(status_code=400, detail="Không tìm thấy địa điểm phù hợp.")
+
+    # Format JSON chuẩn để truyền vào RAG
+    places = [
+        {
+            "id": p.id,
+            "name": p.name,
+            "address": p.address,
+            "latitude": p.latitude,
+            "longitude": p.longitude,
+            "category": p.category,
+            "sub_category": p.sub_category,
+            "rating": p.rating
+        }
+        for p in place_objs
+    ]
+
+    province = place_objs[0].province
+
+    result = generate_itinerary_for_request(
+        province=province,
+        categories=[],
+        subcategories=[],
+        places=places,
+        days=req.days,
+        audience=req.audience,
         start_date=req.start_date,
         end_date=req.end_date,
         budget_per_person=req.budget_per_person,
         top_k=req.top_k,
-        activities=req.activities,
-        seasonal_events=req.seasonal_events,
+        place_tags=req.place_tags,
+        activities=[],
+        seasonal_event=None,
     )
 
     return {
-        "province": req.province,
-        "days": days,
+        "province": province,
+        "days": req.days,
+        "audience": req.audience,
         "start_date": req.start_date,
         "end_date": req.end_date,
-        "audience": req.special_for,
-        "activities": req.activities,
-        "seasonal_events": req.seasonal_events,
         "budget_per_person": req.budget_per_person,
-        "itinerary": itinerary_text
+        "itinerary": result
     }
