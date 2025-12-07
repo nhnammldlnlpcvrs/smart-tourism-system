@@ -34,9 +34,9 @@ class RAGPipeline:
                 self.store = VectorStore.load(self.persist_path)
                 self.retriever = Retriever(self.embedder, self.store)
                 self.is_built = True
-                print("🔵 Loaded existing vector store from disk.")
+                print("Loaded existing vector store from disk.")
             except Exception as e:
-                print("⚠ Failed to load vector store, will rebuild.", e)
+                print("Failed to load vector store, will rebuild.", e)
                 self.store = None
                 self.retriever = None
 
@@ -45,7 +45,7 @@ class RAGPipeline:
         """
         Build FAISS vectors from processed record list.
         """
-        print(f"🔧 Building vector store from {len(records)} records…")
+        print(f"Building vector store from {len(records)} records…")
 
         vectors = self.embedder.encode_records(records)
 
@@ -63,11 +63,11 @@ class RAGPipeline:
             persist_path=self.persist_path
         )
 
-        self.store.save()  # 💾 Persist FAISS + metadata
+        self.store.save()  # Persist FAISS + metadata
         self.retriever = Retriever(self.embedder, self.store)
         self.is_built = True
 
-        print("✅ Vector store built & saved.")
+        print("Vector store built & saved.")
         return self
 
     # Build store directly from PostgreSQL
@@ -87,6 +87,9 @@ class RAGPipeline:
 
         return self.retriever.retrieve(query, top_k=top_k)
 
+    def llm_generate(self, prompt: str):
+        return self.generator.generate(prompt)
+
     # Full RAG → Itinerary LLM
     def generate_itinerary(
         self,
@@ -101,7 +104,8 @@ class RAGPipeline:
         budget_per_person: str = None,
         top_k: int = 5,
         activities: Optional[List[str]] = None,
-        seasonal_event: Optional[str] = None,
+        seasonal_events: Optional[List[str]] = None,
+        selected_place_tags: Optional[List[str]] = None,
     ):
 
         # Build the query from available filters
@@ -114,8 +118,8 @@ class RAGPipeline:
         if activities:
             search_terms.extend(activities)
 
-        if seasonal_event:
-            search_terms.append(seasonal_event)
+        if seasonal_events:
+            search_terms.append(seasonal_events)
 
         query = " ".join([str(x).lower() for x in search_terms if x])
 
@@ -133,7 +137,8 @@ class RAGPipeline:
             end_date=end_date,
             budget_per_person=budget_per_person,
             activities=activities,
-            seasonal_event=seasonal_event
+            seasonal_events=seasonal_events,
+            selected_place_tags=selected_place_tags
         )
 
         llm_out = self.generator.generate(prompt)
