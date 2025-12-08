@@ -1,7 +1,7 @@
 # backend/app/service/itinerary/itinerary_module.py
 from fastapi import HTTPException
 from datetime import datetime
-from typing import List, Optional, Union
+from typing import List, Dict, Any
 
 from app.api.rag_itinerary_module import generate_itinerary_for_request
 
@@ -16,56 +16,45 @@ def validate_date(date_str: str) -> datetime:
         )
 
 
-def validate_places(places: List[dict]):
-    required_keys = {"name", "latitude", "longitude"}
-
-    for place in places:
-        missing = required_keys - set(place.keys())
-        if missing:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Thiếu trường: {', '.join(missing)}"
-            )
-
-
 def process_itinerary_request(
-    province: str,
-    places: List[dict],
-    place_tags: List[str],
-    start_date: Optional[str],
-    end_date: Optional[str],
-    days: Optional[int],
-    audience: Optional[str],
-    budget_per_person: Optional[Union[int, str]],
+    places: List[Dict[str, Any]],
+    start_date: str,
+    end_date: str,
     top_k: int = 5
 ):
+    # Validate dates
+    start = validate_date(start_date)
+    end = validate_date(end_date)
 
-    if not places:
-        raise HTTPException(status_code=400, detail="Bạn chưa chọn địa điểm.")
-    validate_places(places)
-
-    if start_date and end_date:
-        start = validate_date(start_date)
-        end = validate_date(end_date)
-        days = (end - start).days + 1
-    elif not days:
+    if end < start:
         raise HTTPException(
             status_code=400,
-            detail="Cần cung cấp days hoặc start_date + end_date."
+            detail="end_date phải lớn hơn hoặc bằng start_date."
         )
+    
+    # Cải tiến: Thêm kiểm tra nếu danh sách địa điểm trống
+    if not places:
+        return {
+            "days": 0,
+            "itinerary": {
+                "schedule": [],
+                "text": "Không có địa điểm nào được chọn để tạo lịch trình."
+            }
+        }
 
-    return generate_itinerary_for_request(
-        province=province,
-        categories=[],              # bỏ – không dùng
-        subcategories=[],           # bỏ – không dùng
-        places=places,
-        days=days,
-        audience=audience,
-        start_date=start_date,
-        end_date=end_date,
-        budget_per_person=budget_per_person,
-        top_k=top_k,
-        place_tags=place_tags,      # ***QUAN TRỌNG***
-        activities=[],              # bỏ – FE không dùng nữa
-        seasonal_event=None
+    days = (end - start).days + 1
+
+    # Call RAG
+    rag_result = generate_itinerary_for_request(
+    places=places,
+    days=days,
+    start_date=start_date,
+    end_date=end_date,
+    top_k=top_k
     )
+
+
+    return {
+        "days": days,
+        "itinerary": rag_result
+    }
