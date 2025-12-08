@@ -6,11 +6,11 @@ from .loader import load_from_postgres
 from .embedder import Embedder
 from .vector_store import VectorStore
 from .retriever import Retriever
-from .prompt_builder import build_itinerary_prompt
-from .generator import LLMGenerator
-
 
 class RAGPipeline:
+    """
+    Pipeline chỉ thực hiện chức năng RAG: Xây dựng Vector Store, Embedding và Truy xuất dữ liệu (Retrieval).
+    """
     def __init__(self, engine=None, persist_path: Optional[str] = None, rebuild: bool = False):
         self.engine = engine
         self.persist_path = persist_path or "app/rag_store"
@@ -20,7 +20,7 @@ class RAGPipeline:
         self.embedder = Embedder()
         self.store: Optional[VectorStore] = None
         self.retriever: Optional[Retriever] = None
-        self.generator = LLMGenerator()
+        # Loại bỏ: self.generator = LLMGenerator()
 
         # status flag
         self.is_built = False
@@ -45,6 +45,10 @@ class RAGPipeline:
         """
         Build FAISS vectors from processed record list.
         """
+        if self.is_built and not self.rebuild:
+             print("Vector store already built. Set rebuild=True to force rebuild.")
+             return self
+             
         print(f"Building vector store from {len(records)} records…")
 
         vectors = self.embedder.encode_records(records)
@@ -80,71 +84,13 @@ class RAGPipeline:
 
         return self.build_from_records(records)
 
-    # Retrieval
-    def retrieve(self, query: str, top_k: int = 5):
+    # Retrieval: Đổi tên từ 'retrieve' thành 'search' để phù hợp với module gọi
+    def search(self, query: str, top_k: int = 5):
+        """
+        Truy xuất các context liên quan nhất từ Vector Store.
+        """
         if not self.retriever:
-            raise RuntimeError("Retriever is not initialized")
+            raise RuntimeError("Retriever is not initialized or RAG store not built.")
 
+        # Gọi phương thức retrieve thực tế của Retriever component
         return self.retriever.retrieve(query, top_k=top_k)
-
-    def llm_generate(self, prompt: str):
-        return self.generator.generate(prompt)
-
-    # Full RAG → Itinerary LLM
-    def generate_itinerary(
-        self,
-        province: str,
-        selected_categories: List[str],
-        selected_subcategories: List[str],
-        places: List[Dict[str, Any]],
-        days: int = 2,
-        audience: str = "general",
-        start_date: str = None,
-        end_date: str = None,
-        budget_per_person: str = None,
-        top_k: int = 5,
-        activities: Optional[List[str]] = None,
-        seasonal_events: Optional[List[str]] = None,
-        selected_place_tags: Optional[List[str]] = None,
-    ):
-
-        # Build the query from available filters
-        search_terms = [
-            province,
-            *selected_categories,
-            *selected_subcategories
-        ]
-
-        if activities:
-            search_terms.extend(activities)
-
-        if seasonal_events:
-            search_terms.append(seasonal_events)
-
-        query = " ".join([str(x).lower() for x in search_terms if x])
-
-        contexts = self.retrieve(query, top_k=top_k)
-
-        prompt = build_itinerary_prompt(
-            province=province,
-            selected_categories=selected_categories,
-            selected_subcategories=selected_subcategories,
-            places=places,
-            retrieved_contexts=contexts,
-            days=days,
-            audience=audience,
-            start_date=start_date,
-            end_date=end_date,
-            budget_per_person=budget_per_person,
-            activities=activities,
-            seasonal_events=seasonal_events,
-            selected_place_tags=selected_place_tags
-        )
-
-        llm_out = self.generator.generate(prompt)
-
-        return {
-            "prompt": prompt,
-            "llm_output": llm_out,
-            "retrieved": contexts
-        }
