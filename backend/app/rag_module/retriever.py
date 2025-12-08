@@ -1,7 +1,14 @@
-from .embedder import get_embeddings
+# backend/app/rag_module/retriever.py
+from typing import List, Dict, Any
+import numpy as np
+from .embedder import Embedder
+from .vector_store import VectorStore
 
-def retrieve_relevant_docs(query: str, store, top_k=3):
-    q_vec = get_embeddings([{"record": query}])
-    records = store.search(q_vec, top_k)
+class Retriever:
+    def __init__(self, embedder: Embedder, store: VectorStore):
+        self.embedder = embedder
+        self.store = store
 
-    return [{"title": f"Doc {i}", "body": r} for i, r in enumerate(records)]
+    def retrieve(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
+        q_vec = self.embedder.model.encode([query], convert_to_numpy=True).astype("float32")
+        return self.store.search(q_vec, top_k=top_k)
