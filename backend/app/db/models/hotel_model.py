@@ -1,4 +1,4 @@
-# models/hotel_model.py
+# backend/app/db/models/hotel_model.py
 from sqlalchemy import Column, BigInteger, Float, Text
 from app.db.base import Base
 

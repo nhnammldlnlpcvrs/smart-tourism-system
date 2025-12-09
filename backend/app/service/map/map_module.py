@@ -1,3 +1,4 @@
+# backend/app/service/map/map_module.py
 import httpx
 import asyncio
 
@@ -27,7 +28,7 @@ async def get_location(query: str):
             }
 
     except Exception as e:
-        print("🌍 Lỗi lấy tọa độ (Nominatim):", e)
+        print("Lỗi lấy tọa độ (Nominatim):", e)
         return None
 
 
@@ -119,6 +120,6 @@ async def get_distance(origin: str, destination: str):
         }
 
     except Exception as e:
-        print("📏 Lỗi tính khoảng cách:", e)
+        print("Lỗi tính khoảng cách:", e)
         return {"error": str(e)}
 
