@@ -14,7 +14,7 @@ def api_get_provinces():
 @router.get("/")
 def api_recommend_hotels(place_id: int, radius: float = 50.0):
     """
-    TÌM KHÁCH SẠN GẦN ĐỊA ĐIỂM VUI CHƠI
+    🔍 TÌM KHÁCH SẠN GẦN ĐỊA ĐIỂM VUI CHƠI
     
     API này hoạt động theo cơ chế "Du lịch thông minh":
     1. Frontend gửi ID của địa điểm khách đang xem (ví dụ: Hồ Gươm, Chùa Hương).
