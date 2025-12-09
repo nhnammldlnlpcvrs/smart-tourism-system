@@ -1,40 +1,42 @@
+# backend/app/api/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.router_chat import router as chat_router
-from app.service.router_map import router as map_router
-from app.service.router_weather import router as weather_router
+from app.service.map.map_router import router as map_router
+from app.service.weather.weather_router import router as weather_router
+from app.service.foods.food_router import router as food_router
+from app.service.hotel.hotel_router import router as hotel_router
+from app.service.tourism.tourism_router import router as tourism_router
+from app.service.itinerary.itinerary_router import router as itinerary_router
 
 app = FastAPI(
-    title="Tourist Guide Backend",
-    description="Backend cho ứng dụng hướng dẫn du lịch tích hợp Google Maps và Thời tiết."
+    title="Smart Tourism System",
+    description="API Server for Smart Tourism System",
+    version="1.0.0"
 )
 
-origins = [
-    "http://localhost:5500",
-    "http://127.0.0.1:5500",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
-
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # Change to frontend domains in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-app.include_router(chat_router)
-app.include_router(map_router)
-app.include_router(weather_router)
-
-@app.get("/")
+# System Routes
+@app.get("/", tags=["System"])
 def home():
-    return {"message": "🎉 Vietnam Smart Tourism API đang hoạt động!"}
+    return {"message": "API Layer đang hoạt động!"}
 
-@app.get("/test-cors")
-def test_cors():
-    return {"message": "CORS is working!", "status": "success"}
+@app.get("/health", tags=["System"])
+def health():
+    return {"status": "ok"}
+
+# Business Routers
+app.include_router(tourism_router, prefix="/tourism", tags=["Tourism"])
+app.include_router(itinerary_router, prefix="/itinerary", tags=["Itinerary RAG"])
+app.include_router(map_router, prefix="/map", tags=["Map"])
+app.include_router(weather_router, prefix="/weather", tags=["Weather"])
+app.include_router(food_router, prefix="/foods", tags=["Foods"])
+app.include_router(hotel_router, prefix="/hotels", tags=["Hotels"])

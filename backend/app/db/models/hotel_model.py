@@ -1,6 +1,6 @@
-# models/hotel_model.py
+# backend/app/db/models/hotel_model.py
 from sqlalchemy import Column, BigInteger, Float, Text
-from ..base import Base
+from app.db.base import Base
 
 class VietnamHotel(Base):
     __tablename__ = "vietnam_hotels"
