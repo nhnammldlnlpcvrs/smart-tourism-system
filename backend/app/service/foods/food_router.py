@@ -1,4 +1,3 @@
-# backend/app/service/foods/food_router.py
 from fastapi import APIRouter
 from app.service.tourism.tourism_module import get_all_provinces
 from .food_module import (
