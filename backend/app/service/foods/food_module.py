@@ -33,8 +33,10 @@ def get_main_tags(province: str):
 def get_foods_by_province_and_tag(province: str, tag: str):
     return [
         {
+            "id": item["id"],
             "food": item["food"],
-            "description": item["description"]
+            "image_url": item.get("image_url", None),
+            "description": item["description"],
         }
         for item in FOODS
         if item["province"] == province and tag in item["tags"]

@@ -1,3 +1,4 @@
+
 from fastapi import APIRouter
 from app.service.tourism.tourism_module import get_provinces
 from .food_module import (
@@ -9,7 +10,7 @@ router = APIRouter(prefix="/foods", tags=["Foods"])
 
 @router.get("/provinces")
 def api_get_provinces():
-    return get_provinces()
+   return get_provinces()
 
 @router.get("/tags/main")
 def api_main_tags(province: str):
