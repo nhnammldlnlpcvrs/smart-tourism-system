@@ -1,60 +1,59 @@
 # backend/app/service/itinerary/itinerary_module.py
+
 from fastapi import HTTPException
-from datetime import datetime
 from typing import List, Dict, Any
-
-from app.api.rag_itinerary_module import generate_itinerary_for_request
-
-
-def validate_date(date_str: str) -> datetime:
-    try:
-        return datetime.strptime(date_str, "%Y-%m-%d")
-    except ValueError:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Ngày '{date_str}' không hợp lệ, format phải là YYYY-MM-DD"
-        )
+from app.api.rag_itinerary_module import generate_itinerary_rag
 
 
 def process_itinerary_request(
-    places: List[Dict[str, Any]],
-    start_date: str,
-    end_date: str,
-    top_k: int = 5
+    province: str,
+    days: int,
+    preferences: Dict,
+    places: List[Dict[str, Any]]
 ):
-    # Validate dates
-    start = validate_date(start_date)
-    end = validate_date(end_date)
 
-    if end < start:
-        raise HTTPException(
-            status_code=400,
-            detail="end_date phải lớn hơn hoặc bằng start_date."
-        )
-    
-    # Cải tiến: Thêm kiểm tra nếu danh sách địa điểm trống
-    if not places:
-        return {
-            "days": 0,
-            "itinerary": {
-                "schedule": [],
-                "text": "Không có địa điểm nào được chọn để tạo lịch trình."
-            }
-        }
+    if days <= 0:
+        raise HTTPException(status_code=400, detail="Số ngày phải > 0")
 
-    days = (end - start).days + 1
+    # --- FILTERING LAYER ---
+    filtered = [p for p in places if p["province"] == province]
 
-    # Call RAG
-    rag_result = generate_itinerary_for_request(
-    places=places,
-    days=days,
-    start_date=start_date,
-    end_date=end_date,
-    top_k=top_k
+    # 1. Sở thích (interests → match: category/sub_category/activities)
+    interests = preferences.get("interests", [])
+    if interests:
+        filtered = [
+            p for p in filtered
+            if any(interest.lower() in (
+                p["category"] + " " +
+                " ".join(p.get("sub_category") or []) + " " +
+                " ".join(p.get("activities") or [])
+            ).lower()
+            for interest in interests)
+        ]
+
+    # 2. Phù hợp group_type
+    group = preferences.get("group_type")
+    if group:
+        filtered = [
+            p for p in filtered
+            if group.lower() in [x.lower() for x in p.get("special_for", [])]
+        ]
+
+    # 3. Tránh category/tags
+    avoid = preferences.get("avoid_categories", [])
+    if avoid:
+        filtered = [
+            p for p in filtered
+            if not any(a.lower() in [t.lower() for t in p.get("tags", [])] for a in avoid)
+        ]
+
+    if not filtered:
+        filtered = places  # fallback
+
+    # RAG + Itinerary formatter
+    return generate_itinerary_rag(
+        province=province,
+        days=days,
+        preferences=preferences,
+        places=filtered
     )
-
-
-    return {
-        "days": days,
-        "itinerary": rag_result
-    }
