@@ -1,9 +1,9 @@
 # backend/app/service/itinerary/itinerary_router.py
+
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional, Dict
 from sqlalchemy.orm import Session
-
 from app.db.models.tourism_model import TourismPlace
 from app.db.session import get_db
 from app.service.itinerary.itinerary_module import process_itinerary_request
@@ -11,59 +11,63 @@ from app.service.itinerary.itinerary_module import process_itinerary_request
 router = APIRouter(prefix="/itinerary", tags=["Itinerary RAG"])
 
 
-class ExtractNamesRequest(BaseModel):
-    place_ids: List[int]
+# ---- INPUT MODEL (Trip Profile) ----
+class ItineraryPreferences(BaseModel):
+    interests: List[str] = []                # match: category, sub_category, activities
+    pace: Optional[str] = None               # slow/medium/fast
+    group_type: Optional[str] = None         # family/couple/adventure
+    avoid_categories: List[str] = []         # match: tags/category
+    time_preferences: Dict[str, List[str]] = {}   # morning/afternoon/evening → activities
 
 
-@router.post("/extract-names")
-def extract_names(req: ExtractNamesRequest, db: Session = Depends(get_db)):
-    places = db.query(TourismPlace).filter(
-        TourismPlace.id.in_(req.place_ids)
-    ).all()
-
-    return {"places": [{"id": p.id, "name": p.name} for p in places]}
+class ItineraryRequest(BaseModel):
+    province: str
+    days: int
+    preferences: ItineraryPreferences
 
 
-class GenerateRequest(BaseModel):
-    place_ids: List[int]
-    start_date: str
-    end_date: str
-    top_k: int = 5
-
-
+# ---- API: /itinerary/generate ----
 @router.post("/generate")
-def generate_itinerary(req: GenerateRequest, db: Session = Depends(get_db)):
+def generate_itinerary(req: ItineraryRequest, db: Session = Depends(get_db)):
 
+    if req.days <= 0:
+        raise HTTPException(status_code=400, detail="Số ngày phải > 0")
+
+    # Lấy địa điểm theo province
     place_objs = db.query(TourismPlace).filter(
-        TourismPlace.id.in_(req.place_ids)
+        TourismPlace.province.ilike(f"%{req.province}%")
     ).all()
 
     if not place_objs:
-        raise HTTPException(status_code=400, detail="Không tìm thấy địa điểm phù hợp.")
+        raise HTTPException(status_code=404, detail="Không tìm thấy địa điểm nào theo tỉnh yêu cầu.")
 
-    # Build place dict list: Trích xuất an toàn hơn cho các trường có thể là None hoặc List
-    places = [
-        {
+    # Convert ORM → dict
+    place_dicts = []
+    for p in place_objs:
+        place_dicts.append({
             "id": p.id,
             "name": p.name,
+            "province": p.province,
+            "category": p.category,
+            "sub_category": p.sub_category or [],
             "address": p.address,
-            # Sử dụng getattr() với giá trị mặc định an toàn
-            "open_hours": getattr(p, 'open_hours', None),
-            "price_range": getattr(p, 'price_range', None),
-            "highlights": getattr(p, 'highlights', []), # Mặc định là list rỗng
-            "activities": getattr(p, 'activities', []), # Mặc định là list rỗng
-            "duration_recommend": getattr(p, 'duration_recommend', None),
-            "seasonal_events": getattr(p, 'seasonal_events', []), # Mặc định là list rỗng
-            "special_for": getattr(p, 'special_for', []), # Mặc định là list rỗng
-        }
-        for p in place_objs
-    ]
+            "latitude": p.latitude,
+            "longitude": p.longitude,
+            "highlights": p.highlights or [],
+            "activities": p.activities or [],
+            "special_for": p.special_for or [],
+            "duration_recommend": p.duration_recommend,
+            "seasonal_events": p.seasonal_events or [],
+            "best_time_to_visit": p.best_time_to_visit,
+            "tags": p.tags or [],
+            "weather_notes": p.weather_notes,
+            "price_range": p.price_range,
+            "open_hours": p.open_hours
+        })
 
-    result = process_itinerary_request(
-        places=places,
-        start_date=req.start_date,
-        end_date=req.end_date,
-        top_k=req.top_k
+    return process_itinerary_request(
+        province=req.province,
+        days=req.days,
+        preferences=req.preferences.dict(),
+        places=place_dicts
     )
-
-    return result
