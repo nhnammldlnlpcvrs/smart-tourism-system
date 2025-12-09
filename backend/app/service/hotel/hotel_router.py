@@ -12,11 +12,17 @@ def api_get_provinces():
     return get_all_provinces()
 
 @router.get("/")
-def api_hotels(province: str, place_id: Optional[int] = None):
+def api_recommend_hotels(place_id: int, radius: float = 50.0):
     """
-    - province: Tên tỉnh (Bắt buộc).
-    - place_id: ID địa điểm tham quan (Optional).
-      + Có ID: Gợi ý khách sạn gần đó 10km.
-      + Không ID: Liệt kê khách sạn theo tỉnh.
+    TÌM KHÁCH SẠN GẦN ĐỊA ĐIỂM VUI CHƠI
+    
+    API này hoạt động theo cơ chế "Du lịch thông minh":
+    1. Frontend gửi ID của địa điểm khách đang xem (ví dụ: Hồ Gươm, Chùa Hương).
+    2. Backend tự lấy tọa độ của địa điểm đó trong Database.
+    3. Backend quét và trả về danh sách khách sạn xung quanh trong bán kính cho phép.
+    
+    Params:
+    - place_id (int): ID của địa điểm tham quan (Bắt buộc).
+    - radius (float): Bán kính tìm kiếm tính bằng km (Mặc định 10km).
     """
-    return get_hotels_by_province_and_place_id(province, place_id)
+    return get_hotels_by_province_and_place_id(place_id, radius_km=radius)
