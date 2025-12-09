@@ -1,6 +1,6 @@
 # backend/app/service/tourism/tourism_router.py
 from fastapi import APIRouter, Query
-from fastapi import Body
+from typing import Optional
 from .tourism_module import (
     get_all_provinces,
     get_category_tree_by_province,
@@ -28,14 +28,20 @@ def api_get_categories(province: str):
 @router.get("/places")
 def api_get_places(
     province: str,
-    subcategories: list[str] = Query(...)
+    subcategories: Optional[list[str]] = Query(None)  
 ):
     """
     Ví dụ gọi API:
     /tourism/places?province=An%20Giang&subcategories=Chùa&subcategories=Di%20tích
     """
+    if not subcategories:
+        # Nếu không có subcategories, lấy tất cả địa điểm
+        results = get_places_by_subcategories(province, [])
+    else:
+        results = get_places_by_subcategories(province, subcategories)
+    
     return {
         "province": province,
-        "selected_subcategories": subcategories,
-        "results": get_places_by_subcategories(province, subcategories)
+        "selected_subcategories": subcategories or [],
+        "results": results
     }
