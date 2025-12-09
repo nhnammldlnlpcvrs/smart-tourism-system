@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.ext.declarative import declarative_base
 from fastapi import Depends
 
-DATABASE_URL = "postgresql://postgres:abc123@localhost:5432/tourismdb"
+DATABASE_URL = "postgresql://postgres:1234@localhost:5432/tourismdb"
 
 # Engine
 engine = create_engine(
