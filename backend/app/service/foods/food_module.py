@@ -42,4 +42,3 @@ def get_foods_by_province_and_tag(province: str, tag: str):
         for item in FOODS
         if item["province"] == province and tag in item["tags"]
     ]
-
