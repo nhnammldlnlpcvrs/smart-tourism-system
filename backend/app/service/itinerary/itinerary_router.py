@@ -8,7 +8,7 @@ from app.db.models.tourism_model import TourismPlace
 from app.db.session import get_db
 from app.service.itinerary.itinerary_module import process_itinerary_request
 
-router = APIRouter(prefix="/itinerary", tags=["Itinerary RAG"])
+router = APIRouter(tags=["Itinerary RAG"])
 
 
 # ---- INPUT MODEL (Trip Profile) ----
