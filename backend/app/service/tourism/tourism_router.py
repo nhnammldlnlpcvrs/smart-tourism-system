@@ -7,7 +7,7 @@ from .tourism_module import (
     get_places_by_subcategories
 )
 
-router = APIRouter(prefix="/tourism", tags=["Tourism"])
+router = APIRouter()
 
 
 @router.get("/provinces")

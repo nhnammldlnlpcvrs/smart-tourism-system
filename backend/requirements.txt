@@ -29,3 +29,10 @@ python-multipart>=0.0.6
 tqdm>=4.66.4
 sentence-transformers>=2.7.0
 
+pytest
+pytest-asyncio
+httpx
+faker
+locust
+pytest-benchmark
+

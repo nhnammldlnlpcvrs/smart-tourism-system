@@ -5,7 +5,7 @@ from .food_module import (
     get_foods_by_province_and_tag
 )
 
-router = APIRouter(prefix="/foods", tags=["Foods"])
+router = APIRouter(tags=["Foods"])
 
 @router.get("/provinces")
 def api_get_provinces():
