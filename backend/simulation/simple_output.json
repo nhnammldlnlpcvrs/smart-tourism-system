@@ -1,0 +1,31 @@
+{
+  "province": "Hà Nội",
+  "num_tourists": 5,
+  "days": 3,
+  "weather": [
+    "rainy",
+    "sunny",
+    "sunny"
+  ],
+  "visits": {
+    "Sample Place A": 12,
+    "Sample Place B": 3
+  },
+  "logs": [
+    "Day 1, tourist 1 visited Sample Place B (weather=rainy)",
+    "Day 1, tourist 2 visited Sample Place A (weather=rainy)",
+    "Day 1, tourist 3 visited Sample Place A (weather=rainy)",
+    "Day 1, tourist 4 visited Sample Place A (weather=rainy)",
+    "Day 1, tourist 5 visited Sample Place A (weather=rainy)",
+    "Day 2, tourist 1 visited Sample Place A (weather=sunny)",
+    "Day 2, tourist 2 visited Sample Place B (weather=sunny)",
+    "Day 2, tourist 3 visited Sample Place A (weather=sunny)",
+    "Day 2, tourist 4 visited Sample Place A (weather=sunny)",
+    "Day 2, tourist 5 visited Sample Place A (weather=sunny)",
+    "Day 3, tourist 1 visited Sample Place A (weather=sunny)",
+    "Day 3, tourist 2 visited Sample Place A (weather=sunny)",
+    "Day 3, tourist 3 visited Sample Place A (weather=sunny)",
+    "Day 3, tourist 4 visited Sample Place A (weather=sunny)",
+    "Day 3, tourist 5 visited Sample Place B (weather=sunny)"
+  ]
+}
