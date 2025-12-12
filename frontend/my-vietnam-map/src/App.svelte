@@ -45,4 +45,5 @@
   .map-container, .info-container {
     width: 100%;
   }
+
 </style>
