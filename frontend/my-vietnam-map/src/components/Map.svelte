@@ -353,7 +353,7 @@
   }
 
   path {
-    fill: #4caf50;
+    fill: #e25f5f;
     stroke: #fff;
     stroke-width: 1;
     cursor: pointer;
@@ -361,7 +361,7 @@
   }
 
   path:hover {
-    fill: #ff9800;
+    fill: #E48F97;
   }
 
   path.active {
