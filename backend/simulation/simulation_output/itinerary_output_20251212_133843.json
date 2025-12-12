@@ -1,0 +1,580 @@
+{
+    "province": "Hà Nội",
+    "days": 3,
+    "itinerary": "🗓️ **Day 1**\n**Sáng:** Chợ Ninh Hiệp\n- Hoạt động: \n- Gợi ý: None\n\n**Trưa:** Lăng Chủ tịch Hồ Chí Minh\n- Nổi bật: Lễ viếng Bác, Lễ thượng cờ/hạ cờ, Nhà sàn Bác Hồ\n\n**Chiều:** Hồ Hoàn Kiếm (Hồ Gươm)\n- Thời gian gợi ý: None\n\n**Tối:** Văn Miếu - Quốc Tử Giám\n\n\n🗓️ **Day 2**\n**Sáng:** Hoàng thành Thăng Long\n- Hoạt động: \n- Gợi ý: None\n\n**Trưa:** Cầu Long Biên\n- Nổi bật: Kiến trúc Pháp, Ngắm hoàng hôn, Bãi giữa sông Hồng\n\n**Chiều:** Phố cổ Hà Nội\n- Thời gian gợi ý: None\n\n**Tối:** Làng gốm Bát Tràng\n\n\n🗓️ **Day 3**\n**Sáng:** Quảng trường Ba Đình\n- Hoạt động: \n- Gợi ý: None\n\n**Trưa:** Chùa Hương (Hương Sơn)\n- Nổi bật: Động Hương Tích, Suối Yến, Chùa Thiên Trù\n\n",
+    "rag_contexts_used": [
+        {
+            "raw": {
+                "id": 275,
+                "name": "Lăng Chủ tịch Hồ Chí Minh",
+                "province": "Hà Nội",
+                "category": "Văn hóa - Lịch sử",
+                "sub_category": [
+                    "Di tích đặc biệt",
+                    "Lăng tẩm"
+                ],
+                "type": "natural",
+                "description": "Nơi an nghỉ vĩnh hằng của Chủ tịch Hồ Chí Minh, biểu tượng thiêng liêng của cả dân tộc Việt Nam tại quảng trường Ba Đình.",
+                "highlights": [
+                    "Lễ viếng Bác",
+                    "Lễ thượng cờ/hạ cờ",
+                    "Nhà sàn Bác Hồ"
+                ],
+                "address": "2 Hùng Vương, Điện Biên, Ba Đình, Hà Nội",
+                "latitude": 21.0368,
+                "longitude": 105.8347,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMHx0pkR_hUf4DaJq8ywbEqYONg2J014vbnw&s",
+                "price_range": "Miễn phí (Khách nước ngoài có vé)",
+                "open_hours": "07:30–10:30 (Trừ T2, T6)",
+                "duration_recommend": "2–3 giờ",
+                "activities": [
+                    "Viếng Lăng",
+                    "Tham quan Phủ Chủ Tịch",
+                    "Chụp ảnh"
+                ],
+                "food": [
+                    "Kem Tràng Tiền",
+                    "Bún chả"
+                ],
+                "best_time_to_visit": "Buổi sáng sớm",
+                "seasonal_events": [
+                    "Ngày 2/9",
+                    "Ngày 19/5"
+                ],
+                "tags": [
+                    "lịch sử",
+                    "biểu tượng",
+                    "trang nghiêm"
+                ],
+                "rating": 4.9,
+                "review_count": 15000,
+                "popularity_score": 1.0,
+                "special_for": [
+                    "all",
+                    "patriot"
+                ],
+                "weather_notes": "Trang phục chỉnh tề",
+                "nearby_places": [
+                    278,
+                    277,
+                    276
+                ]
+            },
+            "text": "Name: Lăng Chủ tịch Hồ Chí Minh | Province: Hà Nội | Category: Văn hóa - Lịch sử | Subcategories: Di tích đặc biệt, Lăng tẩm | Type: natural | Address: 2 Hùng Vương, Điện Biên, Ba Đình, Hà Nội | Description: Nơi an nghỉ vĩnh hằng của Chủ tịch Hồ Chí Minh, biểu tượng thiêng liêng của cả dân tộc Việt Nam tại quảng trường Ba Đình. | Highlights: Lễ viếng Bác, Lễ thượng cờ/hạ cờ, Nhà sàn Bác Hồ | Tags: lịch sử, biểu tượng, trang nghiêm | Activities: Viếng Lăng, Tham quan Phủ Chủ Tịch, Chụp ảnh | Food: Kem Tràng Tiền, Bún chả | Seasonal Events: Ngày 2/9, Ngày 19/5 | Best Time To Visit: Buổi sáng sớm | Weather Notes: Trang phục chỉnh tề | Special For: all, patriot | Price Range: Miễn phí (Khách nước ngoài có vé) | Duration: 2–3 giờ | Open Hours: 07:30–10:30 (Trừ T2, T6) | Rating: 4.9 | Reviews: 15000"
+        },
+        {
+            "raw": {
+                "id": 392,
+                "name": "Chùa Hương (Hương Sơn)",
+                "province": "Hà Nội",
+                "category": "Tâm linh",
+                "sub_category": [
+                    "Lễ hội",
+                    "Thắng cảnh"
+                ],
+                "type": "cultural",
+                "description": "Quần thể văn hóa - tôn giáo lớn bậc nhất Việt Nam, với hành trình ngồi đò trên suối Yến thơ mộng vào động Hương Tích.",
+                "highlights": [
+                    "Động Hương Tích",
+                    "Suối Yến",
+                    "Chùa Thiên Trù"
+                ],
+                "address": "Xã Hương Sơn, Huyện Mỹ Đức, Hà Nội",
+                "latitude": 20.6167,
+                "longitude": 105.75,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aDotcBqf3VF5tXgZxJgV5PsfjdVUGYbLSQ&s",
+                "price_range": "Vé thắng cảnh + đò",
+                "open_hours": "05:00–17:00",
+                "duration_recommend": "1 ngày",
+                "activities": [
+                    "Đi đò",
+                    "Leo núi",
+                    "Lễ Phật"
+                ],
+                "food": [
+                    "Rau sắng",
+                    "Chè lam"
+                ],
+                "best_time_to_visit": "Tháng 1–3 âm lịch (Lễ hội)",
+                "seasonal_events": [
+                    "Lễ hội Chùa Hương"
+                ],
+                "tags": [
+                    "tâm linh",
+                    "lễ hội",
+                    "hang động"
+                ],
+                "rating": 4.5,
+                "review_count": 4500,
+                "popularity_score": 0.93,
+                "special_for": [
+                    "pilgrim",
+                    "family"
+                ],
+                "weather_notes": "Rất đông mùa lễ hội",
+                "nearby_places": [
+                    270,
+                    275,
+                    309
+                ]
+            },
+            "text": "Name: Chùa Hương (Hương Sơn) | Province: Hà Nội | Category: Tâm linh | Subcategories: Lễ hội, Thắng cảnh | Type: cultural | Address: Xã Hương Sơn, Huyện Mỹ Đức, Hà Nội | Description: Quần thể văn hóa - tôn giáo lớn bậc nhất Việt Nam, với hành trình ngồi đò trên suối Yến thơ mộng vào động Hương Tích. | Highlights: Động Hương Tích, Suối Yến, Chùa Thiên Trù | Tags: tâm linh, lễ hội, hang động | Activities: Đi đò, Leo núi, Lễ Phật | Food: Rau sắng, Chè lam | Seasonal Events: Lễ hội Chùa Hương | Best Time To Visit: Tháng 1–3 âm lịch (Lễ hội) | Weather Notes: Rất đông mùa lễ hội | Special For: pilgrim, family | Price Range: Vé thắng cảnh + đò | Duration: 1 ngày | Open Hours: 05:00–17:00 | Rating: 4.5 | Reviews: 4500"
+        },
+        {
+            "raw": {
+                "id": 352,
+                "name": "Thành phố Vinh",
+                "province": "Nghệ An",
+                "category": "Đô thị",
+                "sub_category": [
+                    "Trung tâm",
+                    "Văn hóa"
+                ],
+                "type": "city",
+                "description": "Trung tâm kinh tế văn hóa lớn nhất Bắc Trung Bộ, nơi hội tụ đầy đủ các dịch vụ vui chơi, giải trí và ẩm thực đặc sắc xứ Nghệ.",
+                "highlights": [
+                    "Quảng trường Hồ Chí Minh",
+                    "Thành cổ Vinh",
+                    "Núi Quyết"
+                ],
+                "address": "TP Vinh, Nghệ An",
+                "latitude": 18.6733,
+                "longitude": 105.687,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo8sANdNWL03SjGCvWuy3Rlzep5u4qL-OTww&s",
+                "price_range": "Đa dạng",
+                "open_hours": "Cả ngày",
+                "duration_recommend": "1 ngày",
+                "activities": [
+                    "Ăn súp lươn",
+                    "Mua sắm",
+                    "Dạo phố"
+                ],
+                "food": [
+                    "Cháo lươn",
+                    "Súp lươn",
+                    "Bánh mướt"
+                ],
+                "best_time_to_visit": "Quanh năm",
+                "seasonal_events": [
+                    "Lễ hội Làng Sen (Tháng 5 - Gần đó)",
+                    "Festival Biển Cửa Lò (Tháng 4 - Gần đó)"
+                ],
+                "tags": [
+                    "thành phố",
+                    "văn hóa",
+                    "ẩm thực",
+                    "giải trí"
+                ],
+                "rating": 4.5,
+                "review_count": 3000,
+                "popularity_score": 0.93,
+                "special_for": [
+                    "foodie",
+                    "business"
+                ],
+                "weather_notes": "Nắng nóng mùa hè",
+                "nearby_places": [
+                    46,
+                    47
+                ]
+            },
+            "text": "Name: Thành phố Vinh | Province: Nghệ An | Category: Đô thị | Subcategories: Trung tâm, Văn hóa | Type: city | Address: TP Vinh, Nghệ An | Description: Trung tâm kinh tế văn hóa lớn nhất Bắc Trung Bộ, nơi hội tụ đầy đủ các dịch vụ vui chơi, giải trí và ẩm thực đặc sắc xứ Nghệ. | Highlights: Quảng trường Hồ Chí Minh, Thành cổ Vinh, Núi Quyết | Tags: thành phố, văn hóa, ẩm thực, giải trí | Activities: Ăn súp lươn, Mua sắm, Dạo phố | Food: Cháo lươn, Súp lươn, Bánh mướt | Seasonal Events: Lễ hội Làng Sen (Tháng 5 - Gần đó), Festival Biển Cửa Lò (Tháng 4 - Gần đó) | Best Time To Visit: Quanh năm | Weather Notes: Nắng nóng mùa hè | Special For: foodie, business | Price Range: Đa dạng | Duration: 1 ngày | Open Hours: Cả ngày | Rating: 4.5 | Reviews: 3000"
+        },
+        {
+            "raw": {
+                "id": 309,
+                "name": "Phố cổ Hà Nội",
+                "province": "Hà Nội",
+                "category": "Văn hóa",
+                "sub_category": [
+                    "Phố cổ",
+                    "Ẩm thực"
+                ],
+                "type": "city",
+                "description": "Khu phố bảo tồn với 36 phố phường sầm uất, nơi lưu giữ nếp sống, kiến trúc và ẩm thực đường phố đặc sắc của Hà Nội.",
+                "highlights": [
+                    "Nhà cổ Mã Mây",
+                    "Chợ Đồng Xuân",
+                    "Phố Tạ Hiện"
+                ],
+                "address": "Quận Hoàn Kiếm, Hà Nội",
+                "latitude": 21.0333,
+                "longitude": 105.85,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwWK2nNdd3Uo2jEt2lS-8J5_AROMGVLVKuVg&s",
+                "price_range": "Miễn phí",
+                "open_hours": "Cả ngày",
+                "duration_recommend": "3–4 giờ",
+                "activities": [
+                    "Food tour",
+                    "Mua sắm",
+                    "Uống bia"
+                ],
+                "food": [
+                    "Phở",
+                    "Bún chả",
+                    "Bánh mì"
+                ],
+                "best_time_to_visit": "Cuối tuần (Chợ đêm)",
+                "seasonal_events": [
+                    "Trung thu Hàng Mã"
+                ],
+                "tags": [
+                    "ẩm thực",
+                    "mua sắm",
+                    "văn hóa"
+                ],
+                "rating": 4.6,
+                "review_count": 12000,
+                "popularity_score": 1.0,
+                "special_for": [
+                    "foodie",
+                    "backpacker"
+                ],
+                "weather_notes": "Đông đúc, kẹt xe",
+                "nearby_places": [
+                    276,
+                    279
+                ]
+            },
+            "text": "Name: Phố cổ Hà Nội | Province: Hà Nội | Category: Văn hóa | Subcategories: Phố cổ, Ẩm thực | Type: city | Address: Quận Hoàn Kiếm, Hà Nội | Description: Khu phố bảo tồn với 36 phố phường sầm uất, nơi lưu giữ nếp sống, kiến trúc và ẩm thực đường phố đặc sắc của Hà Nội. | Highlights: Nhà cổ Mã Mây, Chợ Đồng Xuân, Phố Tạ Hiện | Tags: ẩm thực, mua sắm, văn hóa | Activities: Food tour, Mua sắm, Uống bia | Food: Phở, Bún chả, Bánh mì | Seasonal Events: Trung thu Hàng Mã | Best Time To Visit: Cuối tuần (Chợ đêm) | Weather Notes: Đông đúc, kẹt xe | Special For: foodie, backpacker | Price Range: Miễn phí | Duration: 3–4 giờ | Open Hours: Cả ngày | Rating: 4.6 | Reviews: 12000"
+        },
+        {
+            "raw": {
+                "id": 278,
+                "name": "Hoàng thành Thăng Long",
+                "province": "Hà Nội",
+                "category": "Văn hóa - Lịch sử",
+                "sub_category": [
+                    "Di sản thế giới",
+                    "Khảo cổ"
+                ],
+                "type": "historical",
+                "description": "Quần thể di tích gắn với lịch sử kinh thành Thăng Long qua nhiều triều đại, Di sản văn hóa thế giới được UNESCO công nhận.",
+                "highlights": [
+                    "Cột cờ Hà Nội",
+                    "Điện Kính Thiên",
+                    "Nhà D67"
+                ],
+                "address": "19C Hoàng Diệu, Điện Biên, Ba Đình, Hà Nội",
+                "latitude": 21.0372,
+                "longitude": 105.8417,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc6X1kTemC7TTrc3BZ-33VFuPbEWgNMBKCfg&s",
+                "price_range": "30.000 VNĐ",
+                "open_hours": "08:00–17:00 (Trừ T2)",
+                "duration_recommend": "2–3 giờ",
+                "activities": [
+                    "Tham quan khảo cổ",
+                    "Chụp ảnh kỷ yếu",
+                    "Tour đêm"
+                ],
+                "food": [
+                    "Cốm làng Vòng"
+                ],
+                "best_time_to_visit": "Mùa thu",
+                "seasonal_events": [
+                    "Lễ hội Hoàng thành"
+                ],
+                "tags": [
+                    "di sản",
+                    "lịch sử",
+                    "khảo cổ"
+                ],
+                "rating": 4.6,
+                "review_count": 4000,
+                "popularity_score": 0.95,
+                "special_for": [
+                    "history_buff",
+                    "student"
+                ],
+                "weather_notes": "Rộng, đi bộ nhiều",
+                "nearby_places": [
+                    275,
+                    277
+                ]
+            },
+            "text": "Name: Hoàng thành Thăng Long | Province: Hà Nội | Category: Văn hóa - Lịch sử | Subcategories: Di sản thế giới, Khảo cổ | Type: historical | Address: 19C Hoàng Diệu, Điện Biên, Ba Đình, Hà Nội | Description: Quần thể di tích gắn với lịch sử kinh thành Thăng Long qua nhiều triều đại, Di sản văn hóa thế giới được UNESCO công nhận. | Highlights: Cột cờ Hà Nội, Điện Kính Thiên, Nhà D67 | Tags: di sản, lịch sử, khảo cổ | Activities: Tham quan khảo cổ, Chụp ảnh kỷ yếu, Tour đêm | Food: Cốm làng Vòng | Seasonal Events: Lễ hội Hoàng thành | Best Time To Visit: Mùa thu | Weather Notes: Rộng, đi bộ nhiều | Special For: history_buff, student | Price Range: 30.000 VNĐ | Duration: 2–3 giờ | Open Hours: 08:00–17:00 (Trừ T2) | Rating: 4.6 | Reviews: 4000"
+        },
+        {
+            "raw": {
+                "id": 126,
+                "name": "Đại Nội Huế",
+                "province": "Thừa Thiên Huế",
+                "category": "Văn hóa - Lịch sử",
+                "sub_category": [
+                    "Di sản thế giới",
+                    "Cung đình"
+                ],
+                "type": "city",
+                "description": "Quần thể di tích Cố đô Huế, nơi từng là trung tâm hành chính và sinh hoạt của 13 đời vua triều Nguyễn, với kiến trúc cung đình lộng lẫy và uy nghiêm.",
+                "highlights": [
+                    "Ngọ Môn",
+                    "Điện Thái Hòa",
+                    "Duyệt Thị Đường"
+                ],
+                "address": "Đường 23/8, Phường Thuận Hòa, TP Huế, Thừa Thiên Huế",
+                "latitude": 16.4689,
+                "longitude": 107.5777,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ZLD9zJhq887JA6coqW-AvOUKT5-N7Pn7yQ&s",
+                "price_range": "200.000 VNĐ",
+                "open_hours": "07:00–17:30",
+                "duration_recommend": "2–3 giờ",
+                "activities": [
+                    "Tham quan cung điện",
+                    "Chụp ảnh cổ phục",
+                    "Xem Nhã nhạc"
+                ],
+                "food": [
+                    "Bún bò Huế",
+                    "Chè cung đình"
+                ],
+                "best_time_to_visit": "Tháng 1–4 (Mát mẻ)",
+                "seasonal_events": [
+                    "Festival Huế"
+                ],
+                "tags": [
+                    "di sản",
+                    "lịch sử",
+                    "kiến trúc"
+                ],
+                "rating": 4.8,
+                "review_count": 20000,
+                "popularity_score": 1.0,
+                "special_for": [
+                    "all"
+                ],
+                "weather_notes": "Nắng nóng mùa hè",
+                "nearby_places": [
+                    127,
+                    130,
+                    383
+                ]
+            },
+            "text": "Name: Đại Nội Huế | Province: Thừa Thiên Huế | Category: Văn hóa - Lịch sử | Subcategories: Di sản thế giới, Cung đình | Type: city | Address: Đường 23/8, Phường Thuận Hòa, TP Huế, Thừa Thiên Huế | Description: Quần thể di tích Cố đô Huế, nơi từng là trung tâm hành chính và sinh hoạt của 13 đời vua triều Nguyễn, với kiến trúc cung đình lộng lẫy và uy nghiêm. | Highlights: Ngọ Môn, Điện Thái Hòa, Duyệt Thị Đường | Tags: di sản, lịch sử, kiến trúc | Activities: Tham quan cung điện, Chụp ảnh cổ phục, Xem Nhã nhạc | Food: Bún bò Huế, Chè cung đình | Seasonal Events: Festival Huế | Best Time To Visit: Tháng 1–4 (Mát mẻ) | Weather Notes: Nắng nóng mùa hè | Special For: all | Price Range: 200.000 VNĐ | Duration: 2–3 giờ | Open Hours: 07:00–17:30 | Rating: 4.8 | Reviews: 20000"
+        },
+        {
+            "raw": {
+                "id": 86,
+                "name": "Vịnh Hạ Long",
+                "province": "Quảng Ninh",
+                "category": "Biển đảo",
+                "sub_category": [
+                    "Di sản thế giới",
+                    "Vịnh"
+                ],
+                "type": "beach",
+                "description": "Kỳ quan thiên nhiên thế giới với hàng nghìn hòn đảo đá vôi lớn nhỏ tạo nên bức tranh thủy mặc khổng lồ, biểu tượng du lịch Việt Nam.",
+                "highlights": [
+                    "Hòn Trống Mái",
+                    "Hang Sửng Sốt",
+                    "Đảo Ti Tốp"
+                ],
+                "address": "TP Hạ Long, Quảng Ninh",
+                "latitude": 20.9,
+                "longitude": 107.195,
+                "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT6NEv9d3EcL_VlXQ1_bUNXF8M3h2M2y3G5-eP2xgekktW6WCFzcHQkho0Wpmmh13j9cfRj0p0Nvog4y5Gh6SMpX0VjRHEOH4QsDcMp-A",
+                "price_range": "290.000 VNĐ (Vé tham quan)",
+                "open_hours": "06:30–18:30",
+                "duration_recommend": "4–6 giờ",
+                "activities": [
+                    "Du thuyền",
+                    "Chèo Kayak",
+                    "Thăm hang động"
+                ],
+                "food": [
+                    "Chả mực",
+                    "Sá sùng",
+                    "Hàu nướng"
+                ],
+                "best_time_to_visit": "Tháng 4–6 hoặc 9–11",
+                "seasonal_events": [
+                    "Carnaval Hạ Long"
+                ],
+                "tags": [
+                    "di sản",
+                    "vịnh",
+                    "du thuyền"
+                ],
+                "rating": 4.9,
+                "review_count": 30000,
+                "popularity_score": 1.0,
+                "special_for": [
+                    "all"
+                ],
+                "weather_notes": "Tránh mùa bão (Tháng 7-8)",
+                "nearby_places": [
+                    87,
+                    88,
+                    89
+                ]
+            },
+            "text": "Name: Vịnh Hạ Long | Province: Quảng Ninh | Category: Biển đảo | Subcategories: Di sản thế giới, Vịnh | Type: beach | Address: TP Hạ Long, Quảng Ninh | Description: Kỳ quan thiên nhiên thế giới với hàng nghìn hòn đảo đá vôi lớn nhỏ tạo nên bức tranh thủy mặc khổng lồ, biểu tượng du lịch Việt Nam. | Highlights: Hòn Trống Mái, Hang Sửng Sốt, Đảo Ti Tốp | Tags: di sản, vịnh, du thuyền | Activities: Du thuyền, Chèo Kayak, Thăm hang động | Food: Chả mực, Sá sùng, Hàu nướng | Seasonal Events: Carnaval Hạ Long | Best Time To Visit: Tháng 4–6 hoặc 9–11 | Weather Notes: Tránh mùa bão (Tháng 7-8) | Special For: all | Price Range: 290.000 VNĐ (Vé tham quan) | Duration: 4–6 giờ | Open Hours: 06:30–18:30 | Rating: 4.9 | Reviews: 30000"
+        },
+        {
+            "raw": {
+                "id": 279,
+                "name": "Cầu Long Biên",
+                "province": "Hà Nội",
+                "category": "Văn hóa - Lịch sử",
+                "sub_category": [
+                    "Cầu",
+                    "Di tích"
+                ],
+                "type": "natural",
+                "description": "Chứng nhân lịch sử vắt qua 3 thế kỷ, cây cầu thép biểu tượng với vẻ đẹp hoài cổ và lãng mạn trên sông Hồng.",
+                "highlights": [
+                    "Kiến trúc Pháp",
+                    "Ngắm hoàng hôn",
+                    "Bãi giữa sông Hồng"
+                ],
+                "address": "Cầu Long Biên, Hoàn Kiếm/Long Biên, Hà Nội",
+                "latitude": 21.0426,
+                "longitude": 105.8553,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwjVTOF4z2FZ_nab4qwFDLZQDWADZbbbM-Lw&s",
+                "price_range": "Miễn phí",
+                "open_hours": "Cả ngày",
+                "duration_recommend": "1 giờ",
+                "activities": [
+                    "Chụp ảnh",
+                    "Đi dạo",
+                    "Uống cafe"
+                ],
+                "food": [
+                    "Ngô khoai nướng"
+                ],
+                "best_time_to_visit": "Hoàng hôn",
+                "seasonal_events": [],
+                "tags": [
+                    "lịch sử",
+                    "check-in",
+                    "lãng mạn"
+                ],
+                "rating": 4.7,
+                "review_count": 5200,
+                "popularity_score": 0.94,
+                "special_for": [
+                    "youth",
+                    "photographer"
+                ],
+                "weather_notes": "Gió sông mạnh",
+                "nearby_places": [
+                    276,
+                    309
+                ]
+            },
+            "text": "Name: Cầu Long Biên | Province: Hà Nội | Category: Văn hóa - Lịch sử | Subcategories: Cầu, Di tích | Type: natural | Address: Cầu Long Biên, Hoàn Kiếm/Long Biên, Hà Nội | Description: Chứng nhân lịch sử vắt qua 3 thế kỷ, cây cầu thép biểu tượng với vẻ đẹp hoài cổ và lãng mạn trên sông Hồng. | Highlights: Kiến trúc Pháp, Ngắm hoàng hôn, Bãi giữa sông Hồng | Tags: lịch sử, check-in, lãng mạn | Activities: Chụp ảnh, Đi dạo, Uống cafe | Food: Ngô khoai nướng | Best Time To Visit: Hoàng hôn | Weather Notes: Gió sông mạnh | Special For: youth, photographer | Price Range: Miễn phí | Duration: 1 giờ | Open Hours: Cả ngày | Rating: 4.7 | Reviews: 5200"
+        },
+        {
+            "raw": {
+                "id": 178,
+                "name": "Hòn Khô",
+                "province": "Bình Định",
+                "category": "Biển đảo",
+                "sub_category": [
+                    "Đảo",
+                    "Lặn biển"
+                ],
+                "type": "beach",
+                "description": "Hòn đảo nhỏ gần bờ, hoang sơ với con đường giữa biển độc đáo khi thủy triều rút.",
+                "highlights": [
+                    "Con đường giữa biển",
+                    "Cầu gỗ quanh núi",
+                    "Lặn san hô"
+                ],
+                "address": "Thôn Hải Đông, Xã Nhơn Hải, Quy Nhơn, Bình Định",
+                "latitude": 13.7667,
+                "longitude": 109.3,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8pUfXXoJTbSGCz8S4FEL7XguW34ZkOmJkwA&s",
+                "price_range": "Thấp (Cano rẻ)",
+                "open_hours": "07:00–16:00",
+                "duration_recommend": "2–3 giờ",
+                "activities": [
+                    "Tắm biển",
+                    "Ăn bánh xèo mực",
+                    "Đi cano"
+                ],
+                "food": [
+                    "Bánh xèo mực",
+                    "Cầu gai"
+                ],
+                "best_time_to_visit": "Tháng 3–9",
+                "seasonal_events": [],
+                "tags": [
+                    "đảo",
+                    "san hô",
+                    "ẩm thực"
+                ],
+                "rating": 4.5,
+                "review_count": 3000,
+                "popularity_score": 0.93,
+                "special_for": [
+                    "foodie",
+                    "youth"
+                ],
+                "weather_notes": "Nắng gắt, ít cây xanh",
+                "nearby_places": [
+                    175,
+                    319
+                ]
+            },
+            "text": "Name: Hòn Khô | Province: Bình Định | Category: Biển đảo | Subcategories: Đảo, Lặn biển | Type: beach | Address: Thôn Hải Đông, Xã Nhơn Hải, Quy Nhơn, Bình Định | Description: Hòn đảo nhỏ gần bờ, hoang sơ với con đường giữa biển độc đáo khi thủy triều rút. | Highlights: Con đường giữa biển, Cầu gỗ quanh núi, Lặn san hô | Tags: đảo, san hô, ẩm thực | Activities: Tắm biển, Ăn bánh xèo mực, Đi cano | Food: Bánh xèo mực, Cầu gai | Best Time To Visit: Tháng 3–9 | Weather Notes: Nắng gắt, ít cây xanh | Special For: foodie, youth | Price Range: Thấp (Cano rẻ) | Duration: 2–3 giờ | Open Hours: 07:00–16:00 | Rating: 4.5 | Reviews: 3000"
+        },
+        {
+            "raw": {
+                "id": 291,
+                "name": "Quần đảo Cát Bà",
+                "province": "Hải Phòng",
+                "category": "Biển đảo",
+                "sub_category": [
+                    "Đảo",
+                    "Vườn quốc gia"
+                ],
+                "type": "beach",
+                "description": "Đảo ngọc của miền Bắc, khu dự trữ sinh quyển thế giới với sự kết hợp hoàn hảo giữa rừng nguyên sinh và biển đảo vịnh Lan Hạ.",
+                "highlights": [
+                    "Vịnh Lan Hạ",
+                    "Vườn quốc gia Cát Bà",
+                    "Bãi Cát Cò"
+                ],
+                "address": "Huyện Cát Hải, TP Hải Phòng",
+                "latitude": 20.7333,
+                "longitude": 107.05,
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3GEramqChIIWX08m0x2Cq_5N26odngXetIA&s",
+                "price_range": "Trung bình",
+                "open_hours": "Cả ngày",
+                "duration_recommend": "2–3 ngày",
+                "activities": [
+                    "Du thuyền",
+                    "Trekking",
+                    "Tắm biển"
+                ],
+                "food": [
+                    "Tu hài",
+                    "Bề bề"
+                ],
+                "best_time_to_visit": "Tháng 4–10",
+                "seasonal_events": [
+                    "Khai trương du lịch Cát Bà (31/3)"
+                ],
+                "tags": [
+                    "đảo",
+                    "vườn quốc gia",
+                    "biển"
+                ],
+                "rating": 4.7,
+                "review_count": 8500,
+                "popularity_score": 0.98,
+                "special_for": [
+                    "nature_lover",
+                    "adventure",
+                    "family"
+                ],
+                "weather_notes": "Tránh bão",
+                "nearby_places": [
+                    322,
+                    342
+                ]
+            },
+            "text": "Name: Quần đảo Cát Bà | Province: Hải Phòng | Category: Biển đảo | Subcategories: Đảo, Vườn quốc gia | Type: beach | Address: Huyện Cát Hải, TP Hải Phòng | Description: Đảo ngọc của miền Bắc, khu dự trữ sinh quyển thế giới với sự kết hợp hoàn hảo giữa rừng nguyên sinh và biển đảo vịnh Lan Hạ. | Highlights: Vịnh Lan Hạ, Vườn quốc gia Cát Bà, Bãi Cát Cò | Tags: đảo, vườn quốc gia, biển | Activities: Du thuyền, Trekking, Tắm biển | Food: Tu hài, Bề bề | Seasonal Events: Khai trương du lịch Cát Bà (31/3) | Best Time To Visit: Tháng 4–10 | Weather Notes: Tránh bão | Special For: nature_lover, adventure, family | Price Range: Trung bình | Duration: 2–3 ngày | Open Hours: Cả ngày | Rating: 4.7 | Reviews: 8500"
+        }
+    ]
+}
