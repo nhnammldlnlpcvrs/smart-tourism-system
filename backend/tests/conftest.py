@@ -8,11 +8,10 @@ from sqlalchemy.orm import sessionmaker
 from fastapi.testclient import TestClient
 from fastapi.testclient import TestClient
 from unittest.mock import AsyncMock, patch
-from app.api.main import app  # Nếu main.py tạo FastAPI app
+from app.api.main import app 
 from app.db.models.tourism_model import TourismPlace
 
 
-# ====== FIX IMPORT PATH ======
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 
@@ -34,7 +33,6 @@ def test_engine():
 
 @pytest.fixture(scope="function")
 def db_session(test_engine):
-    """Transaction rollback để mỗi test có DB sạch"""
     connection = test_engine.connect()
     transaction = connection.begin()
     Session = sessionmaker(bind=connection)
@@ -49,25 +47,19 @@ def db_session(test_engine):
 
 @pytest.fixture
 def client(db_session, monkeypatch):
-    """Override SessionLocal để API dùng DB test"""
     monkeypatch.setattr(SessionLocal, "__call__", lambda self=db_session: db_session)
     return TestClient(app)
 
-# ----------------- Client Fixture -----------------
 @pytest.fixture
 def client():
     return TestClient(app)
 
-# ----------------- Fake DB Fixture -----------------
 @pytest.fixture
 def db_tourism_place():
-    # Fake object cho test hotels
     return TourismPlace(id=1, name="Điểm Test", province="Hà Nội")
 
-# ----------------- Mock Weather API -----------------
 @pytest.fixture
 def mock_weather_api(monkeypatch):
-    """Mock OpenWeather API cho get_current_weather"""
     monkeypatch.setattr("app.service.weather.weather_module.API_KEY", "fake_key")
 
     mock_data = {

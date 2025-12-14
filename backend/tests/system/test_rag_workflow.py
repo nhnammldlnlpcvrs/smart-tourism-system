@@ -1,3 +1,4 @@
+# backend/tests/system/test_rag_workflow.py
 def test_rag_pipeline_end_to_end(client):
     """
     Kiểm tra RAG pipeline load & search.
@@ -15,14 +16,11 @@ def test_rag_pipeline_end_to_end(client):
     first = contexts[0]
     assert isinstance(first, dict)
 
-    # Accept either schema:
     if "content" in first:
         assert isinstance(first["content"], str)
         assert first["content"].strip() != ""
     elif "raw" in first:
-        # raw có thể là dict chứa các trường mô tả
         assert isinstance(first["raw"], dict)
-        # At least one of the raw fields should contain text
         raw_text = ""
         for v in first["raw"].values():
             if isinstance(v, str) and v.strip():

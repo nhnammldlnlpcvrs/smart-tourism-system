@@ -4,7 +4,6 @@ from sqlalchemy import MetaData, Table
 from sqlalchemy.engine import Engine
 
 
-# Load all rows from a Postgres table list
 def load_from_postgres(engine: Engine, table_names: List[str]) -> List[Dict[str, Any]]:
     metadata = MetaData()
     results = []
@@ -25,7 +24,6 @@ def load_from_postgres(engine: Engine, table_names: List[str]) -> List[Dict[str,
     return results
 
 
-# For loading from any in-memory list
 def load_from_list(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     out = []
     for it in items:
@@ -34,7 +32,6 @@ def load_from_list(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return out
 
 
-# Convert PostgreSQL row → clean embedding text
 def record_to_text(record: Dict[str, Any]) -> str:
     fields = []
 

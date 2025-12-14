@@ -1,3 +1,6 @@
+<!---
+frontend/my-vietnam-map/src/components/Map.svelte
+-->
 <script>
   import { onMount } from "svelte";
   import { selectedProvince } from "../stores.js";
@@ -361,7 +364,7 @@
   }
 
   path:hover {
-    fill: #E48F97;
+    fill: #e48f97;
   }
 
   path.active {

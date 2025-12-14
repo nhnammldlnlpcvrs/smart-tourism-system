@@ -16,16 +16,12 @@ class RAGPipeline:
         self.persist_path = persist_path or "app/rag_store"
         self.rebuild = rebuild
 
-        # Components
         self.embedder = Embedder()
         self.store: Optional[VectorStore] = None
         self.retriever: Optional[Retriever] = None
-        # Loại bỏ: self.generator = LLMGenerator()
 
-        # status flag
         self.is_built = False
 
-        # Load existing FAISS store (lazy)
         index_path = os.path.join(self.persist_path, "faiss.index")
         meta_path = os.path.join(self.persist_path, "records.pkl")
 
@@ -40,7 +36,6 @@ class RAGPipeline:
                 self.store = None
                 self.retriever = None
 
-    # Build store from pre-loaded record objects
     def build_from_records(self, records: List[Dict[str, Any]]):
         """
         Build FAISS vectors from processed record list.
@@ -67,14 +62,13 @@ class RAGPipeline:
             persist_path=self.persist_path
         )
 
-        self.store.save()  # Persist FAISS + metadata
+        self.store.save()
         self.retriever = Retriever(self.embedder, self.store)
         self.is_built = True
 
         print("Vector store built & saved.")
         return self
 
-    # Build store directly from PostgreSQL
     def build_from_postgres(self, table_names: List[str]):
         if not self.engine:
             raise RuntimeError("engine required to load postgres tables")
@@ -84,13 +78,8 @@ class RAGPipeline:
 
         return self.build_from_records(records)
 
-    # Retrieval: Đổi tên từ 'retrieve' thành 'search' để phù hợp với module gọi
     def search(self, query: str, top_k: int = 5):
-        """
-        Truy xuất các context liên quan nhất từ Vector Store.
-        """
         if not self.retriever:
             raise RuntimeError("Retriever is not initialized or RAG store not built.")
 
-        # Gọi phương thức retrieve thực tế của Retriever component
         return self.retriever.retrieve(query, top_k=top_k)

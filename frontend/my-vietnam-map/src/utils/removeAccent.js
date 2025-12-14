@@ -1,3 +1,4 @@
+// frontend/my-vietnam-map/src/utils/removeAccent.js
 export function removeAccent(str) {
   return str
     .normalize("NFD")

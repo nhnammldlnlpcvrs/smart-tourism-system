@@ -1,10 +1,8 @@
+# backend/tests/system/test_data_integrity.py
 import json
 
 def test_data_integrity_tourism_matches_api(client):
-    """
-    Kiểm tra JSONL ↔ API: API phải chứa tất cả province xuất hiện trong JSONL.
-    (API thực tế trả {"provinces": [...]})
-    """
+
     jsonl_path = "data/vietnam_tourism.jsonl"
 
     provinces_jsonl = set()

@@ -1,3 +1,4 @@
+// frontend/my-vietnam-map/src/main.js
 import { mount } from 'svelte'
 import './app.css'
 import App from './App.svelte'

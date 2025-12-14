@@ -1,3 +1,4 @@
+# backend/tests/system/test_full_itinerary_generation.py
 def _extract_places(payload):
     """
     Như trên: chấp nhận list hoặc dict{'results': [...]}.
@@ -39,7 +40,6 @@ def test_generate_itinerary_full_flow(client):
     assert "rag_contexts_used" in data
 
     itinerary = data["itinerary"]
-    # itinerary có thể là list (đã parse) hoặc string (markdown)
     if isinstance(itinerary, list):
         assert len(itinerary) > 0
     elif isinstance(itinerary, str):
