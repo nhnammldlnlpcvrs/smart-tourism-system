@@ -1,3 +1,4 @@
+# backend/tests/test_api/test_rag_itinerary.py
 import pytest
 from unittest.mock import patch, MagicMock
 
@@ -7,7 +8,6 @@ from app.api.rag_itinerary_module import generate_itinerary_rag
 @pytest.mark.asyncio
 async def test_generate_itinerary_rag_basic():
     """
-    Test cơ bản: mock pipeline và kiểm tra output format.
     """
 
     fake_contexts = [
@@ -22,7 +22,6 @@ async def test_generate_itinerary_rag_basic():
         {"name": "Place 4", "activities": ["Chụp ảnh"], "weather_notes": "Mát mẻ", "highlights": ["Nổi bật"], "duration_recommend": "1.5 giờ"},
     ]
 
-    # Mock pipeline
     mock_pipeline = MagicMock()
     mock_pipeline.search.return_value = fake_contexts
 
@@ -39,29 +38,22 @@ async def test_generate_itinerary_rag_basic():
             places=fake_places
         )
 
-    # ---- Assertions ----
     assert res["province"] == "Hà Nội"
     assert res["days"] == 1
     assert "itinerary" in res
     assert "rag_contexts_used" in res
 
-    # Itinerary phải chứa Day 1
     assert "Day 1" in res["itinerary"]
 
-    # Kiểm tra 4 điểm trong 1 ngày
     assert "Place 1" in res["itinerary"]
     assert "Place 2" in res["itinerary"]
     assert "Place 3" in res["itinerary"]
     assert "Place 4" in res["itinerary"]
 
-    # RAG contexts trả về đúng mock
     assert res["rag_contexts_used"] == fake_contexts
 
 
 def test_generate_itinerary_with_less_places():
-    """
-    Test khi số lượng places < days * 4
-    """
 
     fake_contexts = [{"title": "CTX", "score": 0.5}]
     fake_places = [
@@ -82,6 +74,5 @@ def test_generate_itinerary_with_less_places():
 
     assert "P1" in res["itinerary"]
     assert "P2" in res["itinerary"]
-    # Không đủ 4 điểm → không crash
     assert "Day 1" in res["itinerary"]
     assert res["rag_contexts_used"] == fake_contexts

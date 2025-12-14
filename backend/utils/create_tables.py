@@ -10,8 +10,6 @@ from app.db.models.hotel_model import VietnamHotel
 
 def load_jsonl(file_path):
     """
-    Load dữ liệu từ file JSONL hoặc JSON array hoặc nhiều object nối nhau.
-    Trả về generator các dict.
     """
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File không tồn tại: {file_path}")
@@ -22,7 +20,6 @@ def load_jsonl(file_path):
     if not content:
         return
 
-    # JSON array: bắt đầu bằng '['
     if content.startswith("["):
         try:
             data = json.loads(content)
@@ -31,8 +28,6 @@ def load_jsonl(file_path):
         except json.JSONDecodeError as e:
             raise ValueError(f"Không parse được JSON array trong {file_path}: {e}")
     else:
-        # Nhiều object nối nhau hoặc JSONL chuẩn
-        # Regex tách từng object: {...}
         pattern = r'\{.*?\}'
         for match in re.finditer(pattern, content):
             try:

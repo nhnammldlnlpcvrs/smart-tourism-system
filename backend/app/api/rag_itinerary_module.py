@@ -29,7 +29,6 @@ def generate_itinerary_rag(
 
     pipeline = get_pipeline()
 
-    # --- Query RAG ---
     query = f"""
     Tạo lịch trình du lịch {days} ngày tại {province}.
     Ưu tiên loại hình: {preferences.get('interests')}.
@@ -40,36 +39,31 @@ def generate_itinerary_rag(
 
     contexts = pipeline.search(query=query, top_k=10)
 
-    # Lấy khoảng 4 điểm/ngày
     selected = places[: days * 4]
 
     itinerary_lines = []
 
     for d in range(1, days + 1):
-        itinerary_lines.append(f"🗓️ **Day {d}**")
+        itinerary_lines.append(f"Day {d}")
 
         idx = (d - 1) * 4
 
-        # Morning
         if idx < len(selected):
             p = selected[idx]
             itinerary_lines.append(f"**Sáng:** {p['name']}")
             itinerary_lines.append(f"- Hoạt động: {', '.join(p.get('activities', []))}")
             itinerary_lines.append(f"- Gợi ý: {p.get('weather_notes')}\n")
 
-        # Noon
         if idx + 1 < len(selected):
             p = selected[idx + 1]
             itinerary_lines.append(f"**Trưa:** {p['name']}")
             itinerary_lines.append(f"- Nổi bật: {', '.join(p.get('highlights', []))}\n")
 
-        # Afternoon
         if idx + 2 < len(selected):
             p = selected[idx + 2]
             itinerary_lines.append(f"**Chiều:** {p['name']}")
             itinerary_lines.append(f"- Thời gian gợi ý: {p.get('duration_recommend')}\n")
 
-        # Evening
         if idx + 3 < len(selected):
             p = selected[idx + 3]
             itinerary_lines.append(f"**Tối:** {p['name']}\n")

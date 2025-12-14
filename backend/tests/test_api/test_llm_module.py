@@ -1,3 +1,4 @@
+# backend/tests/test_api/test_llm_module.py
 import pytest
 import asyncio
 from unittest.mock import patch, AsyncMock, MagicMock
@@ -9,13 +10,9 @@ from app.api.llm_module import (
 )
 
 
-# ---------------------------------------------------------
-# 1) ask_gemini — SUCCESS
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_ask_gemini_success():
 
-    # Fake Gemini response object
     fake_resp = MagicMock()
     fake_resp.text = "Kết quả du lịch mẫu."
 
@@ -27,9 +24,6 @@ async def test_ask_gemini_success():
         assert res == "Kết quả du lịch mẫu."
 
 
-# ---------------------------------------------------------
-# 2) ask_gemini — MODEL NOT INITIALIZED
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_ask_gemini_not_initialized():
     with patch("app.api.llm_module.chat_model", None), \
@@ -38,9 +32,6 @@ async def test_ask_gemini_not_initialized():
         assert res == "ERROR: ChatModel_Not_Initialized"
 
 
-# ---------------------------------------------------------
-# 3) ask_gemini — FAILURE ở send_message_async
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_ask_gemini_send_error():
 
@@ -53,9 +44,6 @@ async def test_ask_gemini_send_error():
     assert "[error]" in res
 
 
-# ---------------------------------------------------------
-# 4) generate_itinerary_with_gemini — SUCCESS
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_generate_itinerary_success():
     fake_resp = MagicMock()
@@ -69,9 +57,6 @@ async def test_generate_itinerary_success():
         assert res == "Lịch trình 2 ngày tại Đà Nẵng."
 
 
-# ---------------------------------------------------------
-# 5) generate_itinerary_with_gemini — MODEL NOT INIT
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_generate_itinerary_not_initialized():
     with patch("app.api.llm_module.writer_model", None):
@@ -79,9 +64,6 @@ async def test_generate_itinerary_not_initialized():
         assert res == "ERROR: WriterModel_Not_Initialized"
 
 
-# ---------------------------------------------------------
-# 6) generate_itinerary_with_gemini — EXCEPTION
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_generate_itinerary_gen_error():
     mock_model = AsyncMock()
@@ -93,9 +75,6 @@ async def test_generate_itinerary_gen_error():
     assert "GEN_ERROR" in res
 
 
-# ---------------------------------------------------------
-# 7) generate_smart_comment — SUCCESS
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_generate_smart_comment_success():
 
@@ -111,9 +90,6 @@ async def test_generate_smart_comment_success():
     assert "Khách sạn" in res
 
 
-# ---------------------------------------------------------
-# 8) generate_smart_comment — MODEL FAIL → STATUS: FAILED
-# ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_generate_smart_comment_failed():
 

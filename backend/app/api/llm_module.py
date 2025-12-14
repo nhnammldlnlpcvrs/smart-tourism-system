@@ -11,18 +11,15 @@ from app.service.tourism.tourism_module import get_category_tree_by_province
 from app.service.hotel.hotel_module import get_hotels_by_province_and_place_id
 from app.service.foods.food_module import get_foods_by_province_and_tag
 
-# --- Init environment ---
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
 
 if not API_KEY:
-    # Không raise khi import để không làm crash server lúc dev — chỉ in warning.
     print("[WARN] GEMINI_API_KEY not set. Gemini calls will fail until you set the key.")
 
 genai.configure(api_key=API_KEY)
 
 
-# --- Tools provided to Gemini for tool-calling ---
 chat_tools = [
     get_current_weather,
     get_nearby_places,
@@ -33,7 +30,6 @@ chat_tools = [
 ]
 
 
-# --- Helper: try multiple model names and return initialized GenerativeModel ---
 def _init_model_with_fallback(
     candidate_models: List[str],
     tools: List[Callable] | None = None,
@@ -67,7 +63,6 @@ def _init_model_with_fallback(
     return None, None
 
 
-# --- Choose safe candidate model names (order matters: prefer newer then fallback) ---
 CHAT_MODEL_CANDIDATES = [
     "models/gemini-2.5-flash",
     "models/gemini-1.5-flash",
@@ -78,27 +73,23 @@ CHAT_MODEL_CANDIDATES = [
 WRITER_MODEL_CANDIDATES = CHAT_MODEL_CANDIDATES[:]  # same list; can be separated if needed
 
 
-# --- Initialize chat model (with tool-calling) and writer model (pure generation) ---
 chat_model, chat_model_name = _init_model_with_fallback(
     CHAT_MODEL_CANDIDATES,
     tools=chat_tools,
     system_instruction="Bạn là Trợ lý Du lịch Việt Nam. Trả lời ngắn gọn, chính xác. Có thể gọi các tool nếu cần."
 )
 
-# CẬP NHẬT: Tối ưu hóa System Instruction cho giọng điệu hệ thống
 writer_model, writer_model_name = _init_model_with_fallback(
     WRITER_MODEL_CANDIDATES,
     tools=None,
     system_instruction="Bạn là **Công cụ Tạo Dữ liệu Gợi ý** tự động (AI Suggestion Generator). Nhiệm vụ là tạo ra dữ liệu khách quan, có cấu trúc (ví dụ: Markdown, Bảng). Tuyệt đối **KHÔNG** sử dụng đại từ nhân xưng (tôi, bạn), lời chào, lời tạm biệt, hoặc bất kỳ ngôn ngữ nào mang tính đối thoại hay cảm xúc. Chỉ trả về đầu ra dữ liệu trực tiếp theo yêu cầu."
 )
 
-# If models not available, we still keep variables None — code handles it gracefully.
 if chat_model is None:
     print("[WARN] chat_model uninitialized: tool-calling will not work until a valid model is available.")
 if writer_model is None:
     print("[WARN] writer_model uninitialized: pure generation will not work until a valid model is available.")
 
-# Start chat session only if chat_model exists
 chat_session = None
 if chat_model:
     try:
@@ -108,7 +99,6 @@ if chat_model:
         chat_session = None
 
 
-# Utility: robust text extractor
 def _extract_text_from_response(resp) -> str:
     """
     Try to extract textual content from various response shapes returned by google.generativeai.
@@ -127,7 +117,6 @@ def _extract_text_from_response(resp) -> str:
                 if texts:
                     return "".join(texts).strip()
 
-        # fallback: resp.text (quick accessor)
         if hasattr(resp, "text") and resp.text:
             return resp.text.strip()
 
@@ -137,7 +126,6 @@ def _extract_text_from_response(resp) -> str:
         return f"[extract_error] {type(e).__name__}: {e}"
 
 
-# Tool-calling handler
 async def _run_tool(func: Callable, kwargs: dict):
     """Run a tool function (async or sync) and return result or error dict."""
     try:
@@ -159,7 +147,6 @@ async def handle_tool_calls(response):
         return {"error": "chat_session not initialized (no chat model available)."}
 
     tool_results = []
-    # function_calls may be list of objects; handle robustly
     calls = getattr(response, "function_calls", None) or []
     for call in calls:
         try:
@@ -193,19 +180,14 @@ async def handle_tool_calls(response):
         return {"error": f"failed to send tool results back to model: {type(e).__name__}: {e}"}
 
 
-# Public API functions
-
-# 1) Main chatbot with tool-calling
 async def ask_gemini(user_prompt: str) -> str:
     """
     Send a user prompt to Gemini (with tool-calling support).
     Returns text response or an error string.
     """
     if chat_model is None or chat_session is None:
-        # Trả về thông báo lỗi cấu trúc, không phải câu văn dài
         return "ERROR: ChatModel_Not_Initialized"
 
-    # keep history manageable
     try:
         if len(chat_session.history) > 40:
             chat_session.history = chat_session.history[-20:]
@@ -217,7 +199,6 @@ async def ask_gemini(user_prompt: str) -> str:
     except Exception as e:
         return f"[error] failed to send_message_async: {type(e).__name__}: {e}"
 
-    # if model requested tool calls
     try:
         if getattr(response, "function_calls", None):
             response = await handle_tool_calls(response)
@@ -227,22 +208,18 @@ async def ask_gemini(user_prompt: str) -> str:
     except Exception as e:
         return f"TOOL_CALL_FAILED: {type(e).__name__}: {e}"
 
-    # extract text safely
     return _extract_text_from_response(response)
 
 
-# 2) Pure generation: create itinerary text (no tool-calling)
 async def generate_itinerary_with_gemini(prompt: str) -> str:
     """
     Use writer_model (pure generation) to produce itinerary text from prompt.
     Returns generated text or error message.
     """
     if writer_model is None:
-        # Trả về thông báo lỗi cấu trúc
         return "ERROR: WriterModel_Not_Initialized"
 
     try:
-        # Use generate_content_async which returns candidate(s) or text
         response = await writer_model.generate_content_async(prompt)
     except Exception as e:
         return f"GEN_ERROR: generate_content_async failed: {type(e).__name__}: {e}"
@@ -250,9 +227,7 @@ async def generate_itinerary_with_gemini(prompt: str) -> str:
     return _extract_text_from_response(response)
 
 
-# 3) Short smart comment generator (1-2 sentences)
 async def generate_smart_comment(city: str, service_type: str) -> str:
-    # CẬP NHẬT: Yêu cầu mô hình tạo đầu ra ngắn gọn, không đối thoại.
     prompts = {
         "hotel": f"Tạo một câu tóm tắt, khách quan về dịch vụ khách sạn tại {city}. Ngắn gọn, tối đa 1 câu.",
         "food": f"Tạo một câu tóm tắt, khách quan về các lựa chọn ẩm thực nổi bật tại {city}. Ngắn gọn, tối đa 1 câu.",
@@ -266,21 +241,17 @@ async def generate_smart_comment(city: str, service_type: str) -> str:
 async def generate_smart_comment_safe(prompt: str) -> str:
     txt = await generate_itinerary_with_gemini(prompt)
     
-    # CẬP NHẬT: Xử lý lỗi/đầu ra trống bằng thông báo lỗi hệ thống
     if txt.startswith("ERROR:") or txt.startswith("GEN_ERROR:") or txt.strip() == "":
         return f"STATUS: FAILED_TO_GENERATE_COMMENT ({txt.split(': ')[0]})"
     
-    # Giữ lại tối đa 2 câu (hoặc phần đầu) để đảm bảo ngắn gọn
     sentences = txt.strip().split(".")
     
     if len(sentences) <= 2:
         return txt.strip()
     
-    # Ghép tối đa 2 câu đầu
     return ". ".join(s.strip() for s in sentences[:2]).strip() + "."
 
 
-# Expose module-level convenience sync wrappers if needed by sync code
 def ask_gemini_sync(user_prompt: str, timeout: float = 60.0) -> str:
     """Sync wrapper for ask_gemini (for synchronous endpoints)."""
     return asyncio.run(asyncio.wait_for(ask_gemini(user_prompt), timeout=timeout))

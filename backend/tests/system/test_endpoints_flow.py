@@ -1,3 +1,4 @@
+# backend/tests/system/test_endpoints_flow.py
 def _extract_places(payload):
     """
     Hỗ trợ: backend có thể trả list trực tiếp hoặc dict chứa 'results'.
@@ -21,7 +22,6 @@ def test_full_tourism_flow(client):
     Các assert linh hoạt để phù hợp với backend hiện tại.
     """
 
-    # 1. Provinces
     res = client.get("/tourism/provinces")
     assert res.status_code == 200
     data = res.json()
@@ -30,7 +30,6 @@ def test_full_tourism_flow(client):
     provinces = set(data["provinces"])
     assert "Hà Nội" in provinces, "Dữ liệu test yêu cầu có 'Hà Nội' trong provinces"
 
-    # 2. Places của Hà Nội (backend có thể trả dict chứa 'results' hoặc list)
     res = client.get("/tourism/places?province=Hà Nội")
     assert res.status_code == 200
     places_payload = res.json()
@@ -38,29 +37,23 @@ def test_full_tourism_flow(client):
     assert isinstance(places, list)
     assert len(places) > 0, "Expected >0 places for Hà Nội"
 
-    # 3. Foods (endpoint trả list)
     res = client.get("/foods/provinces")
     assert res.status_code == 200
     food_provs = res.json()
     assert isinstance(food_provs, list)
     assert "Hà Nội" in food_provs
 
-    # 4. Hotels (endpoint trả list)
     res = client.get("/hotels/provinces")
     assert res.status_code == 200
     hotel_provs = res.json()
     assert isinstance(hotel_provs, list)
     assert "Hà Nội" in hotel_provs
 
-    # 5. Map nearby — dùng coords của place đầu tiên
     first = places[0]
-    # backend naming có thể là lat/lng hoặc latitude/longitude
     lat = first.get("lat") or first.get("latitude")
     lng = first.get("lng") or first.get("longitude")
 
-    # Không phải địa điểm nào trong dataset cũng có tọa độ → test chỉ cần đảm bảo field tồn tại hoặc đơn giản bỏ qua bước này
     if lat is None or lng is None:
-        # Skip step 5 gracefully
         return
     res = client.get(f"/map/nearby?lat={lat}&lng={lng}&radius=2000")
     assert res.status_code == 200

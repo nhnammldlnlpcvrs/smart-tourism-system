@@ -1,4 +1,4 @@
-# tests/simulation/end_to_end.py
+# backend/tests/simulation/end_to_end.py
 
 from fastapi.testclient import TestClient
 from app.api.main import app

@@ -1,14 +1,10 @@
-# tests/test_main.py
+# backend/tests/test_main.py
 import pytest
 from fastapi.testclient import TestClient
 from app.api.main import app
 
 client = TestClient(app)
 
-
-# -------------------------
-# 1) Test root & health
-# -------------------------
 
 def test_home():
     res = client.get("/")
@@ -22,10 +18,6 @@ def test_health():
     assert res.json() == {"status": "ok"}
 
 
-# -------------------------
-# 2) Test routers (smoke)
-# -------------------------
-
 @pytest.mark.parametrize(
     "path, method, payload",
     [
@@ -37,9 +29,6 @@ def test_health():
     ]
 )
 def test_router_endpoint_exists(client, path, method, payload):
-    """
-    Smoke test: endpoint hoạt động (không 404).
-    """
     if method == "GET":
         res = client.get(path)
     else:
