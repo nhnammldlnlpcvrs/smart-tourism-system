@@ -14,8 +14,13 @@ Used for Vietnam tourism data: attractions, foods, hotels, maps, and itinerary s
 
 **Tourism Information Management**
 - Tourist attractions
+![Tourism Information](docs/imgs/places.jpg)
+
 - Local cuisine
+![Foods](docs/imgs/foods.jpg)
+
 - Hotels and accommodations
+![Hotels](docs/imgs/hotels.jpg)
 
 **Real-Time Weather Integration**
 - Current weather conditions for selected destinations
@@ -24,10 +29,12 @@ Used for Vietnam tourism data: attractions, foods, hotels, maps, and itinerary s
 - Uses vector search to retrieve relevant tourism information
 - Enhances responses with contextual data
 
+
 **Rule-Based Itinerary Recommendation**
 - Generates daily travel schedules (morning, afternoon, evening)
 - Combines user preferences with RAG-retrieved context
 - Ensures logical pacing and location constraints
+![Itinerary](docs/imgs/itinerary.jpg)
 
 ## 3. System Architecture
 ![System Architecture](docs/imgs/pipeline_final.png)
