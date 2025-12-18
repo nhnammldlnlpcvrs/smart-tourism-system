@@ -1,15 +1,27 @@
+<!--
+frontend/my-vietnam-map/src/components/Info.svelte
+-->
 <script>
-  import { selectedProvince } from '../stores.js';
-  import { onMount } from 'svelte';
-  import { getPlacesByProvince, getCategoryTree, getPlacesByProvinceAndCategory } from "../api/tourism.js";
+  import { selectedProvince } from "../stores.js";
+  import { onMount } from "svelte";
+  import {
+    getPlacesByProvince,
+    getCategoryTree,
+    getPlacesByProvinceAndCategory,
+  } from "../api/tourism.js";
   import { getHotelsNearPlace } from "../api/hotel.js";
-  import { getFoodsByProvinceAndTag, getMainFoodTags } from "../api/food.js"; 
-  import { generateItinerary, formatItineraryData, calculateDates, formatDate } from "../api/itinerary.js";
+  import { getFoodsByProvinceAndTag, getMainFoodTags } from "../api/food.js";
+  import {
+    generateItinerary,
+    formatItineraryData,
+    calculateDates,
+    formatDate,
+  } from "../api/itinerary.js";
 
   $: province = $selectedProvince;
   $: filteredPlaces = [];
 
-  let selectedCategories = ['all'];
+  let selectedCategories = ["all"];
   let allPlaces = [];
   let selectedPlace = null;
   let minRating = 0;
@@ -17,13 +29,12 @@
   let isLoadingHotels = false;
   let hotels = [];
   let showHotels = false;
-  let selectedFoodTag = '';
+  let selectedFoodTag = "";
   let foodSuggestions = [];
   let isLoadingFoods = false;
   let showFoodResults = false;
   let mainFoodTags = [];
   let isLoadingMainTags = false;
-  // biến cho lịch trình
   let isCreatingItinerary = false;
   let showDatePopup = false;
   let showItineraryTable = false;
@@ -32,35 +43,37 @@
   let selectedPlaces = [];
   let availableCategories = {};
   let selectedSubcategories = [];
-  // biến ngày tháng
-  let selectedStartDate = new Date().toISOString().split('T')[0];
-  let selectedEndDate = new Date(new Date().setDate(new Date().getDate() + 2)).toISOString().split('T')[0];
+  let selectedStartDate = new Date().toISOString().split("T")[0];
+  let selectedEndDate = new Date(new Date().setDate(new Date().getDate() + 2))
+    .toISOString()
+    .split("T")[0];
 
-function calculateTotalDays() {
-  if (!selectedStartDate || !selectedEndDate) return 0;
-  const startDateObj = new Date(selectedStartDate);
-  const endDateObj = new Date(selectedEndDate);
-  const diffTime = Math.abs(
-    endDateObj.getTime() - startDateObj.getTime()
-  );
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  return diffDays + 1;
-}
+  function calculateTotalDays() {
+    if (!selectedStartDate || !selectedEndDate) return 0;
+    const startDateObj = new Date(selectedStartDate);
+    const endDateObj = new Date(selectedEndDate);
+    const diffTime = Math.abs(endDateObj.getTime() - startDateObj.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays + 1;
+  }
   $: totalDays = calculateTotalDays();
 
-async function loadCategories() {
-  if (!province) return;
-  try {
-    const categories = await getCategoryTree(province);
-    availableCategories = categories || {};
-    console.log(`[CATEGORIES] Loaded categories for ${province}:`, availableCategories);
-  } catch (error) {
-    console.error("Error loading categories:", error);
-    availableCategories = {};
+  async function loadCategories() {
+    if (!province) return;
+    try {
+      const categories = await getCategoryTree(province);
+      availableCategories = categories || {};
+      console.log(
+        `[CATEGORIES] Loaded categories for ${province}:`,
+        availableCategories,
+      );
+    } catch (error) {
+      console.error("Error loading categories:", error);
+      availableCategories = {};
+    }
   }
-}
 
-  async function loadPlacesData() { //load dữ liệu địa điểm
+  async function loadPlacesData() {
     if (!province) return;
 
     isLoading = true;
@@ -76,13 +89,16 @@ async function loadCategories() {
           category: allPlaces[0].category,
           type: allPlaces[0].type,
           rating: allPlaces[0].rating,
-          tags: allPlaces[0].tags
+          tags: allPlaces[0].tags,
         });
       }
 
-      filteredPlaces = [...allPlaces].sort((a, b) => (b.rating || 0) - (a.rating || 0));
-      console.log(`[LOAD] Set filteredPlaces to ${filteredPlaces.length} items`);
-
+      filteredPlaces = [...allPlaces].sort(
+        (a, b) => (b.rating || 0) - (a.rating || 0),
+      );
+      console.log(
+        `[LOAD] Set filteredPlaces to ${filteredPlaces.length} items`,
+      );
     } catch (err) {
       console.error("Lỗi tải dữ liệu:", err);
       allPlaces = [];
@@ -93,11 +109,14 @@ async function loadCategories() {
 
   async function loadMainFoodTags() {
     if (!province) return;
-    
+
     isLoadingMainTags = true;
     try {
       mainFoodTags = await getMainFoodTags(province);
-      console.log(`[FOOD] Loaded ${mainFoodTags.length} main tags for ${province}:`, mainFoodTags);
+      console.log(
+        `[FOOD] Loaded ${mainFoodTags.length} main tags for ${province}:`,
+        mainFoodTags,
+      );
     } catch (error) {
       console.error("Lỗi khi tải danh sách tag ẩm thực:", error);
       mainFoodTags = [];
@@ -106,57 +125,57 @@ async function loadCategories() {
     }
   }
 
-function filterPlaces() {
-  console.log("[FILTER] Starting filter...");
-  console.log("[FILTER] allPlaces:", allPlaces.length);
-  console.log("[FILTER] selectedSubcategories:", selectedSubcategories);
-  console.log("[FILTER] minRating:", minRating);
-  
-  if (!province || allPlaces.length === 0) { 
-    filteredPlaces = [];
-    return;
+  function filterPlaces() {
+    console.log("[FILTER] Starting filter...");
+    console.log("[FILTER] allPlaces:", allPlaces.length);
+    console.log("[FILTER] selectedSubcategories:", selectedSubcategories);
+    console.log("[FILTER] minRating:", minRating);
+
+    if (!province || allPlaces.length === 0) {
+      filteredPlaces = [];
+      return;
+    }
+
+    let filtered = allPlaces;
+
+    if (selectedSubcategories.length > 0) {
+      filtered = filtered.filter((place) => {
+        const placeSubcats = place.sub_category || [];
+
+        if (Array.isArray(placeSubcats)) {
+          return selectedSubcategories.some((selected) =>
+            placeSubcats.includes(selected),
+          );
+        } else if (typeof placeSubcats === "string") {
+          return selectedSubcategories.includes(placeSubcats);
+        }
+        return false;
+      });
+    }
+
+    if (minRating > 0) {
+      filtered = filtered.filter((p) => (p.rating || 0) >= minRating);
+    }
+
+    filtered = filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    filteredPlaces = filtered;
+
+    console.log(`[FILTER] Filtered to ${filteredPlaces.length} places`);
   }
-
-  let filtered = allPlaces;
-
-  if (selectedSubcategories.length > 0) {
-    filtered = filtered.filter(place => {
-      const placeSubcats = place.sub_category || [];
-      
-      if (Array.isArray(placeSubcats)) {
-        return selectedSubcategories.some(selected => 
-          placeSubcats.includes(selected)
-        );
-      } else if (typeof placeSubcats === 'string') {
-        return selectedSubcategories.includes(placeSubcats);
-      }
-      return false;
-    });
-  }
-
-  if (minRating > 0) {
-    filtered = filtered.filter(p => (p.rating || 0) >= minRating);
-  }
-
-  filtered = filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-  filteredPlaces = filtered;
-  
-  console.log(`[FILTER] Filtered to ${filteredPlaces.length} places`);
-}
 
   function handleSearch() {
-
     filterPlaces();
   }
 
-function resetFilters() {
-  selectedSubcategories = [];
-  minRating = 0;
-  filteredPlaces = [...allPlaces].sort((a, b) => (b.rating || 0) - (a.rating || 0));
-}
+  function resetFilters() {
+    selectedSubcategories = [];
+    minRating = 0;
+    filteredPlaces = [...allPlaces].sort(
+      (a, b) => (b.rating || 0) - (a.rating || 0),
+    );
+  }
 
   function handlePlaceClick(place) {
-
     selectedPlace = place;
     showHotels = false;
     hotels = [];
@@ -180,9 +199,7 @@ function resetFilters() {
     try {
       const hotelData = await getHotelsNearPlace(selectedPlace.id, 50);
       hotels = hotelData;
-
     } catch (error) {
-
       alert("Có lỗi xảy ra khi tìm khách sạn: " + error.message);
     } finally {
       isLoadingHotels = false;
@@ -216,9 +233,9 @@ function resetFilters() {
   function handleCloseFoods() {
     showFoodResults = false;
     foodSuggestions = [];
-    selectedFoodTag = '';
+    selectedFoodTag = "";
   }
-  
+
   function handleCreateItinerary() {
     isCreatingItinerary = true;
     selectedPlaces = [];
@@ -226,16 +243,16 @@ function resetFilters() {
 
   function handleTogglePlaceSelection(place) {
     if (!isCreatingItinerary) return;
-    
-    const index = selectedPlaces.findIndex(p => p.id === place.id);
+
+    const index = selectedPlaces.findIndex((p) => p.id === place.id);
     if (index === -1) {
       selectedPlaces.push(place);
     } else {
       selectedPlaces.splice(index, 1);
     }
-    selectedPlaces = [...selectedPlaces]; 
+    selectedPlaces = [...selectedPlaces];
   }
-  
+
   function handleCompleteSelection() {
     if (selectedPlaces.length === 0) {
       alert("Bạn hãy chọn ít nhất một địa điểm để tạo lịch trình");
@@ -243,7 +260,7 @@ function resetFilters() {
     }
     showDatePopup = true;
   }
-  
+
   function handleCancelItinerary() {
     isCreatingItinerary = false;
     showDatePopup = false;
@@ -251,42 +268,48 @@ function resetFilters() {
     itineraryData = null;
     selectedPlaces = [];
   }
-  
+
   async function handleCreateFinalItinerary() {
     if (!selectedStartDate || !selectedEndDate) {
       alert("Vui lòng chọn đầy đủ ngày bắt đầu và kết thúc");
       return;
     }
-  
+
     const days = calculateTotalDays();
     if (days <= 0) {
       alert("Ngày kết thúc phải sau ngày bắt đầu");
       return;
     }
-  
+
     isLoadingItinerary = true;
     showDatePopup = false;
-  
+
     try {
       const itineraryRequest = {
         province: province,
         days: days,
         preferences: {
-          interests: [...new Set(selectedPlaces.map(p => p.category || p.type || '').filter(Boolean))],
-          pace: 'medium',
-          group_type: 'family',
+          interests: [
+            ...new Set(
+              selectedPlaces
+                .map((p) => p.category || p.type || "")
+                .filter(Boolean),
+            ),
+          ],
+          pace: "medium",
+          group_type: "family",
           avoid_categories: [],
-          time_preferences: {}
-        }
+          time_preferences: {},
+        },
       };
-      
+
       console.log("Gửi request tạo lịch trình:", itineraryRequest);
-      
+
       const apiResponse = await generateItinerary(itineraryRequest);
       console.log("Response từ API:", apiResponse);
-    
+
       itineraryData = formatSimpleItinerary(apiResponse, days);
-      
+
       if (itineraryData) {
         const dates = calculateDates(new Date(selectedStartDate), days);
         itineraryData.days.forEach((day, index) => {
@@ -300,7 +323,6 @@ function resetFilters() {
       } else {
         alert("Không thể tạo lịch trình. Vui lòng thử lại.");
       }
-      
     } catch (error) {
       console.error("Lỗi khi tạo lịch trình:", error);
       alert("Có lỗi xảy ra khi tạo lịch trình: " + error.message);
@@ -311,45 +333,60 @@ function resetFilters() {
 
   function formatSimpleItinerary(apiResponse, totalDays) {
     console.log("Formatting simple itinerary:", apiResponse);
-    
+
     const itinerary = {
       summary: {
         province: apiResponse.province || province,
         totalDays: apiResponse.days || totalDays,
         totalPlaces: apiResponse.rag_contexts_used?.length || 0,
-        rawResponse: apiResponse
+        rawResponse: apiResponse,
       },
       days: [],
-      rawData: apiResponse
+      rawData: apiResponse,
     };
 
-    if (apiResponse.rag_contexts_used && apiResponse.rag_contexts_used.length > 0) {
-      const placesPerDay = Math.ceil(apiResponse.rag_contexts_used.length / totalDays);
-      
+    if (
+      apiResponse.rag_contexts_used &&
+      apiResponse.rag_contexts_used.length > 0
+    ) {
+      const placesPerDay = Math.ceil(
+        apiResponse.rag_contexts_used.length / totalDays,
+      );
+
       for (let day = 1; day <= totalDays; day++) {
         const startIndex = (day - 1) * placesPerDay;
-        const endIndex = Math.min(startIndex + placesPerDay, apiResponse.rag_contexts_used.length);
-        const dayPlaces = apiResponse.rag_contexts_used.slice(startIndex, endIndex);
-        
-        const formattedPlaces = dayPlaces.map(ctx => ({
+        const endIndex = Math.min(
+          startIndex + placesPerDay,
+          apiResponse.rag_contexts_used.length,
+        );
+        const dayPlaces = apiResponse.rag_contexts_used.slice(
+          startIndex,
+          endIndex,
+        );
+
+        const formattedPlaces = dayPlaces.map((ctx) => ({
           name: ctx.raw.name,
           detail: ctx.raw,
-          time: ctx.raw.duration_recommend || '',
-          description: ctx.raw.description || 
-                      (ctx.raw.highlights && ctx.raw.highlights.length > 0 ? 
-                       ctx.raw.highlights[0] : ''),
-          category: ctx.raw.category || '',
+          time: ctx.raw.duration_recommend || "",
+          description:
+            ctx.raw.description ||
+            (ctx.raw.highlights && ctx.raw.highlights.length > 0
+              ? ctx.raw.highlights[0]
+              : ""),
+          category: ctx.raw.category || "",
           rating: ctx.raw.rating || 0,
-          location: ctx.raw.address || '',
-          coordinates: ctx.raw.latitude && ctx.raw.longitude ? 
-                      { lat: ctx.raw.latitude, lng: ctx.raw.longitude } : null
+          location: ctx.raw.address || "",
+          coordinates:
+            ctx.raw.latitude && ctx.raw.longitude
+              ? { lat: ctx.raw.latitude, lng: ctx.raw.longitude }
+              : null,
         }));
-        
+
         itinerary.days.push({
           dayNumber: day,
           date: null,
           places: formattedPlaces,
-          notes: extractNotesFromItinerary(apiResponse.itinerary, day)
+          notes: extractNotesFromItinerary(apiResponse.itinerary, day),
         });
       }
     } else {
@@ -358,7 +395,7 @@ function resetFilters() {
           dayNumber: day,
           date: null,
           places: [],
-          notes: []
+          notes: [],
         });
       }
     }
@@ -368,16 +405,22 @@ function resetFilters() {
 
   function extractNotesFromItinerary(itineraryText, dayNumber) {
     if (!itineraryText) return [];
-    
+
     const notes = [];
-    const dayPattern = new RegExp(`(Ngày\\s*${dayNumber}:|Day\\s*${dayNumber}.*?\\n)`, 'i');
+    const dayPattern = new RegExp(
+      `(Ngày\\s*${dayNumber}:|Day\\s*${dayNumber}.*?\\n)`,
+      "i",
+    );
     const match = itineraryText.match(dayPattern);
-    
+
     if (match) {
       const startIndex = match.index + match[0].length;
-      const nextDayPattern = new RegExp(`(Ngày\\s*${dayNumber + 1}:|Day\\s*${dayNumber + 1}.*?\\n)`, 'i');
+      const nextDayPattern = new RegExp(
+        `(Ngày\\s*${dayNumber + 1}:|Day\\s*${dayNumber + 1}.*?\\n)`,
+        "i",
+      );
       const nextMatch = itineraryText.slice(startIndex).match(nextDayPattern);
-      
+
       let dayText;
       if (nextMatch) {
         dayText = itineraryText.slice(startIndex, startIndex + nextMatch.index);
@@ -385,15 +428,20 @@ function resetFilters() {
         dayText = itineraryText.slice(startIndex);
       }
 
-      const lines = dayText.split('\n');
-      lines.forEach(line => {
-        if (line.includes('Ghi chú:') || line.includes('Gợi ý:') || line.includes('Lưu ý:') || line.includes('Note:')) {
-          const note = line.replace(/Ghi chú:|Gợi ý:|Lưu ý:|Note:/i, '').trim();
+      const lines = dayText.split("\n");
+      lines.forEach((line) => {
+        if (
+          line.includes("Ghi chú:") ||
+          line.includes("Gợi ý:") ||
+          line.includes("Lưu ý:") ||
+          line.includes("Note:")
+        ) {
+          const note = line.replace(/Ghi chú:|Gợi ý:|Lưu ý:|Note:/i, "").trim();
           if (note) notes.push(note);
         }
       });
     }
-    
+
     return notes;
   }
 
@@ -411,12 +459,11 @@ function resetFilters() {
   }
 
   function formatDisplayDate(date) {
-    if (!date) return '';
+    if (!date) return "";
     return formatDate(date);
   }
 
   $: if (province) {
-
     loadPlacesData();
     loadCategories();
     loadMainFoodTags();
@@ -425,10 +472,12 @@ function resetFilters() {
     hotels = [];
     showFoodResults = false;
     foodSuggestions = [];
-    selectedFoodTag = '';
+    selectedFoodTag = "";
     handleCancelItinerary();
-    selectedStartDate = new Date().toISOString().split('T')[0];
-    selectedEndDate = new Date(new Date().setDate(new Date().getDate() + 2)).toISOString().split('T')[0];
+    selectedStartDate = new Date().toISOString().split("T")[0];
+    selectedEndDate = new Date(new Date().setDate(new Date().getDate() + 2))
+      .toISOString()
+      .split("T")[0];
   }
 </script>
 
@@ -439,113 +488,123 @@ function resetFilters() {
         <div class="spinner"></div>
         <p>Đang tải dữ liệu...</p>
       </div>
-
     {:else if !selectedPlace}
-
       <div class="province-header">
         <h2>{province}</h2>
         <div class="header-buttons">
           <button on:click={resetFilters} class="reset-btn">Reset</button>
           {#if !isCreatingItinerary && !showItineraryTable}
-            <button 
-              on:click={handleCreateItinerary} 
-              class="itinerary-btn"
-            >Thử tạo lịch trình</button>
+            <button on:click={handleCreateItinerary} class="itinerary-btn"
+              >Thử tạo lịch trình</button
+            >
           {:else if isCreatingItinerary}
-            <button 
-              on:click={handleCompleteSelection} 
-              class="complete-btn"
-            >Hoàn tất</button>
-            <button 
-              on:click={handleCancelItinerary} 
-              class="cancel-btn"
-            >Hủy</button>
+            <button on:click={handleCompleteSelection} class="complete-btn"
+              >Hoàn tất</button
+            >
+            <button on:click={handleCancelItinerary} class="cancel-btn"
+              >Hủy</button
+            >
           {/if}
         </div>
       </div>
 
-{#if showDatePopup}
-  <div class="date-popup-overlay">
-    <div class="date-popup">
-      <div class="date-popup-header">
-        <h3>Thiết lập lịch trình</h3>
-        <button on:click={() => showDatePopup = false} class="close-popup-btn">×</button>
-      </div>
-
-      <div class="date-popup-content">
-        <div class="date-selection">
-          <div class="date-group">
-            <h4>Ngày bắt đầu</h4>
-            <div class="date-inputs">
-              <input 
-                type="date" 
-                bind:value={selectedStartDate}
-                min={new Date().toISOString().split('T')[0]}
-              />
+      {#if showDatePopup}
+        <div class="date-popup-overlay">
+          <div class="date-popup">
+            <div class="date-popup-header">
+              <h3>Thiết lập lịch trình</h3>
+              <button
+                on:click={() => (showDatePopup = false)}
+                class="close-popup-btn">×</button
+              >
             </div>
-          </div>
-          
-          <div class="date-group">
-            <h4>Ngày kết thúc</h4>
-            <div class="date-inputs">
-              <input 
-                type="date" 
-                bind:value={selectedEndDate}
-                min={selectedStartDate}
-              />
+
+            <div class="date-popup-content">
+              <div class="date-selection">
+                <div class="date-group">
+                  <h4>Ngày bắt đầu</h4>
+                  <div class="date-inputs">
+                    <input
+                      type="date"
+                      bind:value={selectedStartDate}
+                      min={new Date().toISOString().split("T")[0]}
+                    />
+                  </div>
+                </div>
+
+                <div class="date-group">
+                  <h4>Ngày kết thúc</h4>
+                  <div class="date-inputs">
+                    <input
+                      type="date"
+                      bind:value={selectedEndDate}
+                      min={selectedStartDate}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="selected-places-summary">
+                <h4>Đã chọn {selectedPlaces.length} địa điểm</h4>
+                <div class="selected-places-list">
+                  {#each selectedPlaces as place}
+                    <span class="selected-place-tag">{place.name}</span>
+                  {/each}
+                </div>
+              </div>
+            </div>
+
+            <div class="date-popup-actions">
+              <button
+                on:click={handleCreateFinalItinerary}
+                class="create-itinerary-btn"
+                disabled={isLoadingItinerary ||
+                  !selectedStartDate ||
+                  !selectedEndDate}
+              >
+                {isLoadingItinerary ? "Đang tạo..." : "Tạo lịch trình"}
+              </button>
+              <button
+                on:click={() => (showDatePopup = false)}
+                class="cancel-date-btn"
+              >
+                Hủy
+              </button>
             </div>
           </div>
         </div>
-
-        <div class="selected-places-summary">
-          <h4>Đã chọn {selectedPlaces.length} địa điểm</h4>
-          <div class="selected-places-list">
-            {#each selectedPlaces as place}
-              <span class="selected-place-tag">{place.name}</span>
-            {/each}
-          </div>
-        </div>
-      </div>
-      
-      <div class="date-popup-actions">
-        <button 
-          on:click={handleCreateFinalItinerary} 
-          class="create-itinerary-btn"
-          disabled={isLoadingItinerary || !selectedStartDate || !selectedEndDate}
-        >
-          {isLoadingItinerary ? 'Đang tạo...' : 'Tạo lịch trình'}
-        </button>
-        <button on:click={() => showDatePopup = false} class="cancel-date-btn">
-          Hủy
-        </button>
-      </div>
-    </div>
-  </div>
-{/if}
+      {/if}
 
       {#if showItineraryTable && itineraryData}
         <div class="itinerary-table-container">
           <div class="itinerary-header">
             <h2>Lịch trình {itineraryData.summary.province}</h2>
-            <button on:click={() => showItineraryTable = false} class="close-itinerary-btn">×</button>
+            <button
+              on:click={() => (showItineraryTable = false)}
+              class="close-itinerary-btn">×</button
+            >
           </div>
-          
+
           <div class="itinerary-summary">
             <p>
-              Thời gian: {formatDisplayDate(selectedStartDate)} - {formatDisplayDate(selectedEndDate)} 
+              Thời gian: {formatDisplayDate(selectedStartDate)} - {formatDisplayDate(
+                selectedEndDate,
+              )}
               ({itineraryData.summary.totalDays} ngày)
             </p>
             <p>Tổng số địa điểm: {itineraryData.summary.totalPlaces}</p>
           </div>
-          
+
           <div class="itinerary-days">
             {#each itineraryData.days as day}
               <div class="itinerary-day">
                 <div class="day-header">
                   <h3>Ngày {day.dayNumber}: {formatDisplayDate(day.date)}</h3>
-                  <span class="day-places-count">{day.places.length} địa điểm</span>
+                  <span class="day-places-count"
+                    >{day.places.length} địa điểm</span
+                  >
                 </div>
-                
+
                 <div class="day-places">
                   {#each day.places as place, placeIndex}
                     <div class="itinerary-place">
@@ -554,23 +613,31 @@ function resetFilters() {
                         <h4>{place.name}</h4>
                         <div class="place-meta">
                           {#if place.detail?.category}
-                            <span class="category-badge">{place.detail.category}</span>
+                            <span class="category-badge"
+                              >{place.detail.category}</span
+                            >
                           {:else if place.category}
                             <span class="category-badge">{place.category}</span>
                           {/if}
                           {#if place.detail?.rating || place.rating}
-                            <span class="rating">⭐ {(place.detail?.rating || place.rating || 0).toFixed(1)}</span>
+                            <span class="rating"
+                              >⭐ {(
+                                place.detail?.rating ||
+                                place.rating ||
+                                0
+                              ).toFixed(1)}</span
+                            >
                           {/if}
                         </div>
-                        
+
                         {#if place.time}
                           <p class="place-time">⏰ {place.time}</p>
                         {/if}
-                        
+
                         <p class="place-description">
                           {getPlaceDescription(place)}
                         </p>
-                        
+
                         {#if place.detail?.address}
                           <p class="place-address">📍 {place.detail.address}</p>
                         {/if}
@@ -578,7 +645,7 @@ function resetFilters() {
                     </div>
                   {/each}
                 </div>
-                
+
                 {#if day.notes && day.notes.length > 0}
                   <div class="day-notes">
                     <strong>📝 Ghi chú:</strong>
@@ -590,15 +657,21 @@ function resetFilters() {
               </div>
             {/each}
           </div>
-          
+
           <div class="itinerary-actions">
-            <button class="new-itinerary-btn" on:click={() => {
-              showItineraryTable = false;
-              handleCreateItinerary();
-            }}>
+            <button
+              class="new-itinerary-btn"
+              on:click={() => {
+                showItineraryTable = false;
+                handleCreateItinerary();
+              }}
+            >
               Tạo lịch trình mới
             </button>
-            <button class="cancel-itinerary-btn" on:click={() => showItineraryTable = false}>
+            <button
+              class="cancel-itinerary-btn"
+              on:click={() => (showItineraryTable = false)}
+            >
               Đóng
             </button>
           </div>
@@ -621,9 +694,9 @@ function resetFilters() {
                 <div class="subcategory-buttons">
                   {#each subcategories as sub}
                     <label class="subcategory-checkbox">
-                      <input 
-                        type="checkbox" 
-                        bind:group={selectedSubcategories} 
+                      <input
+                        type="checkbox"
+                        bind:group={selectedSubcategories}
                         value={sub}
                         checked={selectedSubcategories.includes(sub)}
                       />
@@ -638,7 +711,13 @@ function resetFilters() {
 
         <div class="rating-filter">
           <label>Mức đánh giá bạn muốn: {minRating.toFixed(1)} ⭐</label>
-          <input type="range" min="0" max="5" step="0.5" bind:value={minRating} />
+          <input
+            type="range"
+            min="0"
+            max="5"
+            step="0.5"
+            bind:value={minRating}
+          />
         </div>
 
         <div class="search-actions">
@@ -649,7 +728,9 @@ function resetFilters() {
       {#if isCreatingItinerary}
         <div class="itinerary-instruction">
           <p>Chọn các địa điểm bạn muốn thêm vào lịch trình:</p>
-          <p class="selected-count">Đã chọn: {selectedPlaces.length} địa điểm</p>
+          <p class="selected-count">
+            Đã chọn: {selectedPlaces.length} địa điểm
+          </p>
         </div>
       {/if}
 
@@ -658,16 +739,19 @@ function resetFilters() {
         {#if filteredPlaces.length > 0}
           <div class="places-grid">
             {#each filteredPlaces as place}
-              <div 
+              <div
                 class="place-card {isCreatingItinerary ? 'selectable' : ''}"
-                on:click={isCreatingItinerary ? () => {} : () => handlePlaceClick(place)}
+                on:click={isCreatingItinerary
+                  ? () => {}
+                  : () => handlePlaceClick(place)}
               >
                 {#if isCreatingItinerary}
                   <div class="itinerary-checkbox">
-                    <input 
-                      type="checkbox" 
-                      on:click|stopPropagation={() => handleTogglePlaceSelection(place)}
-                      checked={selectedPlaces.some(p => p.id === place.id)}
+                    <input
+                      type="checkbox"
+                      on:click|stopPropagation={() =>
+                        handleTogglePlaceSelection(place)}
+                      checked={selectedPlaces.some((p) => p.id === place.id)}
                     />
                   </div>
                 {/if}
@@ -680,11 +764,17 @@ function resetFilters() {
                 <div class="place-info">
                   <h4>{place.name}</h4>
                   <div class="place-meta">
-                    <span class="category-badge">{place.category || 'Không có'}</span>
-                    <span class="rating">⭐ {place.rating || 0} ({place.review_count || 0})</span>
+                    <span class="category-badge"
+                      >{place.category || "Không có"}</span
+                    >
+                    <span class="rating"
+                      >⭐ {place.rating || 0} ({place.review_count || 0})</span
+                    >
                   </div>
                   <p class="place-description">
-                    {place.description ? place.description.slice(0, 100) + '...' : 'Không có mô tả'}
+                    {place.description
+                      ? place.description.slice(0, 100) + "..."
+                      : "Không có mô tả"}
                   </p>
 
                   <div class="place-tags">
@@ -696,22 +786,25 @@ function resetFilters() {
               </div>
             {/each}
           </div>
-
         {:else if allPlaces.length > 0}
           <p class="no-results">
-            Không tìm thấy địa điểm phù hợp<br>
-            <button on:click={resetFilters} style="margin-top: 10px; padding: 8px 16px;">
-              Hiển thị tất cả {allPlaces.length} địa điểm </button>
+            Không tìm thấy địa điểm phù hợp<br />
+            <button
+              on:click={resetFilters}
+              style="margin-top: 10px; padding: 8px 16px;"
+            >
+              Hiển thị tất cả {allPlaces.length} địa điểm
+            </button>
           </p>
         {:else}
           <p class="no-results">Không có dữ liệu địa điểm cho tỉnh này.</p>
         {/if}
       </div>
-      
+
       <div class="food-discovery-section">
         <h3>Khám phá ẩm thực {province}</h3>
         <p class="food-subtitle">Chọn loại ẩm thực bạn muốn khám phá</p>
-        
+
         {#if isLoadingMainTags}
           <div class="loading-tags">
             <div class="small-spinner"></div>
@@ -720,14 +813,17 @@ function resetFilters() {
         {:else if mainFoodTags.length > 0}
           <div class="food-tag-buttons">
             {#each mainFoodTags as tag}
-              <button 
-                class="food-tag-btn" 
+              <button
+                class="food-tag-btn"
                 on:click={() => handleFindFoods(tag)}
                 title={tag}
               >
                 <span class="food-tag-text">
-                  {tag === 'món mặn' ? 'Món mặn' : 
-                   tag === 'món chay' ? 'Món chay' : tag}
+                  {tag === "món mặn"
+                    ? "Món mặn"
+                    : tag === "món chay"
+                      ? "Món chay"
+                      : tag}
                 </span>
               </button>
             {/each}
@@ -754,9 +850,9 @@ function resetFilters() {
                 <div class="food-result-card">
                   <div class="food-image-wrapper">
                     {#if food.image_url}
-                      <img 
-                        src={food.image_url} 
-                        alt={food.food} 
+                      <img
+                        src={food.image_url}
+                        alt={food.food}
                         class="food-image"
                         loading="lazy"
                       />
@@ -775,7 +871,9 @@ function resetFilters() {
                       <span class="food-number">{index + 1}</span>
                       <h4 class="food-name">{food.food}</h4>
                     </div>
-                    <p class="food-description">{food.description || 'Không có mô tả'}</p>
+                    <p class="food-description">
+                      {food.description || "Không có mô tả"}
+                    </p>
                   </div>
                   <div class="food-meta">
                     <span class="food-id">ID: {food.id}</span>
@@ -785,7 +883,9 @@ function resetFilters() {
               {/each}
             </div>
             <div class="food-results-summary">
-              <p>Tìm thấy <strong>{foodSuggestions.length}</strong> món {selectedFoodTag}</p>
+              <p>
+                Tìm thấy <strong>{foodSuggestions.length}</strong> món {selectedFoodTag}
+              </p>
             </div>
           {:else}
             <div class="no-food-results">
@@ -796,32 +896,37 @@ function resetFilters() {
       {/if}
     {:else}
       <div class="place-detail">
-        <button class="back-btn" on:click={handleBackToList}>← Quay lại danh sách</button>
+        <button class="back-btn" on:click={handleBackToList}
+          >← Quay lại danh sách</button
+        >
         {#if selectedPlace.image_url}
           <img src={selectedPlace.image_url} class="detail-image" />
         {:else}
           <div class="no-image detail-no-image">📷</div>
         {/if}
-        
+
         <h2>{selectedPlace.name}</h2>
 
         <div class="detail-meta">
-          <span class="detail-category">{selectedPlace.category || 'Không có'}</span>
+          <span class="detail-category"
+            >{selectedPlace.category || "Không có"}</span
+          >
           <span class="detail-rating">
-            ⭐ {selectedPlace.rating || 0} ({selectedPlace.review_count || 0} đánh giá)
+            ⭐ {selectedPlace.rating || 0} ({selectedPlace.review_count || 0} đánh
+            giá)
           </span>
         </div>
 
         <div class="detail-section">
           <h4>Mô tả</h4>
-          <p>{selectedPlace.description || 'Không có mô tả'}</p>
+          <p>{selectedPlace.description || "Không có mô tả"}</p>
         </div>
 
         <div class="detail-section">
           <h4>Địa chỉ</h4>
-          <p>{selectedPlace.address || 'Không có địa chỉ'}</p>
+          <p>{selectedPlace.address || "Không có địa chỉ"}</p>
           <button class="hotel-btn" on:click={handleFindHotels}>
-            {isLoadingHotels ? 'Đang tìm...' : 'Tìm khách sạn gần đây'}
+            {isLoadingHotels ? "Đang tìm..." : "Tìm khách sạn gần đây"}
           </button>
         </div>
 
@@ -844,25 +949,27 @@ function resetFilters() {
                     <div class="hotel-header">
                       <h4>{index + 1}. {hotel.hotel}</h4>
                     </div>
-                    
+
                     <div class="hotel-info-grid">
                       <div class="info-item">
                         <span class="info-label">📍</span>
-                        <span class="info-value">{hotel.address || 'Không có địa chỉ'}</span>
+                        <span class="info-value"
+                          >{hotel.address || "Không có địa chỉ"}</span
+                        >
                       </div>
-                      
+
                       {#if hotel.description}
                         <div class="info-item">
                           <span class="info-value">{hotel.description}</span>
                         </div>
                       {/if}
                     </div>
-                    
+
                     {#if hotel.link}
                       <div class="hotel-actions">
-                        <a 
-                          href={hotel.link} 
-                          target="_blank" 
+                        <a
+                          href={hotel.link}
+                          target="_blank"
                           rel="noopener noreferrer"
                           class="map-link-btn"
                         >
@@ -875,7 +982,9 @@ function resetFilters() {
               </div>
 
               <div class="hotels-summary">
-                <p>Tìm thấy <strong>{hotels.length}</strong> khách sạn gần nhất</p>
+                <p>
+                  Tìm thấy <strong>{hotels.length}</strong> khách sạn gần nhất
+                </p>
               </div>
             {:else}
               <div class="no-hotels">
@@ -887,7 +996,7 @@ function resetFilters() {
 
         <div class="detail-section">
           <h4>Giờ mở cửa</h4>
-          <p>{selectedPlace.open_hours || 'Không có thông tin'}</p>
+          <p>{selectedPlace.open_hours || "Không có thông tin"}</p>
         </div>
 
         {#if selectedPlace.highlights?.length > 0}
@@ -925,7 +1034,6 @@ function resetFilters() {
       </div>
     {/if}
   </div>
-
 {:else}
   <div class="placeholder">
     <h3>Click vào một tỉnh trên bản đồ để xem thông tin</h3>
@@ -934,15 +1042,15 @@ function resetFilters() {
 
 <style>
   :root {
-    --map-lightest: #FDEEEF;
-    --map-medium: #F8D8DC;
-    --map-darkest: #E48F97;
-    --text-red: #A82223;
+    --map-lightest: #fdeeef;
+    --map-medium: #f8d8dc;
+    --map-darkest: #e48f97;
+    --text-red: #a82223;
     --text-dark: #333333;
-    --info-bg: #FFFFFF;
-    --screen-bg: #FAF2F2;
-    --accent-green: #4CAF50;
-    --accent-blue: #2196F3;
+    --info-bg: #ffffff;
+    --screen-bg: #faf2f2;
+    --accent-green: #4caf50;
+    --accent-blue: #2196f3;
     --shadow-light: rgba(168, 34, 35, 0.1);
     --shadow-medium: rgba(168, 34, 35, 0.15);
     --shadow-dark: rgba(168, 34, 35, 0.2);
@@ -953,7 +1061,8 @@ function resetFilters() {
 
   body {
     background-color: var(--screen-bg);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
     color: var(--text-dark);
     margin: 0;
     padding: 0;
@@ -973,13 +1082,18 @@ function resetFilters() {
   }
 
   .info-container::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, var(--text-red), var(--map-darkest), var(--map-medium));
+    background: linear-gradient(
+      90deg,
+      var(--text-red),
+      var(--map-darkest),
+      var(--map-medium)
+    );
     border-radius: 20px 20px 0 0;
   }
 
@@ -994,7 +1108,7 @@ function resetFilters() {
     border: 2px solid var(--border-light);
     margin: 20px 0;
   }
-  
+
   .spinner {
     width: 50px;
     height: 50px;
@@ -1004,10 +1118,14 @@ function resetFilters() {
     animation: spin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     margin-bottom: 20px;
   }
-  
+
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   .province-header {
@@ -1020,7 +1138,7 @@ function resetFilters() {
     flex-wrap: wrap;
     gap: 16px;
   }
-  
+
   .province-header h2 {
     margin: 0;
     color: var(--text-red);
@@ -1031,7 +1149,7 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .header-buttons {
     display: flex;
     gap: 12px;
@@ -1039,10 +1157,20 @@ function resetFilters() {
     flex-wrap: wrap;
   }
 
-  .reset-btn, .itinerary-btn, .complete-btn, .cancel-btn,
-  .search-btn, .back-btn, .hotel-btn, .external-search-btn,
-  .food-tag-btn, .create-itinerary-btn, .cancel-date-btn,
-  .print-btn, .new-itinerary-btn, .cancel-itinerary-btn {
+  .reset-btn,
+  .itinerary-btn,
+  .complete-btn,
+  .cancel-btn,
+  .search-btn,
+  .back-btn,
+  .hotel-btn,
+  .external-search-btn,
+  .food-tag-btn,
+  .create-itinerary-btn,
+  .cancel-date-btn,
+  .print-btn,
+  .new-itinerary-btn,
+  .cancel-itinerary-btn {
     padding: 14px 28px;
     border-radius: 14px;
     font-weight: 600;
@@ -1059,47 +1187,47 @@ function resetFilters() {
     gap: 8px;
     min-width: 120px;
   }
-  
+
   .reset-btn {
     background: linear-gradient(135deg, var(--map-medium), var(--map-darkest));
     color: white;
     box-shadow: 0 6px 20px var(--shadow-light);
   }
-  
+
   .reset-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px var(--shadow-medium);
   }
-  
+
   .itinerary-btn {
-    background: linear-gradient(135deg, var(--accent-green), #2E7D32);
+    background: linear-gradient(135deg, var(--accent-green), #2e7d32);
     color: white;
     box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
   }
-  
+
   .itinerary-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
-    background: linear-gradient(135deg, #43A047, #1B5E20);
+    background: linear-gradient(135deg, #43a047, #1b5e20);
   }
-  
+
   .complete-btn {
-    background: linear-gradient(135deg, var(--accent-blue), #1565C0);
+    background: linear-gradient(135deg, var(--accent-blue), #1565c0);
     color: white;
     box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
   }
-  
+
   .complete-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(33, 150, 243, 0.4);
   }
-  
+
   .cancel-btn {
     background: linear-gradient(135deg, var(--map-darkest), var(--text-red));
     color: white;
     box-shadow: 0 6px 20px var(--shadow-light);
   }
-  
+
   .cancel-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px var(--shadow-medium);
@@ -1113,7 +1241,7 @@ function resetFilters() {
     border: 2px solid var(--border-light);
     box-shadow: 0 8px 32px var(--shadow-light);
   }
-  
+
   .filter-section h3 {
     margin: 0 0 24px 0;
     color: var(--text-red);
@@ -1125,18 +1253,18 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .filter-section h3::before {
     font-size: 20px;
   }
-  
+
   .categories {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     margin: 20px 0;
   }
-  
+
   .category-checkbox {
     display: flex;
     align-items: center;
@@ -1150,25 +1278,25 @@ function resetFilters() {
     font-weight: 500;
     font-size: 15px;
   }
-  
+
   .category-checkbox:hover {
     border-color: var(--text-red);
     background: var(--map-lightest);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px var(--shadow-light);
   }
-  
+
   .category-checkbox input[type="checkbox"]:checked + span {
     color: var(--text-red);
     font-weight: 600;
   }
-  
+
   .category-checkbox input[type="checkbox"] {
     width: 18px;
     height: 18px;
     accent-color: var(--text-red);
   }
-  
+
   .rating-filter {
     margin: 10px 0;
     padding: 24px;
@@ -1176,7 +1304,7 @@ function resetFilters() {
     border-radius: 25px;
     border: 2px solid var(--border-light);
   }
-  
+
   .rating-filter label {
     display: block;
     margin-bottom: 5px;
@@ -1184,7 +1312,7 @@ function resetFilters() {
     font-weight: 600;
     font-size: 17px;
   }
-  
+
   .rating-filter input[type="range"] {
     width: 100%;
     height: 8px;
@@ -1194,7 +1322,7 @@ function resetFilters() {
     border-radius: 6px;
     outline: none;
   }
-  
+
   .rating-filter input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 26px;
@@ -1205,32 +1333,32 @@ function resetFilters() {
     border: 4px solid white;
     box-shadow: 0 4px 12px var(--shadow-medium);
   }
-  
+
   .search-actions {
     margin-top: 28px;
   }
-  
+
   .search-btn {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, var(--text-red), #8B0000);
+    background: linear-gradient(135deg, var(--text-red), #8b0000);
     color: white;
     box-shadow: 0 8px 28px var(--shadow-medium);
     font-size: 17px;
     font-weight: 700;
     border-radius: 14px;
   }
-  
+
   .search-btn:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px var(--shadow-dark);
-    background: linear-gradient(135deg, #8B0000, #660000);
+    background: linear-gradient(135deg, #8b0000, #660000);
   }
 
   .places-list {
     margin-top: 32px;
   }
-  
+
   .places-list h3 {
     margin: 0 0 24px 0;
     color: var(--text-red);
@@ -1241,14 +1369,14 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .places-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 24px;
     margin-top: 24px;
   }
-  
+
   .place-card {
     background: var(--info-bg);
     border: 2px solid var(--border-light);
@@ -1258,22 +1386,22 @@ function resetFilters() {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
   }
-  
+
   .place-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 24px 48px var(--shadow-medium);
     border-color: var(--text-red);
   }
-  
+
   .place-card.selectable {
     border: 2px dashed var(--border-medium);
   }
-  
+
   .place-card.selectable:hover {
     border-style: solid;
     border-color: var(--text-red);
   }
-  
+
   .itinerary-checkbox {
     position: absolute;
     top: 16px;
@@ -1284,14 +1412,14 @@ function resetFilters() {
     border-radius: 50%;
     box-shadow: 0 6px 20px var(--shadow-medium);
   }
-  
+
   .itinerary-checkbox input[type="checkbox"] {
     width: 22px;
     height: 22px;
     cursor: pointer;
     accent-color: var(--text-red);
   }
-  
+
   .no-image {
     width: 100%;
     height: 220px;
@@ -1303,7 +1431,7 @@ function resetFilters() {
     color: var(--text-red);
     opacity: 0.7;
   }
-  
+
   .place-card img {
     width: 100%;
     height: 220px;
@@ -1311,15 +1439,15 @@ function resetFilters() {
     display: block;
     transition: transform 0.5s ease;
   }
-  
+
   .place-card:hover img {
     transform: scale(1.06);
   }
-  
+
   .place-info {
     padding: 24px;
   }
-  
+
   .place-info h4 {
     margin: 0 0 16px 0;
     color: var(--text-red);
@@ -1329,7 +1457,7 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .place-meta {
     display: flex;
     justify-content: space-between;
@@ -1338,7 +1466,7 @@ function resetFilters() {
     padding-bottom: 16px;
     border-bottom: 2px solid var(--border-light);
   }
-  
+
   .category-badge {
     background: linear-gradient(135deg, var(--map-lightest), var(--map-medium));
     color: var(--text-red);
@@ -1349,7 +1477,7 @@ function resetFilters() {
     letter-spacing: 0.3px;
     border: 2px solid var(--border-medium);
   }
-  
+
   .rating {
     color: var(--text-red);
     font-weight: 700;
@@ -1358,12 +1486,12 @@ function resetFilters() {
     align-items: center;
     gap: 6px;
   }
-  
+
   .rating::before {
-    content: '⭐';
+    content: "⭐";
     font-size: 18px;
   }
-  
+
   .place-description {
     color: var(--text-dark);
     font-size: 15px;
@@ -1372,14 +1500,14 @@ function resetFilters() {
     opacity: 0.9;
     word-wrap: break-word;
   }
-  
+
   .place-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 16px;
   }
-  
+
   .tag {
     background: var(--map-lightest);
     color: var(--text-red);
@@ -1389,7 +1517,7 @@ function resetFilters() {
     font-weight: 500;
     border: 1px solid var(--border-light);
   }
-  
+
   .selected-count {
     color: var(--text-red);
     font-weight: 700;
@@ -1405,7 +1533,7 @@ function resetFilters() {
     border: 2px solid var(--border-medium);
     box-shadow: 0 10px 40px var(--shadow-light);
   }
-  
+
   .food-discovery-section h3 {
     margin: 0 0 18px 0;
     color: var(--text-red);
@@ -1417,11 +1545,11 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .food-discovery-section h3::before {
     font-size: 24px;
   }
-  
+
   .food-subtitle {
     color: var(--text-dark);
     opacity: 0.8;
@@ -1429,12 +1557,12 @@ function resetFilters() {
     font-size: 16px;
     line-height: 1.6;
   }
-  
+
   .food-tag-buttons {
     display: flex;
     gap: 16px;
   }
-  
+
   .food-tag-btn {
     flex: 1;
     padding: 20px;
@@ -1446,7 +1574,7 @@ function resetFilters() {
     box-shadow: 0 6px 24px var(--shadow-light);
     border-radius: 14px;
   }
-  
+
   .food-tag-btn:hover {
     background: linear-gradient(135deg, var(--map-lightest), var(--map-medium));
     border-color: var(--text-red);
@@ -1463,7 +1591,7 @@ function resetFilters() {
     box-shadow: 0 12px 48px var(--shadow-medium);
     animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   @keyframes slideIn {
     from {
       opacity: 0;
@@ -1474,7 +1602,7 @@ function resetFilters() {
       transform: translateY(0);
     }
   }
-  
+
   .food-results-header {
     display: flex;
     justify-content: space-between;
@@ -1483,7 +1611,7 @@ function resetFilters() {
     padding-bottom: 20px;
     border-bottom: 3px solid var(--border-medium);
   }
-  
+
   .food-results-header h3 {
     margin: 0;
     color: var(--text-red);
@@ -1492,14 +1620,14 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .food-results-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 24px;
     margin-top: 24px;
   }
-  
+
   .food-result-card {
     background: var(--info-bg);
     border-radius: 16px;
@@ -1508,31 +1636,31 @@ function resetFilters() {
     transition: all 0.3s ease;
     box-shadow: 0 8px 28px var(--shadow-light);
   }
-  
+
   .food-result-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 16px 48px var(--shadow-medium);
     border-color: var(--text-red);
   }
-  
+
   .food-image-wrapper {
     width: 100%;
     height: 220px;
     overflow: hidden;
     position: relative;
   }
-  
+
   .food-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-  
+
   .food-result-card:hover .food-image {
     transform: scale(1.08);
   }
-  
+
   .food-image-fallback {
     width: 100%;
     height: 100%;
@@ -1543,18 +1671,18 @@ function resetFilters() {
     font-size: 52px;
     color: var(--text-red);
   }
-  
+
   .food-info {
     padding: 24px;
   }
-  
+
   .food-header {
     display: flex;
     align-items: center;
     gap: 14px;
     margin-bottom: 16px;
   }
-  
+
   .food-number {
     background: linear-gradient(135deg, var(--text-red), var(--map-darkest));
     color: white;
@@ -1569,7 +1697,7 @@ function resetFilters() {
     flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(168, 34, 35, 0.3);
   }
-  
+
   .food-name {
     margin: 0;
     color: var(--text-red);
@@ -1579,7 +1707,7 @@ function resetFilters() {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .food-description {
     margin: 0;
     color: var(--text-dark);
@@ -1588,7 +1716,7 @@ function resetFilters() {
     opacity: 0.9;
     word-wrap: break-word;
   }
-  
+
   .food-results-summary {
     margin-top: 28px;
     padding: 20px;
@@ -1723,7 +1851,7 @@ function resetFilters() {
 
   .hotel-btn {
     margin-top: 15px;
-    background: linear-gradient(135deg, var(--accent-blue), #1565C0);
+    background: linear-gradient(135deg, var(--accent-blue), #1565c0);
     color: white;
     padding: 18px 36px;
     border-radius: 16px;
@@ -1733,7 +1861,7 @@ function resetFilters() {
   }
 
   .hotel-btn:hover {
-    background: linear-gradient(135deg, #1976D2, #0D47A1);
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
     transform: translateY(-4px);
     box-shadow: 0 16px 48px rgba(33, 150, 243, 0.4);
   }
@@ -1805,7 +1933,7 @@ function resetFilters() {
   }
 
   .hotel-address::before {
-    content: '📍';
+    content: "📍";
   }
 
   .hotel-description {
@@ -1868,7 +1996,7 @@ function resetFilters() {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
-    
+
     .food-results-list {
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
@@ -1881,224 +2009,223 @@ function resetFilters() {
       padding: 24px;
       max-height: 80vh;
     }
-    
+
     .province-header {
       flex-direction: column;
       align-items: flex-start;
       gap: 16px;
     }
-    
+
     .header-buttons {
       width: 100%;
       justify-content: flex-start;
     }
-    
+
     .date-selection {
       grid-template-columns: 1fr;
       gap: 20px;
     }
-    
+
     .date-popup-actions {
       flex-direction: column;
       gap: 16px;
     }
-    
+
     .create-itinerary-btn,
     .cancel-date-btn {
       width: 100%;
       min-width: auto;
     }
-    
+
     .option-buttons {
       flex-direction: column;
     }
-    
+
     .option-btn {
       width: 100%;
     }
-    
+
     .food-tag-buttons {
       flex-direction: column;
     }
-    
+
     .place-content h4 {
       font-size: 20px;
     }
 
-  @keyframes slideUp {
-    from { 
-      opacity: 0;
-      transform: translateY(40px) scale(0.95);
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
-    to { 
-      opacity: 1;
-      transform: translateY(0) scale(1);
+
+    .categories-container {
+      margin: 15px 0;
+      padding: 20px;
+      background: var(--info-bg);
+      border-radius: 16px;
+      border: 2px solid var(--border-light);
+    }
+
+    .category-group {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .category-group:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .category-group h4 {
+      margin: 0 0 12px 0;
+      color: var(--text-red);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .subcategory-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .subcategory-checkbox {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: var(--map-lightest);
+      border: 2px solid var(--border-medium);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .subcategory-checkbox:hover {
+      border-color: var(--text-red);
+      background: var(--map-medium);
+    }
+
+    .subcategory-checkbox input {
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--text-red);
+    }
+
+    .subcategory-checkbox.checked {
+      background: var(--text-red);
+      color: white;
+      border-color: var(--text-red);
+    }
+
+    .place-subcategories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .subcategory-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--map-lightest);
+      color: var(--text-red);
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      border: 1px solid var(--border-light);
+      text-align: left;
+    }
+
+    .detail-section.subcategories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .detail-section.subcategories .subcategory-tag {
+      padding: 6px 14px;
+      background: var(--text-red);
+      color: white;
+      font-size: 12px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .categories-container {
+        padding: 16px;
+      }
+
+      .category-group {
+        margin-bottom: 16px;
+      }
+
+      .category-group h4 {
+        font-size: 15px;
+      }
+
+      .subcategory-buttons {
+        gap: 6px;
+      }
+
+      .subcategory-checkbox {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+
+      .subcategory-checkbox input {
+        margin-right: 6px;
+        width: 14px;
+        height: 14px;
+      }
     }
   }
 
-.categories-container {
-  margin: 15px 0;
-  padding: 20px;
-  background: var(--info-bg);
-  border-radius: 16px;
-  border: 2px solid var(--border-light);
-}
-
-.category-group {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.category-group:last-child {
-  margin-bottom: 0;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.category-group h4 {
-  margin: 0 0 12px 0;
-  color: var(--text-red);
-  font-size: 16px;
-  font-weight: 600;
-  text-align: left;
-}
-
-.subcategory-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 5px;
-}
-
-.subcategory-checkbox {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  background: var(--map-lightest);
-  border: 2px solid var(--border-medium);
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-dark);
-  transition: all 0.2s;
-  text-align: left;
-}
-
-.subcategory-checkbox:hover {
-  border-color: var(--text-red);
-  background: var(--map-medium);
-}
-
-.subcategory-checkbox input {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  accent-color: var(--text-red);
-}
-
-.subcategory-checkbox.checked {
-  background: var(--text-red);
-  color: white;
-  border-color: var(--text-red);
-}
-
-.place-subcategories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.subcategory-tag {
-  display: inline-block;
-  padding: 4px 10px;
-  background: var(--map-lightest);
-  color: var(--text-red);
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 500;
-  border: 1px solid var(--border-light);
-  text-align: left;
-}
-
-.detail-section.subcategories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 15px;
-  text-align: left;
-}
-
-.detail-section.subcategories .subcategory-tag {
-  padding: 6px 14px;
-  background: var(--text-red);
-  color: white;
-  font-size: 12px;
-  border: none;
-}
-
-@media (max-width: 768px) {
-  .categories-container {
-    padding: 16px;
-  }
-  
-  .category-group {
-    margin-bottom: 16px;
-  }
-  
-  .category-group h4 {
-    font-size: 15px;
-  }
-  
-  .subcategory-buttons {
-    gap: 6px;
-  }
-  
   .subcategory-checkbox {
-    padding: 6px 12px;
-    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid var(--border-medium);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    margin: 4px;
   }
-  
-  .subcategory-checkbox input {
-    margin-right: 6px;
-    width: 14px;
-    height: 14px;
+
+  .subcategory-checkbox:hover {
+    border-color: var(--text-red);
+    background: var(--map-lightest);
   }
-}
-}
 
-.subcategory-checkbox {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  background: white;
-  border: 2px solid var(--border-medium);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--text-dark);
-  transition: all 0.2s ease;
-  margin: 4px;
-}
+  .subcategory-checkbox.checked {
+    background: var(--text-red);
+    color: white;
+    border-color: var(--text-red);
+  }
 
-.subcategory-checkbox:hover {
-  border-color: var(--text-red);
-  background: var(--map-lightest);
-}
-
-.subcategory-checkbox.checked {
-  background: var(--text-red);
-  color: white;
-  border-color: var(--text-red);
-}
-
-.subcategory-checkbox input[type="checkbox"] {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-}
-
+  .subcategory-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
 </style>

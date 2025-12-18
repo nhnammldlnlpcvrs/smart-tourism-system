@@ -1,3 +1,6 @@
+<!---
+frontend/my-vietnam-map/src/App.svelte
+-->
 <script>
   import Map from "./components/Map.svelte";
   import Info from "./components/Info.svelte";
@@ -25,7 +28,7 @@
     min-height: 90vh;
   }
 
-  @media(min-width: 992px) {
+  @media (min-width: 992px) {
     main {
       flex-direction: row;
       align-items: flex-start;
@@ -42,8 +45,8 @@
     }
   }
 
-  .map-container, .info-container {
+  .map-container,
+  .info-container {
     width: 100%;
   }
-
 </style>

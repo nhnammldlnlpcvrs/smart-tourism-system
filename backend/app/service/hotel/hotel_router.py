@@ -5,7 +5,7 @@ from app.service.tourism.tourism_module import get_all_provinces
 
 from .hotel_module import get_hotels_by_province_and_place_id
 
-router = APIRouter(prefix="/hotels", tags=["Hotels"])
+router = APIRouter(tags=["Hotels"])
 
 @router.get("/provinces")
 def api_get_provinces():

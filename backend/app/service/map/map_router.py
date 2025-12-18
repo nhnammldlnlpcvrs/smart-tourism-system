@@ -3,7 +3,7 @@ from fastapi import APIRouter, Query
 from app.service.map.map_module import get_nearby_places, get_distance, get_location
 
 # Tạo router cho API Google Maps
-router = APIRouter(prefix="/map", tags=["Google Map"])
+router = APIRouter(tags=["Google Map"])
 
 # 🗺️ Endpoint: Tìm địa điểm gần vị trí chỉ định
 @router.get("/nearby")

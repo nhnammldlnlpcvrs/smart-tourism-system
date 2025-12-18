@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from .weather_module import get_current_weather
 
-router = APIRouter(prefix="/weather", tags=["Weather"])
+router = APIRouter(tags=["Weather"])
 
 class WeatherQuery(BaseModel):
     city: str

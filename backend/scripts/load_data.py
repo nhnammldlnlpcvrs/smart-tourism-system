@@ -3,7 +3,6 @@ import argparse
 import os
 import sys
 
-# Cho phép import từ thư mục project root
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from utils.create_tables import (

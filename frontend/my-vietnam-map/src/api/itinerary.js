@@ -1,6 +1,6 @@
-// frontend/src/api/itinerary.js
+// frontend/my-vietnam-map/src/api/itinerary.js
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE = 'http://localhost:8000';
 
 /**
  * Gửi yêu cầu tạo lịch trình tới backend
@@ -9,8 +9,10 @@ const API_BASE_URL = 'http://localhost:8000';
  */
 export async function generateItinerary(itineraryData) {
     try {
-        // Sửa URL endpoint cho đúng với cấu trúc API của bạn
-        const response = await fetch(`${API_BASE_URL}/itinerary/itinerary/generate`, {
+        const url = `${API_BASE}/itinerary/generate`;
+        console.log("[ITINERARY API] POST:", url);
+        console.log("[ITINERARY API] Payload:", itineraryData);
+        const response = await fetch(`${API_BASE}/itinerary/generate`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,19 +40,16 @@ export async function generateItinerary(itineraryData) {
  */
 export function formatItineraryData(apiResponse) {
     console.log('Raw API response:', apiResponse); // Debug log
-    
+
     if (!apiResponse) {
         console.error('API response is empty');
         return null;
     }
 
-    // Kiểm tra cấu trúc response khác nhau
     let itinerary;
     if (apiResponse.itinerary) {
-        // Case 1: Response có trường itinerary (theo code hiện tại)
         itinerary = apiResponse.itinerary;
     } else if (apiResponse.days) {
-        // Case 2: Response trực tiếp là itinerary
         itinerary = apiResponse;
     } else {
         console.error('API response không có cấu trúc itinerary hợp lệ:', apiResponse);
@@ -68,29 +67,25 @@ export function formatItineraryData(apiResponse) {
         rawData: apiResponse
     };
 
-    // Kiểm tra nếu có itinerary.text (định dạng text)
     if (itinerary.text) {
-        // Parse các ngày từ itinerary text
         const daySections = itinerary.text.split(/Ngày \d+:/g).filter(section => section.trim());
 
         daySections.forEach((section, index) => {
             const dayNumber = index + 1;
             const lines = section.split('\n').filter(line => line.trim());
-            
+
             const places = lines
                 .filter(line => line.includes('-') || line.includes('→'))
                 .map(line => {
-                    // Extract place name từ line
                     let placeName = line
                         .replace(/^- /, '')
                         .replace(/^→ /, '')
                         .replace(/\(.*?\)/g, '')
                         .trim();
 
-                    // Tìm thông tin chi tiết từ filtered_places (nếu có)
                     let placeDetail = null;
                     if (itinerary.filtered_places) {
-                        placeDetail = itinerary.filtered_places.find(p => 
+                        placeDetail = itinerary.filtered_places.find(p =>
                             placeName.includes(p.name) || (p.name && p.name.includes(placeName))
                         );
                     }
@@ -103,8 +98,8 @@ export function formatItineraryData(apiResponse) {
                         category: placeDetail?.category || '',
                         rating: 0,
                         location: placeDetail?.address || '',
-                        coordinates: placeDetail?.latitude && placeDetail?.longitude 
-                            ? { lat: placeDetail.latitude, lng: placeDetail.longitude } 
+                        coordinates: placeDetail?.latitude && placeDetail?.longitude
+                            ? { lat: placeDetail.latitude, lng: placeDetail.longitude }
                             : null
                     };
                 })
@@ -114,21 +109,18 @@ export function formatItineraryData(apiResponse) {
                 result.summary.totalPlaces += places.length;
                 result.days.push({
                     dayNumber,
-                    date: null, // Sẽ được tính sau
+                    date: null,
                     places,
                     notes: extractNotesFromSection(section)
                 });
             }
         });
-    } 
-    // Kiểm tra nếu có cấu trúc days trực tiếp
+    }
     else if (itinerary.days && Array.isArray(itinerary.days)) {
-        // Case: API trả về cấu trúc days trực tiếp
         itinerary.days.forEach((dayData, index) => {
             const dayNumber = index + 1;
             const places = [];
-            
-            // Xử lý các địa điểm trong ngày
+
             if (dayData.places && Array.isArray(dayData.places)) {
                 dayData.places.forEach(place => {
                     places.push({
@@ -139,13 +131,13 @@ export function formatItineraryData(apiResponse) {
                         category: place.category || '',
                         rating: 0,
                         location: place.address || '',
-                        coordinates: place.latitude && place.longitude 
-                            ? { lat: place.latitude, lng: place.longitude } 
+                        coordinates: place.latitude && place.longitude
+                            ? { lat: place.latitude, lng: place.longitude }
                             : null
                     });
                 });
             }
-            
+
             if (places.length > 0) {
                 result.summary.totalPlaces += places.length;
                 result.days.push({
@@ -157,12 +149,11 @@ export function formatItineraryData(apiResponse) {
             }
         });
     }
-    // Kiểm tra nếu có daily_itineraries
     else if (itinerary.daily_itineraries && Array.isArray(itinerary.daily_itineraries)) {
         itinerary.daily_itineraries.forEach((dayItinerary, index) => {
             const dayNumber = index + 1;
             const places = [];
-            
+
             if (dayItinerary.places && Array.isArray(dayItinerary.places)) {
                 dayItinerary.places.forEach(place => {
                     places.push({
@@ -173,13 +164,13 @@ export function formatItineraryData(apiResponse) {
                         category: place.category || '',
                         rating: 0,
                         location: place.address || '',
-                        coordinates: place.latitude && place.longitude 
-                            ? { lat: place.latitude, lng: place.longitude } 
+                        coordinates: place.latitude && place.longitude
+                            ? { lat: place.latitude, lng: place.longitude }
                             : null
                     });
                 });
             }
-            
+
             if (places.length > 0) {
                 result.summary.totalPlaces += places.length;
                 result.days.push({
@@ -192,7 +183,6 @@ export function formatItineraryData(apiResponse) {
         });
     }
 
-    // Nếu không có days nào được tạo, tạo cấu trúc mặc định
     if (result.days.length === 0 && itinerary.filtered_places) {
         console.log('Creating default day structure from filtered_places');
         result.days.push({
@@ -206,8 +196,8 @@ export function formatItineraryData(apiResponse) {
                 category: place.category || '',
                 rating: 0,
                 location: place.address || '',
-                coordinates: place.latitude && place.longitude 
-                    ? { lat: place.latitude, lng: place.longitude } 
+                coordinates: place.latitude && place.longitude
+                    ? { lat: place.latitude, lng: place.longitude }
                     : null
             })),
             notes: []
@@ -219,40 +209,34 @@ export function formatItineraryData(apiResponse) {
     return result;
 }
 
-/**
- * Trích xuất thời gian từ dòng text
- */
+
 function extractTimeFromLine(line) {
     const timeMatch = line.match(/(\d{1,2}[:.]\d{2}|\d{1,2}\s*(giờ|h|AM|PM|sáng|chiều|tối))/i);
     return timeMatch ? timeMatch[0] : '';
 }
 
-/**
- * Trích xuất ghi chú từ section
- */
+
 function extractNotesFromSection(section) {
     const notes = [];
     const lines = section.split('\n');
-    
+
     lines.forEach(line => {
         if (line.includes('Ghi chú:') || line.includes('Lưu ý:') || line.includes('Note:')) {
             notes.push(line.replace(/Ghi chú:|Lưu ý:|Note:/i, '').trim());
         }
     });
-    
+
     return notes;
 }
 
-/**
- * Trích xuất ghi chú từ day object
- */
+
 function extractNotesFromDay(dayData) {
     const notes = [];
-    
+
     if (dayData.notes && Array.isArray(dayData.notes)) {
         return dayData.notes;
     }
-    
+
     if (dayData.tips) {
         if (Array.isArray(dayData.tips)) {
             return dayData.tips;
@@ -260,7 +244,7 @@ function extractNotesFromDay(dayData) {
             return [dayData.tips];
         }
     }
-    
+
     return notes;
 }
 
@@ -272,37 +256,33 @@ function extractNotesFromDay(dayData) {
  */
 export function calculateDates(startDate, totalDays) {
     if (!startDate || !totalDays) return [];
-    
+
     const dates = [];
     const currentDate = new Date(startDate);
-    
+
     for (let i = 0; i < totalDays; i++) {
         const dateCopy = new Date(currentDate);
         dateCopy.setDate(dateCopy.getDate() + i);
         dates.push(dateCopy);
     }
-    
+
     return dates;
 }
 
-/**
- * Format date thành string dd/mm/yyyy
- */
+
 export function formatDate(date) {
     if (!date) return '';
-    
+
     // Nếu date là string, chuyển thành Date object
     const d = date instanceof Date ? date : new Date(date);
-    
+
     // Kiểm tra date hợp lệ
     if (isNaN(d.getTime())) return '';
-    
+
     return `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth() + 1).toString().padStart(2, '0')}/${d.getFullYear()}`;
 }
 
-/**
- * Helper function để tạo dữ liệu test nếu API không hoạt động
- */
+
 export function getMockItineraryData() {
     return {
         itinerary: {
