@@ -3,7 +3,7 @@ set -e
 
 echo "Starting FastAPI backend..."
 cd backend
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 &
+python -m uvicorn app.api.main:app --reload &
 BACK_PID=$!
 
 echo "Starting Svelte frontend..."
