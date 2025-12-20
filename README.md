@@ -68,3 +68,78 @@ The system follows a modular architecture consisting of:
 
 ## 6. How to Run
 
+### 6.1. Requirements
+
+- **Python:** 3.10 – 3.12  
+- **Node.js:** 18 or higher  
+- **npm** or **yarn**  
+- (Recommended) **Git Bash** on Windows  
+- (Optional) **Docker & Docker Compose**
+
+### 6.2. Option 1: Run with Docker (Recommended)
+
+This is the easiest way to run the full system without manual dependency installation.
+
+#### Step 1: Navigate to the project directory
+```bash
+cd smart-tourism-system
+```
+
+#### Step 2: Build and start the system
+```bash
+docker compose up --build
+```
+
+#### Step 3: Access the application
+
+- Frontend: http://localhost:5500
+
+- Backend API (Swagger UI): http://localhost:8000/docs
+
+### 6.3. Option 2: Run Locally (Manual Setup)
+
+#### 6.3.1. Run Backend
+
+- Step 1: Create and activate a virtual environment
+
+```bash
+python -m venv venv
+source venv/Scripts/activate   # Windows (Git Bash)
+```
+- Step 2: Install backend dependencies
+```bash
+pip install -r requirements_dev.txt
+```
+
+- Step 3: Start the FastAPI server
+```bash
+cd backend
+uvicorn app.api.main:app --reload
+```
+
+**Backend** will be available at:
+
+- http://localhost:8000
+
+- API documentation: http://localhost:8000/docs
+
+### 6.3.2. Run Frontend
+
+- Step 1: Navigate to the frontend directory
+```bash
+cd frontend/my-vietnam-map
+```
+
+- Step 2: Install frontend dependencies
+```bash
+npm install
+```
+
+- Step 3: Start the frontend development server
+```bash
+npm run dev -- --host
+```
+
+**Frontend** will be available at:
+
+- http://localhost:5500
