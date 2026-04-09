@@ -37,7 +37,9 @@ Used for Vietnam tourism data: attractions, foods, hotels, maps, and itinerary s
 ![Itinerary](docs/imgs/itinerary.jpg)
 
 ## 3. System Architecture
-![System Architecture](docs/imgs/pipeline_final.png)
+<p align="center">
+  <img src="docs/imgs/pipeline_final.png" alt="System Architecture" width="2000"/>
+</p>
 The system follows a modular architecture consisting of:
 
 - **Backend**
